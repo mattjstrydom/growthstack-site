@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://growthstackhq.com/sitemap.xml
+Sitemap: https://www.growthstackhq.com/sitemap.xml
