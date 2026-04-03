@@ -556,7 +556,7 @@ footer {
 
 /* Blog cards */
 .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-top: 48px; }
-.blog-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--r-lg); overflow: hidden; transition: var(--t); }
+.blog-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--r-lg); overflow: hidden; transition: var(--t); cursor: pointer; }
 .blog-card:hover { border-color: rgba(241,90,36,0.35); box-shadow: var(--shadow-md); transform: translateY(-3px); }
 .blog-card__img { height: 160px; background: var(--color-dark-bg); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
 .blog-card__body { padding: 24px; }
