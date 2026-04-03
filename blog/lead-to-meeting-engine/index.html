@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K9FXGZQ5");</script>
+  <title>Lead-to-Meeting Engine: Building Verified Lead Lists with Apollo and MillionVerifier | GrowthStack</title>
+  <meta name="description" content="A step-by-step system for building a verified B2B lead list using Apollo and MillionVerifier, then loading it into a working cold outbound sequence in Smartlead or Instantly.">
+  <link rel="icon" type="image/png" sizes="180x180" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="canonical" href="https://www.growthstackhq.com/blog/lead-to-meeting-engine">
+  <meta property="og:title" content="Lead-to-Meeting Engine: Building Verified Lead Lists with Apollo and MillionVerifier">
+  <meta property="og:description" content="A step-by-step system for building a verified B2B lead list using Apollo and MillionVerifier, then loading it into a working cold outbound sequence in Smartlead or Instantly.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.growthstackhq.com/blog/lead-to-meeting-engine">
+  <meta property="og:image" content="https://www.growthstackhq.com/favicon.png">
+  <meta property="article:published_time" content="2025-09-16">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Lead-to-Meeting Engine: Apollo, MillionVerifier, and Smartlead","description":"A step-by-step system for building a verified B2B lead list using Apollo and MillionVerifier, then loading it into a working cold outbound sequence in Smartlead or Instantly.","datePublished":"2025-09-16","author":{"@type":"Organization","name":"GrowthStack"},"publisher":{"@type":"Organization","name":"GrowthStack","url":"https://www.growthstackhq.com"},"url":"https://www.growthstackhq.com/blog/lead-to-meeting-engine"}</script>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/blog/blog-post.css">
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9FXGZQ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="nav scrolled" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo"><div class="nav__logo-bars"><span></span><span></span><span></span></div>GrowthStack</a>
+    <div class="nav__links"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog" class="active">Blog</a><a href="/contact">Contact</a></div>
+    <div class="nav__right"><button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary">Book a Discovery Call</button></div>
+    <button class="nav__burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/contact">Contact</a><button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary" style="margin-top:20px;justify-content:center">Book a Discovery Call</button></div>
+</nav>
+<section class="post-hero">
+  <div class="container">
+    <div class="post-meta">
+      <span class="post-meta__cat">Lead Generation</span>
+      <span class="post-meta__sep">&#183;</span>
+      <span class="post-meta__date">September 16, 2025</span>
+      <span class="post-meta__sep">&#183;</span>
+      <span class="post-meta__read">9 min read</span>
+    </div>
+    <h1>Lead-to-Meeting Engine: Apollo, MillionVerifier, and Smartlead</h1>
+  </div>
+</section>
+<div class="post-body">
+
+  <p>Most outbound failures happen before the first email is sent. The lead list is wrong &#8212; wrong people, wrong companies, unverified emails. You build sequences on top of that broken foundation, wonder why reply rates are low, and blame the copy.</p>
+  <p>This post lays out the exact system we use to build verified B2B lead lists and get them into a working outbound sequence. It uses three tools &#8212; Apollo, MillionVerifier, and Smartlead &#8212; and produces a list you can send to with confidence.</p>
+
+  <h2>Step 1: Define Your ICP Before You Touch Apollo</h2>
+  <p>Every wasted hour in lead generation starts with a vague ICP. Before opening Apollo, write down the exact criteria for your ideal customer:</p>
+  <ul>
+    <li><strong>Industry</strong> &#8212; Be specific. Not "tech" &#8212; "B2B SaaS companies" or "fintech startups".</li>
+    <li><strong>Company size</strong> &#8212; Employee count range. "10&#8211;200 employees" is a usable filter. "SMBs" is not.</li>
+    <li><strong>Geography</strong> &#8212; Country, region, or city. Outbound messaging and timing vary significantly by market.</li>
+    <li><strong>Funding stage</strong> &#8212; Are you targeting bootstrapped companies, seed-funded, or Series A+? Each has a different budget reality and urgency level.</li>
+    <li><strong>Buyer title</strong> &#8212; Exactly who books the meeting. Founder, VP of Sales, Head of Marketing. Not "decision maker".</li>
+    <li><strong>Signals</strong> &#8212; What behaviour or circumstance makes someone a good prospect right now? Recent funding, hiring for a specific role, just launched a product, expanded to a new market.</li>
+  </ul>
+  <p>Write this down before opening Apollo. The tool can only filter what you know how to ask for.</p>
+
+  <h2>Step 2: Build Your List in Apollo</h2>
+  <p>Apollo&#8217;s free tier gives you access to 10 contact exports per month. Their paid plans (from $49/month) remove this limit. For most early-stage teams, the Starter plan is sufficient to start.</p>
+  <p>To build a clean list:</p>
+  <ol>
+    <li>Go to <strong>People Search</strong> and apply your ICP filters &#8212; job titles, company size, industry, geography, and any technology filters relevant to your product.</li>
+    <li>Use the <strong>Intent signals</strong> filter if available on your plan &#8212; companies actively researching topics relevant to your offer convert at 2&#8211;3x the rate of cold lists.</li>
+    <li>Filter by <strong>Email status: Verified or Likely to Engage</strong> &#8212; this removes contacts Apollo has already flagged as low quality.</li>
+    <li>Review the first 50&#8211;100 results manually before exporting. Check that the titles and companies match your ICP. If 20% of results are wrong, your filters need adjusting.</li>
+    <li>Export to CSV. 300&#8211;500 contacts is a good starting batch &#8212; large enough to get statistically meaningful data, small enough to keep quality high.</li>
+  </ol>
+
+  <div class="callout">
+    <p><strong>On data quality:</strong> Apollo&#8217;s database is large but not perfectly accurate. Email bounce rates on raw Apollo exports are typically 8&#8211;15%. That&#8217;s too high to send without verification. The next step fixes this.</p>
+  </div>
+
+  <h2>Step 3: Verify Every Email with MillionVerifier</h2>
+  <p>MillionVerifier is the most cost-effective bulk email verification tool available. At $0.003 per credit (less in bulk), verifying 500 contacts costs under $2. It&#8217;s not a meaningful cost.</p>
+  <p>The verification process:</p>
+  <ol>
+    <li>Export your Apollo list as a CSV with the email column included.</li>
+    <li>Upload it to MillionVerifier under <strong>Bulk Verification</strong>.</li>
+    <li>Wait for results (typically 5&#8211;15 minutes for 500 contacts).</li>
+    <li>Download the results file. It adds a status column to each contact: <strong>OK</strong>, <strong>Catch-All</strong>, <strong>Invalid</strong>, or <strong>Unknown</strong>.</li>
+    <li>Keep: <strong>OK</strong> status emails only. These have confirmed as deliverable.</li>
+    <li>Use with caution: <strong>Catch-All</strong> emails may or may not bounce &#8212; include them in a separate, smaller sequence if you want to test them.</li>
+    <li>Suppress: <strong>Invalid</strong> and <strong>Unknown</strong>. Delete them from your sending list entirely.</li>
+  </ol>
+  <p>After verification, a typical 500-contact Apollo export becomes 380&#8211;420 usable contacts. That&#8217;s your actual sending list.</p>
+
+  <h2>Step 4: Import Into Smartlead and Build Your Sequence</h2>
+  <p>Smartlead (and Instantly &#8212; either works) handles the sending, scheduling, inbox rotation, and reply tracking. Here&#8217;s the setup:</p>
+  <ol>
+    <li><strong>Create a new campaign</strong> and import your verified CSV.</li>
+    <li><strong>Map the columns</strong> &#8212; first name, last name, email, company name, and any custom variables you want to use for personalisation (job title, recent funding, technology used).</li>
+    <li><strong>Write your sequence</strong> &#8212; 3&#8211;4 steps, spaced 3&#8211;5 days apart. Step 1 is your opening email. Steps 2&#8211;3 are follow-ups that add value rather than just bumping the thread. Step 4 is a breakup email.</li>
+    <li><strong>Set sending limits</strong> &#8212; 20&#8211;40 emails per inbox per day maximum. Use inbox rotation across multiple sending accounts.</li>
+    <li><strong>Enable open and reply tracking</strong> &#8212; you need this data to optimise over time.</li>
+    <li><strong>Schedule sends</strong> for your prospect&#8217;s timezone, between 7am&#8211;10am local time. This is consistently the highest-performing delivery window for B2B outbound.</li>
+  </ol>
+
+  <h2>Sequence Structure That Works</h2>
+  <p>The four-step sequence we use as a starting template:</p>
+  <ul>
+    <li><strong>Email 1 (Day 1)</strong> &#8212; Personalised first line + specific pain point + single CTA. Under 100 words. No attachments.</li>
+    <li><strong>Email 2 (Day 4)</strong> &#8212; A different angle. Reference a relevant case study, data point, or insight. Not "just following up".</li>
+    <li><strong>Email 3 (Day 9)</strong> &#8212; Social proof or specificity. Name a company similar to theirs that you&#8217;ve helped, or ask a specific question about their current situation.</li>
+    <li><strong>Email 4 (Day 16)</strong> &#8212; The breakup. Short, direct, slightly cheeky. "Is outbound just not a priority right now?" Many replies come from this email.</li>
+  </ul>
+
+  <h2>What to Measure and When to Optimise</h2>
+  <p>After your first 200&#8211;300 sends, review these metrics:</p>
+  <ul>
+    <li><strong>Open rate</strong> &#8212; Below 30%: deliverability issue. 30&#8211;50%: normal. Above 50%: excellent.</li>
+    <li><strong>Reply rate</strong> &#8212; Below 1%: ICP or messaging problem. 1&#8211;3%: baseline. Above 3%: strong.</li>
+    <li><strong>Positive reply rate</strong> &#8212; Of your replies, what % are interested vs unsubscribing? You want at least 30% positive.</li>
+    <li><strong>Bounce rate</strong> &#8212; Should be below 2% with verified lists. Above 3%: recheck your verification step.</li>
+  </ul>
+  <p>Optimise one variable at a time. Change the subject line and measure for 100 sends before changing anything else. If you change everything at once, you won&#8217;t know what worked.</p>
+
+  <hr class="post-divider">
+  <div class="post-cta">
+    <div class="eyebrow" style="justify-content:center">Done For You</div>
+    <h3>Want us to handle this for you?</h3>
+    <p>GrowthStack builds and runs your entire outbound motion &#8212; from infrastructure to booked meetings.</p>
+    <button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary">Book a Discovery Call</button>
+  </div>
+</div>
+<div class="container"><div class="post-nav"><a href="/blog">&#8592; Back to Blog</a></div></div>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><div class="nav__logo-bars" style="height:16px"><span style="height:7px"></span><span style="height:11px"></span><span style="height:16px"></span></div>GrowthStack</div><p>Done-for-you outbound for early-stage B2B startups.</p></div>
+      <div class="footer-col"><h5>Navigation</h5><div class="footer-links"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/contact">Contact</a></div></div>
+      <div class="footer-col"><h5>Contact</h5><p class="footer-email"><a href="mailto:hello@growthstackhq.com">hello@growthstackhq.com</a></p></div>
+    </div>
+    <div class="footer-bottom"><p>&#169; 2026 GrowthStack. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div></div>
+  </div>
+</footer>
+<script src="/main.js"></script>
+<script type="text/javascript">(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");Cal("init", "discovery", {origin:"https://app.cal.com"});Cal.ns.discovery("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#292929"},"dark":{"cal-brand":"#f25b45"}},"hideEventTypeDetails":false,"layout":"month_view"});</script>
+</body>
+</html>

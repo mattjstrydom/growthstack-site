@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K9FXGZQ5");</script>
+  <title>Scaling Cold Email: From 1,000 to 50,000 Monthly Sends Without Damaging Deliverability | GrowthStack</title>
+  <meta name="description" content="How to scale cold email volume from 1,000 to 50,000 monthly sends without burning your domain reputation or landing in spam. Infrastructure, sequencing, and pacing strategy.">
+  <link rel="icon" type="image/png" sizes="180x180" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="canonical" href="https://www.growthstackhq.com/blog/scaling-outbound-sends">
+  <meta property="og:title" content="Scaling Cold Email: From 1,000 to 50,000 Monthly Sends Without Damaging Deliverability">
+  <meta property="og:description" content="How to scale cold email volume from 1,000 to 50,000 monthly sends without burning your domain reputation or landing in spam. Infrastructure, sequencing, and pacing strategy.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.growthstackhq.com/blog/scaling-outbound-sends">
+  <meta property="og:image" content="https://www.growthstackhq.com/favicon.png">
+  <meta property="article:published_time" content="2025-05-05">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Scaling Outbound: How to Move from 1,000 to 50,000 Monthly Sends Without Burning Your Brand","description":"How to scale cold email volume from 1,000 to 50,000 monthly sends without burning your domain reputation or landing in spam. Infrastructure, sequencing, and pacing strategy.","datePublished":"2025-05-05","author":{"@type":"Organization","name":"GrowthStack"},"publisher":{"@type":"Organization","name":"GrowthStack","url":"https://www.growthstackhq.com"},"url":"https://www.growthstackhq.com/blog/scaling-outbound-sends"}</script>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/blog/blog-post.css">
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9FXGZQ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="nav scrolled" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo"><div class="nav__logo-bars"><span></span><span></span><span></span></div>GrowthStack</a>
+    <div class="nav__links"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog" class="active">Blog</a><a href="/contact">Contact</a></div>
+    <div class="nav__right"><button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary">Book a Discovery Call</button></div>
+    <button class="nav__burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/contact">Contact</a><button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary" style="margin-top:20px;justify-content:center">Book a Discovery Call</button></div>
+</nav>
+<section class="post-hero">
+  <div class="container">
+    <div class="post-meta">
+      <span class="post-meta__cat">Cold Email</span>
+      <span class="post-meta__sep">&#183;</span>
+      <span class="post-meta__date">May 5, 2025</span>
+      <span class="post-meta__sep">&#183;</span>
+      <span class="post-meta__read">8 min read</span>
+    </div>
+    <h1>Scaling Outbound: How to Move from 1,000 to 50,000 Monthly Sends Without Burning Your Brand</h1>
+  </div>
+</section>
+<div class="post-body">
+
+  <p>Most outbound playbooks tell you to increase volume to get more meetings. What they don&#8217;t tell you is that volume without infrastructure destroys deliverability, and destroyed deliverability means none of your emails reach the inbox &#8212; at any volume.</p>
+  <p>This post covers the exact pacing and infrastructure strategy for scaling cold email from 1,000 to 50,000 monthly sends while maintaining inbox placement rates above 90%.</p>
+
+  <h2>Why Volume Alone Kills Deliverability</h2>
+  <p>Email providers &#8212; Google, Microsoft, and others &#8212; evaluate sending behaviour in real time. When they see a domain that suddenly increases its send volume by 5x in a week, they flag it. The signals that trigger this:</p>
+  <ul>
+    <li>Sending more emails than your domain&#8217;s historical average</li>
+    <li>High send rates per inbox (more than 50&#8211;100 emails/day from a single address)</li>
+    <li>Sending to lists with high bounce or complaint rates</li>
+    <li>Sending from recently registered domains without established reputation</li>
+  </ul>
+  <p>The result is progressive filtering: your emails move from the inbox to the promotions tab, then to spam, then get blocked entirely. This can happen within days of a volume spike.</p>
+
+  <h2>The Infrastructure You Need Before Scaling</h2>
+  <p>Before increasing volume, confirm you have:</p>
+  <ul>
+    <li><strong>Multiple sending domains</strong> &#8212; Each domain has its own reputation. Spreading sends across 3&#8211;5 domains means no single domain&#8217;s reputation is at risk from your total volume.</li>
+    <li><strong>Multiple inboxes per domain</strong> &#8212; 2&#8211;3 inboxes per domain, giving you 6&#8211;15 total inboxes across your domain portfolio.</li>
+    <li><strong>All domains warmed up</strong> &#8212; Every inbox should have been warming for at least 21 days before receiving production sends.</li>
+    <li><strong>Inbox rotation enabled</strong> &#8212; Your sending tool distributes sends across all inboxes automatically.</li>
+    <li><strong>List verification in place</strong> &#8212; Every batch of contacts is verified before sending.</li>
+    <li><strong>Google Postmaster Tools monitoring</strong> &#8212; You&#8217;re actively watching domain reputation and spam rates.</li>
+  </ul>
+
+  <h2>The Scaling Pacing Model</h2>
+  <p>Scale gradually. Here&#8217;s a framework for moving from 1,000 to 50,000 monthly sends:</p>
+
+  <h3>Phase 1: 1,000&#8211;5,000 sends/month (Weeks 1&#8211;4)</h3>
+  <p>At this stage you&#8217;re running 2&#8211;3 domains with 2 inboxes each &#8212; 4&#8211;6 inboxes total. Each inbox sends 25&#8211;30 emails/day. Total daily sends: 100&#8211;180. This volume is safe, gives you time to monitor reputation, and delivers enough data to optimise your sequences.</p>
+
+  <h3>Phase 2: 5,000&#8211;15,000 sends/month (Weeks 5&#8211;8)</h3>
+  <p>Add 2 more domains with 2 inboxes each. Your total inbox count moves to 8&#8211;10. Increase daily send limits per inbox to 35&#8211;40 emails/day. Total daily sends: 280&#8211;400. Before increasing, confirm Postmaster Tools is showing Green/High domain reputation and your bounce rate is below 2%.</p>
+
+  <h3>Phase 3: 15,000&#8211;30,000 sends/month (Weeks 9&#8211;12)</h3>
+  <p>Add 3&#8211;4 more domains. Total: 12&#8211;15 inboxes. Increase per-inbox limits to 40&#8211;50 emails/day. Daily sends: 480&#8211;750. At this volume, monitoring becomes critical. Check Postmaster Tools weekly. Any reputation dip should trigger a volume reduction on the affected domain, not the entire sending pool.</p>
+
+  <h3>Phase 4: 30,000&#8211;50,000 sends/month (Weeks 13&#8211;16)</h3>
+  <p>Full infrastructure of 15&#8211;20 inboxes across 6&#8211;8 domains. Per-inbox limits: 40&#8211;50/day (never exceed 50 on any single inbox). Daily sends: 600&#8211;1,000. At this scale, you also need dedicated reply handling &#8212; someone monitoring positive replies and booking meetings within hours of receiving them.</p>
+
+  <h2>List Strategy at Scale</h2>
+  <p>Higher volume requires a higher-quality list operation. At 50,000 sends per month, you need 2,500&#8211;3,000 new verified contacts per week. Here&#8217;s how to maintain quality at that pace:</p>
+  <ul>
+    <li><strong>Run ICP filters tightly</strong> &#8212; Don&#8217;t widen your criteria to hit volume targets. A slightly smaller list of better-fit contacts outperforms a larger list of marginal fits every time.</li>
+    <li><strong>Verify every batch</strong> &#8212; No exceptions. Even if it delays the campaign by a day.</li>
+    <li><strong>Suppress aggressively</strong> &#8212; Anyone who replied (positively or negatively), unsubscribed, or bounced gets removed from all future sequences immediately.</li>
+    <li><strong>Rotate sequences</strong> &#8212; Don&#8217;t send the same four-email sequence to every contact. Run 2&#8211;3 sequence variants simultaneously and let performance data determine which gets more of your volume.</li>
+  </ul>
+
+  <h2>The Warning Signs That You&#8217;re Scaling Too Fast</h2>
+  <ul>
+    <li>Open rate drops below 30% &#8212; your emails are going to spam before they&#8217;re being read</li>
+    <li>Bounce rate climbs above 3% &#8212; list quality or verification has broken down</li>
+    <li>Google Postmaster shows &#8220;Low&#8221; or &#8220;Medium&#8221; domain reputation &#8212; pull back immediately</li>
+    <li>Reply rates drop even as send volume increases &#8212; you&#8217;re reaching inbox but the audience isn&#8217;t right</li>
+    <li>Any domain hits the spam folder in a seed test &#8212; pause that domain and diagnose</li>
+  </ul>
+  <p>If any of these appear, reduce volume by 50% on the affected domains before diagnosing. Continuing to send at high volume into a reputation problem compounds the damage.</p>
+
+  <div class="callout">
+    <p><strong>The rule:</strong> Your total daily send volume should never be more than 3x what it was the previous week. Gradual scaling is the only scaling that holds.</p>
+  </div>
+
+  <hr class="post-divider">
+  <div class="post-cta">
+    <div class="eyebrow" style="justify-content:center">Done For You</div>
+    <h3>Want us to handle this for you?</h3>
+    <p>GrowthStack builds and runs your entire outbound motion &#8212; from infrastructure to booked meetings.</p>
+    <button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary">Book a Discovery Call</button>
+  </div>
+</div>
+<div class="container"><div class="post-nav"><a href="/blog">&#8592; Back to Blog</a></div></div>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><div class="nav__logo-bars" style="height:16px"><span style="height:7px"></span><span style="height:11px"></span><span style="height:16px"></span></div>GrowthStack</div><p>Done-for-you outbound for early-stage B2B startups.</p></div>
+      <div class="footer-col"><h5>Navigation</h5><div class="footer-links"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/contact">Contact</a></div></div>
+      <div class="footer-col"><h5>Contact</h5><p class="footer-email"><a href="mailto:hello@growthstackhq.com">hello@growthstackhq.com</a></p></div>
+    </div>
+    <div class="footer-bottom"><p>&#169; 2026 GrowthStack. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div></div>
+  </div>
+</footer>
+<script src="/main.js"></script>
+<script type="text/javascript">(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");Cal("init", "discovery", {origin:"https://app.cal.com"});Cal.ns.discovery("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#292929"},"dark":{"cal-brand":"#f25b45"}},"hideEventTypeDetails":false,"layout":"month_view"});</script>
+</body>
+</html>

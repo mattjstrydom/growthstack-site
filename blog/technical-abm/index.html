@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K9FXGZQ5");</script>
+  <title>Technical ABM: How to Run Account-Based Outbound Without an Enterprise Budget | GrowthStack</title>
+  <meta name="description" content="Account-based marketing doesn't require a $50,000 ABM platform. Here's how early-stage B2B startups can run precise, personalised ABM campaigns using data enrichment and sequencing tools.">
+  <link rel="icon" type="image/png" sizes="180x180" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="canonical" href="https://www.growthstackhq.com/blog/technical-abm">
+  <meta property="og:title" content="Technical ABM: How to Run Account-Based Outbound Without an Enterprise Budget">
+  <meta property="og:description" content="Account-based marketing doesn't require a $50,000 ABM platform. Here's how early-stage B2B startups can run precise, personalised ABM campaigns using data enrichment and sequencing tools.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.growthstackhq.com/blog/technical-abm">
+  <meta property="og:image" content="https://www.growthstackhq.com/favicon.png">
+  <meta property="article:published_time" content="2024-05-02">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Technical ABM: How Infrastructure Enables Account-Based Precision at Scale","description":"Account-based marketing doesn't require a $50,000 ABM platform. Here's how early-stage B2B startups can run precise, personalised ABM campaigns using data enrichment and sequencing tools.","datePublished":"2024-05-02","author":{"@type":"Organization","name":"GrowthStack"},"publisher":{"@type":"Organization","name":"GrowthStack","url":"https://www.growthstackhq.com"},"url":"https://www.growthstackhq.com/blog/technical-abm"}</script>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/blog/blog-post.css">
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9FXGZQ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="nav scrolled" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo"><div class="nav__logo-bars"><span></span><span></span><span></span></div>GrowthStack</a>
+    <div class="nav__links"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog" class="active">Blog</a><a href="/contact">Contact</a></div>
+    <div class="nav__right"><button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary">Book a Discovery Call</button></div>
+    <button class="nav__burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/contact">Contact</a><button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary" style="margin-top:20px;justify-content:center">Book a Discovery Call</button></div>
+</nav>
+<section class="post-hero">
+  <div class="container">
+    <div class="post-meta">
+      <span class="post-meta__cat">ABM</span>
+      <span class="post-meta__sep">&#183;</span>
+      <span class="post-meta__date">May 2, 2024</span>
+      <span class="post-meta__sep">&#183;</span>
+      <span class="post-meta__read">9 min read</span>
+    </div>
+    <h1>Technical ABM: How Infrastructure Enables Account-Based Precision at Scale</h1>
+  </div>
+</section>
+<div class="post-body">
+
+  <p>Account-based marketing (ABM) has a perception problem. Most early-stage founders hear &#8220;ABM&#8221; and think: expensive software, large enterprise, dedicated ABM team. They assume it doesn&#8217;t apply to them.</p>
+  <p>But ABM is a strategy, not a platform. And with the right data infrastructure, a two-person team can run account-based outbound that rivals what enterprise teams do with six-figure tool budgets.</p>
+  <p>This post shows you how.</p>
+
+  <h2>What ABM Actually Means (and What It Doesn&#8217;t)</h2>
+  <p>ABM means targeting a defined list of specific companies &#8212; your &#8220;target account list&#8221; &#8212; with personalised, coordinated outreach, rather than doing broad-based outbound to whoever matches your ICP filters.</p>
+  <p>The difference in practice:</p>
+  <ul>
+    <li><strong>Broad outbound:</strong> Filter Apollo for 500 SaaS companies with 10&#8211;100 employees, export the list, send a four-email sequence. Efficient, scalable, but generic.</li>
+    <li><strong>ABM:</strong> Identify 50 specific companies that are an exceptionally strong fit, research each one deeply, send highly personalised outreach to 3&#8211;5 stakeholders at each company, coordinate across email and LinkedIn.</li>
+  </ul>
+  <p>ABM isn&#8217;t better or worse than broad outbound &#8212; it&#8217;s a different tool for a different situation. ABM makes sense when: your deal sizes are large enough to justify the higher per-contact cost; you have a short list of highly specific accounts you want to win; or your product has a complex buying process with multiple stakeholders.</p>
+
+  <h2>The Technical Stack for ABM Without Enterprise Budget</h2>
+  <p>You can build a functional ABM infrastructure for $200&#8211;500/month using these tools:</p>
+  <ul>
+    <li><strong>Clay</strong> (from $149/month) &#8212; The backbone of modern technical ABM. Clay pulls data from 50+ enrichment providers in a waterfall model, runs AI research on each account, and can build highly personalised variables for every contact. If a contact recently posted on LinkedIn about a problem your product solves, Clay can surface that and use it in your outreach.</li>
+    <li><strong>Apollo or LinkedIn Sales Navigator</strong> &#8212; For identifying contacts within your target accounts. Apollo is better for email data; Sales Navigator is better for mapping org structures and finding additional stakeholders.</li>
+    <li><strong>Instantly or Smartlead</strong> &#8212; For sending email sequences with inbox rotation and deliverability management.</li>
+    <li><strong>LinkedIn (manual or Expandi)</strong> &#8212; For coordinating LinkedIn connection requests and messages alongside your email sequences.</li>
+    <li><strong>HubSpot free tier</strong> &#8212; For tracking account-level pipeline, logging activity, and measuring which accounts are engaging.</li>
+  </ul>
+
+  <h2>Building Your Target Account List</h2>
+  <p>The quality of your ABM campaign is determined almost entirely by the quality of your target account list. This isn&#8217;t a step to rush.</p>
+  <p>Criteria for a strong target account list:</p>
+  <ul>
+    <li><strong>Strong ICP fit</strong> &#8212; Every company on the list should be a clear fit for your product. Not "they could probably use this" &#8212; "they definitely have this problem and are likely actively trying to solve it."</li>
+    <li><strong>Reachability</strong> &#8212; You can identify and reach the right stakeholders. If a company&#8217;s decision-maker has no digital presence and no verified email, they&#8217;re hard to include in ABM.</li>
+    <li><strong>Buying signals</strong> &#8212; Recent funding, active hiring for relevant roles, technology stack changes, leadership changes, expansion into new markets. These signals indicate a company is more likely to be in buying mode.</li>
+    <li><strong>Deal potential</strong> &#8212; ABM has a higher per-account cost than broad outbound. Make sure the potential deal size justifies it.</li>
+  </ul>
+  <p>For most early-stage teams, a target account list of 50&#8211;150 companies is the right size. Small enough to research deeply; large enough to generate meaningful pipeline.</p>
+
+  <h2>Using Clay for Account-Level Personalisation</h2>
+  <p>Clay changes ABM economics dramatically. Before Clay, personalising outreach at scale required hiring researchers or VAs to manually gather account intelligence. Clay automates this.</p>
+  <p>Here&#8217;s a practical Clay workflow for ABM:</p>
+  <ol>
+    <li><strong>Import your target account list</strong> &#8212; Company names, domains, or LinkedIn URLs. Clay works from these as the starting point.</li>
+    <li><strong>Enrich company data</strong> &#8212; Clay pulls funding history (from Crunchbase), employee count, technology stack (from BuiltWith or Clearbit), recent news, and job postings from its waterfall of data providers.</li>
+    <li><strong>Identify contacts</strong> &#8212; Clay finds 3&#8211;5 relevant contacts per account with verified emails and LinkedIn profiles.</li>
+    <li><strong>Run AI research</strong> &#8212; Clay&#8217;s AI can scrape each contact&#8217;s recent LinkedIn posts, summarise their company&#8217;s recent news, identify a relevant trigger event, and generate a personalised first line for your email.</li>
+    <li><strong>Export to your sequencer</strong> &#8212; The enriched, personalised contact data goes into Instantly or Smartlead as custom variables that populate in your email templates.</li>
+  </ol>
+  <p>The result: genuinely personalised outreach &#8212; not just &#8220;Hi [First Name]&#8221; &#8212; at the speed of automation.</p>
+
+  <h2>Multi-Stakeholder Outreach: Reaching the Full Buying Committee</h2>
+  <p>In ABM, you&#8217;re not just reaching one person at each account. You&#8217;re mapping and engaging the full buying committee &#8212; everyone who influences or makes the purchasing decision.</p>
+  <p>For a typical B2B software sale at a 20&#8211;100 person company, the buying committee often includes:</p>
+  <ul>
+    <li>The primary user/champion (e.g., Head of Sales or RevOps)</li>
+    <li>The budget holder (e.g., CFO or CEO)</li>
+    <li>A technical evaluator (e.g., Head of Engineering or IT, if relevant)</li>
+  </ul>
+  <p>Your outreach should reach all three, but with different messaging. The champion cares about the workflow problem your product solves. The budget holder cares about ROI and risk. The technical evaluator cares about integration complexity and security.</p>
+  <p>This doesn&#8217;t require three separate campaigns &#8212; it requires three sequence variants with different angles, all flowing from the same enriched account data in Clay.</p>
+
+  <h2>Coordinating Email and LinkedIn</h2>
+  <p>ABM works best when email and LinkedIn outreach are coordinated, not parallel. A rough timeline that works:</p>
+  <ul>
+    <li><strong>Day 1:</strong> Send email sequence step 1.</li>
+    <li><strong>Day 2:</strong> Connect on LinkedIn with a personalised note (referencing something specific, not &#8220;I&#8217;d like to add you to my network&#8221;).</li>
+    <li><strong>Day 5:</strong> Email sequence step 2. If they accepted the LinkedIn connection, engage with a recent post before sending.</li>
+    <li><strong>Day 8:</strong> LinkedIn message if they haven&#8217;t replied to email &#8212; a short, direct note, not a pitch.</li>
+    <li><strong>Day 12:</strong> Email sequence step 3.</li>
+    <li><strong>Day 18:</strong> Final email. If no response across all channels, they&#8217;re not ready right now &#8212; tag for follow-up in 60 days.</li>
+  </ul>
+
+  <h2>Measuring ABM Performance</h2>
+  <p>ABM metrics are different from broad outbound metrics because the unit of measurement is the <em>account</em>, not the contact:</p>
+  <ul>
+    <li><strong>Account engagement rate</strong> &#8212; What % of target accounts had at least one stakeholder engage (reply, book a call, connect on LinkedIn)?</li>
+    <li><strong>Account-to-meeting conversion</strong> &#8212; Of your target accounts, what % resulted in at least one booked meeting?</li>
+    <li><strong>Pipeline generated from target accounts</strong> &#8212; Total potential deal value from accounts that entered the pipeline through ABM.</li>
+    <li><strong>Cost per account engaged</strong> &#8212; Total ABM spend divided by accounts with meaningful engagement.</li>
+  </ul>
+  <p>For ABM to make sense financially, your account-to-meeting conversion rate should be 5&#8211;15% (compared to 0.5&#8211;2% for broad outbound). The higher per-account investment is justified by higher win rates on the accounts you do engage.</p>
+
+  <div class="callout">
+    <p><strong>Start small:</strong> Run your first ABM campaign on 25&#8211;50 accounts before building out the full infrastructure. The goal is to validate that your personalisation approach resonates before investing in scaling it.</p>
+  </div>
+
+  <hr class="post-divider">
+  <div class="post-cta">
+    <div class="eyebrow" style="justify-content:center">Done For You</div>
+    <h3>Want us to handle this for you?</h3>
+    <p>GrowthStack builds and runs your entire outbound motion &#8212; from infrastructure to booked meetings.</p>
+    <button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary">Book a Discovery Call</button>
+  </div>
+</div>
+<div class="container"><div class="post-nav"><a href="/blog">&#8592; Back to Blog</a></div></div>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><div class="nav__logo-bars" style="height:16px"><span style="height:7px"></span><span style="height:11px"></span><span style="height:16px"></span></div>GrowthStack</div><p>Done-for-you outbound for early-stage B2B startups.</p></div>
+      <div class="footer-col"><h5>Navigation</h5><div class="footer-links"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/contact">Contact</a></div></div>
+      <div class="footer-col"><h5>Contact</h5><p class="footer-email"><a href="mailto:hello@growthstackhq.com">hello@growthstackhq.com</a></p></div>
+    </div>
+    <div class="footer-bottom"><p>&#169; 2026 GrowthStack. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div></div>
+  </div>
+</footer>
+<script src="/main.js"></script>
+<script type="text/javascript">(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");Cal("init", "discovery", {origin:"https://app.cal.com"});Cal.ns.discovery("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#292929"},"dark":{"cal-brand":"#f25b45"}},"hideEventTypeDetails":false,"layout":"month_view"});</script>
+</body>
+</html>
