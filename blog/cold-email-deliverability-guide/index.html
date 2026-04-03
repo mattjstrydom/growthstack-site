@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K9FXGZQ5");</script>
+  <!-- End Google Tag Manager -->
+  <title>Cold Email Deliverability: The Complete Guide for B2B Founders | GrowthStack</title>
+  <meta name="description" content="Everything a B2B founder needs to know about cold email deliverability — DNS setup, inbox warmup, list hygiene, reputation monitoring, and scaling without burning domains.">
+  <link rel="icon" type="image/png" sizes="180x180" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="canonical" href="https://www.growthstackhq.com/blog/cold-email-deliverability-guide">
+  <meta property="og:title" content="Cold Email Deliverability: The Complete Guide for B2B Founders">
+  <meta property="og:description" content="Everything a B2B founder needs to know about cold email deliverability — DNS setup, inbox warmup, list hygiene, reputation monitoring, and scaling without burning domains.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.growthstackhq.com/blog/cold-email-deliverability-guide">
+  <meta property="og:image" content="https://www.growthstackhq.com/blog/cold-email-deliverability-guide/og-image.png">
+  <meta property="article:published_time" content="2026-04-10">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cold Email Deliverability: The Complete Guide for B2B Founders","description":"Everything a B2B founder needs to know about cold email deliverability — DNS setup, inbox warmup, list hygiene, reputation monitoring, and scaling without burning domains.","datePublished":"2026-04-10","author":{"@type":"Organization","name":"GrowthStack"},"publisher":{"@type":"Organization","name":"GrowthStack","url":"https://www.growthstackhq.com"},"url":"https://www.growthstackhq.com/blog/cold-email-deliverability-guide"}</script>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/blog/blog-post.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9FXGZQ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="nav scrolled" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo"><div class="nav__logo-bars"><span></span><span></span><span></span></div>GrowthStack</a>
+    <div class="nav__links"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog" class="active">Blog</a><a href="/contact">Contact</a></div>
+    <div class="nav__right"><button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary">Book a Discovery Call</button></div>
+    <button class="nav__burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/contact">Contact</a><button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary" style="margin-top:20px;justify-content:center">Book a Discovery Call</button></div>
+</nav>
+
+<section class="post-hero">
+  <div class="container">
+    <div class="post-meta">
+      <span class="post-meta__cat">Deliverability</span>
+      <span class="post-meta__sep">&#183;</span>
+      <span class="post-meta__date">April 10, 2026</span>
+      <span class="post-meta__sep">&#183;</span>
+      <span class="post-meta__read">14 min read</span>
+    </div>
+    <h1>Cold Email Deliverability: The Complete Guide for B2B Founders</h1>
+  </div>
+</section>
+
+<div class="post-body">
+
+  <p>Cold email deliverability is the single biggest variable between a campaign that books meetings and one that disappears into the void. It&#8217;s also the thing most founders get wrong — not because it&#8217;s complicated, but because nobody explains it in plain terms before they start.</p>
+  <p>This guide covers everything: the infrastructure decisions, the DNS records, inbox warmup, list hygiene, reputation monitoring, and how to scale sends without destroying the domains you&#8217;ve built up. By the end, you&#8217;ll know exactly what to build, in what order, and why each step matters.</p>
+  <p>If you&#8217;re looking for the short version focused on a specific issue — like <a href="/blog/cold-email-spam-fix">why your emails are landing in spam</a> or <a href="/blog/cold-email-warmup-guide">how inbox warmup works</a> — those posts go deeper on individual pieces. This guide is the full picture.</p>
+
+  <h2>What &#8220;Deliverability&#8221; Actually Means</h2>
+  <p>Deliverability is not the same as delivery. Delivery means the email wasn&#8217;t bounced — it reached a mail server. Deliverability means it reached the <em>inbox</em>, not spam. An email can be delivered but not deliverable. You can have a 98% delivery rate and a 30% inbox placement rate. That gap is the deliverability problem.</p>
+  <p>Mail servers — primarily Google and Microsoft, which power most business email — use a combination of signals to decide where an inbound email goes. Those signals fall into three buckets: <strong>authentication</strong> (is this sender who they claim to be?), <strong>reputation</strong> (has this sender historically behaved well?), and <strong>engagement</strong> (do recipients interact with emails from this sender?). Good deliverability means scoring well on all three, consistently.</p>
+
+  <h2>The Infrastructure You Need Before Sending a Single Email</h2>
+
+  <h3>1. Dedicated sending domains — not your main domain</h3>
+  <p>Your primary business domain (the one in your email signature, on your website, in your transactional emails) should never be used for cold outreach. If it gets blacklisted or its reputation damaged, your entire business email — investor communications, customer onboarding, invoices — is affected.</p>
+  <p>Register one to three sending domains that are close variants of your brand. If your company is <em>acme.com</em>, register <em>getacme.com</em>, <em>useacme.com</em>, or <em>acmehq.com</em>. Set up two to three Google Workspace inboxes per domain (e.g. james@getacme.com, j.smith@getacme.com, james.smith@getacme.com). Each inbox is a separate sending channel that you&#8217;ll rotate across. Domain cost: $10&#8211;$15/year. Workspace cost: $6/user/month. For three domains with two inboxes each, that&#8217;s roughly $36/month before your sequencing tool.</p>
+
+  <h3>2. DNS authentication: SPF, DKIM, and DMARC</h3>
+  <p>These three DNS records are non-negotiable. Mail servers check them on every inbound email. Missing or broken records are an immediate deliverability failure.</p>
+  <p><strong>SPF (Sender Policy Framework)</strong> declares which mail servers are authorised to send email on behalf of your domain. It&#8217;s a TXT record in your DNS that looks something like <code>v=spf1 include:_spf.google.com ~all</code>. Your email provider (Google Workspace, Microsoft 365) will give you the exact record to add.</p>
+  <p><strong>DKIM (DomainKeys Identified Mail)</strong> adds a cryptographic signature to every email you send. The receiving server checks the signature against a public key in your DNS to confirm the email genuinely came from you and wasn&#8217;t tampered with in transit. Your email or sequencing provider generates the key; you add it as a TXT record.</p>
+  <p><strong>DMARC (Domain-based Message Authentication, Reporting &amp; Conformance)</strong> tells receiving servers what to do when an email fails SPF or DKIM checks. Start with <code>p=none</code> (monitor only) so you can see failures without affecting delivery. Once your infrastructure is clean, move to <code>p=quarantine</code>. Never start at <code>p=reject</code> — too aggressive before you&#8217;ve validated everything.</p>
+  <p>Verify all three records at <strong>MXToolbox.com</strong> immediately after adding them. Every single sending domain needs its own complete set. This takes about 20 minutes per domain and is the most important 20 minutes you&#8217;ll spend on this entire process.</p>
+
+  <h3>3. Inbox warmup: mandatory, not optional</h3>
+  <p>A new inbox has zero sending history. To mail servers, it looks exactly like the infrastructure a spammer would set up — because spammers also use new inboxes. The solution is warmup: a process of gradually building sending history and reputation before running outbound campaigns.</p>
+  <p>Warmup tools (Instantly has it built in, Smartlead has it built in, Lemwarm is a standalone option) automatically send emails between a network of pre-warmed inboxes, mark them as important, and rescue them from spam folders. This simulates the behaviour of a legitimate, actively used inbox. Run warmup for a minimum of 14 days before sending any outbound. Three to four weeks is better. During the warmup period, the tool handles everything — you don&#8217;t send outbound at all from those inboxes.</p>
+  <p>For a deeper walkthrough of warmup timelines, limits, and common mistakes, see our dedicated post: <a href="/blog/cold-email-warmup-guide">Cold Email Warmup: How Long It Takes and How to Do It Properly.</a></p>
+
+  <h2>List Hygiene: The Step Most People Skip</h2>
+  <p>Sending to a dirty list — one with invalid, catch-all, or inactive email addresses — is one of the fastest ways to destroy domain reputation. Bounce rates above 3% are a serious signal to mail servers. Above 5%, you risk blacklisting.</p>
+  <p>Every list should be verified before you load it into your sequencing tool. This is not optional. The tools that do this well: <strong>MillionVerifier</strong> (fast, cheap, bulk-friendly — our first recommendation), <strong>NeverBounce</strong> (reliable, good API), <strong>ZeroBounce</strong> (solid for catch-all handling). Any of these will flag addresses as Valid, Invalid, Catch-All, or Unknown. Send only to Valid. Remove everything else before importing.</p>
+  <p>For lists built from LinkedIn, Apollo, or Clay, expect 5&#8211;20% of addresses to be invalid or catch-all. Verification before sending is what keeps your bounce rate under 2%.</p>
+
+  <h2>Sending Volume: The Limits That Matter</h2>
+  <p>Even with perfect infrastructure and a clean list, sending too much too fast will trigger spam filters. Google and Microsoft rate-limit inboxes based on their sending history. Ignoring those limits damages reputation.</p>
+  <p>The rules of thumb for a warmed inbox:</p>
+  <ul>
+    <li>First month of outbound (post-warmup): 20&#8211;30 emails per inbox per day maximum</li>
+    <li>Month two onwards: 40&#8211;50 emails per inbox per day maximum — Google Workspace&#8217;s practical safe ceiling</li>
+    <li>To send more volume: add more inboxes, not more emails per inbox</li>
+    <li>Never exceed 500 emails per day from any single domain (across all inboxes on that domain)</li>
+  </ul>
+  <p>The inbox rotation model — distributing sends across multiple inboxes on multiple domains — is how you scale volume without hitting per-inbox limits. A sequencing tool like Instantly or Smartlead handles rotation automatically once you&#8217;ve added your inboxes. At 20 inboxes sending 30 emails each, you have 600 sends/day capacity without overloading any single sender.</p>
+
+  <h2>Monitoring Reputation</h2>
+  <p>Set up <strong>Google Postmaster Tools</strong> (postmaster.google.com) for every sending domain. It&#8217;s free, takes 10 minutes to configure, and shows you domain reputation, IP reputation, authentication pass rates, and spam complaint rates from Google&#8217;s perspective.</p>
+  <p>The metric to watch most closely: <strong>spam rate</strong>. Google&#8217;s threshold for acceptable spam complaints is 0.1% — one complaint per thousand emails. If you approach or breach this, pause sending and investigate immediately. Common causes: list targeting too broad (wrong ICP), sequences too aggressive (too many follow-ups), or subject lines that feel deceptive.</p>
+  <p>Also check your domains against blacklists monthly. MXToolbox has a free blacklist checker — run every sending domain through it. Being on a blacklist is fixable but takes time; catching it early limits the damage.</p>
+
+  <h2>What Good Deliverability Looks Like in Practice</h2>
+  <p>With this infrastructure in place, here&#8217;s what you should expect from a well-run campaign targeting a relevant ICP:</p>
+  <ul>
+    <li><strong>Inbox placement rate:</strong> 90%+ (test with mail-tester.com before launching)</li>
+    <li><strong>Open rate:</strong> 40&#8211;65% on initial emails to a targeted, verified list</li>
+    <li><strong>Bounce rate:</strong> under 2%, ideally under 1%</li>
+    <li><strong>Spam complaint rate:</strong> below 0.08%</li>
+    <li><strong>Domain reputation in Postmaster Tools:</strong> High</li>
+  </ul>
+  <p>If your open rates are below 25%, treat that as a deliverability signal first, not a copy signal. Fix the infrastructure, then re-evaluate the messaging. Many founders iterate endlessly on subject lines when the real issue is that the emails never reached the inbox.</p>
+
+  <h2>The Full Setup Checklist</h2>
+  <ol>
+    <li>Register 2&#8211;3 sending domains (not your primary domain)</li>
+    <li>Create 2&#8211;3 Google Workspace inboxes per domain</li>
+    <li>Configure SPF, DKIM, and DMARC on each domain</li>
+    <li>Verify all DNS records with MXToolbox</li>
+    <li>Connect all inboxes to your sequencing tool (Instantly, Smartlead)</li>
+    <li>Enable inbox warmup — run for 14&#8211;30 days before sending outbound</li>
+    <li>Set up Google Postmaster Tools for each domain</li>
+    <li>Verify your lead list with MillionVerifier before importing</li>
+    <li>Start outbound sends: 20&#8211;30 emails/inbox/day in month one</li>
+    <li>Monitor Postmaster Tools weekly; run blacklist check monthly</li>
+  </ol>
+
+  <div class="callout">
+    <p><strong>The principle behind all of this:</strong> Deliverability is reputation management, not a technical checklist. Every decision — how many domains, how many inboxes, how many sends per day — is a reputation decision. Build conservatively. Scale gradually. The founders who try to shortcut this always pay for it later.</p>
+  </div>
+
+  <h2>Related Posts in This Series</h2>
+  <p>This is the hub post for GrowthStack&#8217;s deliverability content. If you want to go deeper on a specific topic:</p>
+  <ul>
+    <li><a href="/blog/cold-email-spam-fix">Why Your Cold Emails Are Landing in Spam — And How to Fix Each Cause</a></li>
+    <li><a href="/blog/cold-email-warmup-guide">Cold Email Warmup: How Long It Takes and How to Do It Properly</a></li>
+    <li><a href="/blog/deliverability-slim">The Infrastructure Fixes That Get You Back in the Inbox</a></li>
+  </ul>
+
+  <hr class="post-divider">
+  <div class="post-cta">
+    <div class="eyebrow" style="justify-content:center">Done For You</div>
+    <h3>Want us to build this for you?</h3>
+    <p>GrowthStack sets up your entire deliverability infrastructure as part of our GTM Foundation — properly configured, warmed, and ready to send before we hand over.</p>
+    <button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary">Book a Discovery Call</button>
+  </div>
+</div>
+
+<div class="container"><div class="post-nav"><a href="/blog">&#8592; Back to Blog</a></div></div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><div class="nav__logo-bars" style="height:16px"><span style="height:7px"></span><span style="height:11px"></span><span style="height:16px"></span></div>GrowthStack</div><p>Done-for-you outbound for early-stage B2B startups.</p></div>
+      <div class="footer-col"><h5>Navigation</h5><div class="footer-links"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/contact">Contact</a></div></div>
+      <div class="footer-col"><h5>Contact</h5><p class="footer-email"><a href="mailto:hello@growthstackhq.com">hello@growthstackhq.com</a></p></div>
+    </div>
+    <div class="footer-bottom"><p>&#169; 2026 GrowthStack. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div></div>
+  </div>
+</footer>
+<script src="/main.js"></script>
+<script type="text/javascript">(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");Cal("init", "discovery", {origin:"https://app.cal.com"});Cal.ns.discovery("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#292929"},"dark":{"cal-brand":"#f25b45"}},"hideEventTypeDetails":false,"layout":"month_view"});</script>
+</body>
+</html>

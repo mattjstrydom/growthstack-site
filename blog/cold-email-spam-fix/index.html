@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K9FXGZQ5");</script>
+  <!-- End Google Tag Manager -->
+  <title>Why Your Cold Emails Are Landing in Spam — And How to Fix Each Cause | GrowthStack</title>
+  <meta name="description" content="Cold emails going to spam? Here are the seven most common causes — broken DNS, no warmup, dirty lists, sending too fast — and exactly how to fix each one.">
+  <link rel="icon" type="image/png" sizes="180x180" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="canonical" href="https://www.growthstackhq.com/blog/cold-email-spam-fix">
+  <meta property="og:title" content="Why Your Cold Emails Are Landing in Spam — And How to Fix Each Cause">
+  <meta property="og:description" content="Cold emails going to spam? Here are the seven most common causes — broken DNS, no warmup, dirty lists, sending too fast — and exactly how to fix each one.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.growthstackhq.com/blog/cold-email-spam-fix">
+  <meta property="og:image" content="https://www.growthstackhq.com/blog/cold-email-spam-fix/og-image.png">
+  <meta property="article:published_time" content="2026-04-14">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why Your Cold Emails Are Landing in Spam — And How to Fix Each Cause","description":"Cold emails going to spam? Here are the seven most common causes — broken DNS, no warmup, dirty lists, sending too fast — and exactly how to fix each one.","datePublished":"2026-04-14","author":{"@type":"Organization","name":"GrowthStack"},"publisher":{"@type":"Organization","name":"GrowthStack","url":"https://www.growthstackhq.com"},"url":"https://www.growthstackhq.com/blog/cold-email-spam-fix"}</script>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/blog/blog-post.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9FXGZQ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="nav scrolled" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo"><div class="nav__logo-bars"><span></span><span></span><span></span></div>GrowthStack</a>
+    <div class="nav__links"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog" class="active">Blog</a><a href="/contact">Contact</a></div>
+    <div class="nav__right"><button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary">Book a Discovery Call</button></div>
+    <button class="nav__burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/contact">Contact</a><button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary" style="margin-top:20px;justify-content:center">Book a Discovery Call</button></div>
+</nav>
+
+<section class="post-hero">
+  <div class="container">
+    <div class="post-meta">
+      <span class="post-meta__cat">Deliverability</span>
+      <span class="post-meta__sep">&#183;</span>
+      <span class="post-meta__date">April 14, 2026</span>
+      <span class="post-meta__sep">&#183;</span>
+      <span class="post-meta__read">9 min read</span>
+    </div>
+    <h1>Why Your Cold Emails Are Landing in Spam &#8212; And How to Fix Each Cause</h1>
+  </div>
+</section>
+
+<div class="post-body">
+
+  <p>Campaigns going quiet is one of the most frustrating experiences in early-stage sales. You wrote the emails. You built the list. You set up the sequences. And the replies just don&#8217;t come. No opt-outs, no bounces, no angry responses — just silence.</p>
+  <p>In most cases, the emails are landing in spam. And the cause is almost never what founders assume. It&#8217;s not the subject line. It&#8217;s not the offer. It&#8217;s not the targeting. It&#8217;s infrastructure — and infrastructure has specific, diagnosable, fixable causes.</p>
+  <p>This post covers the seven most common reasons cold emails land in spam, how to identify which one is affecting you, and the exact fix for each. For a full picture of deliverability from the ground up, see our <a href="/blog/cold-email-deliverability-guide">Complete Cold Email Deliverability Guide.</a></p>
+
+  <h2>First: How to Confirm You Have a Deliverability Problem</h2>
+  <p>Before diagnosing the cause, confirm the diagnosis. Send your next email to <strong>mail-tester.com</strong> — it gives you a deliverability score out of 10 and flags specific issues with your authentication, content, and sender reputation. Also check <strong>Google Postmaster Tools</strong> for your sending domain. If your domain reputation shows Medium or Low, or if spam rates are above 0.05%, you have a confirmed deliverability problem.</p>
+  <p>Low open rates alone (below 25%) are a signal — but they could also mean your subject lines are weak or your targeting is off. Use Postmaster Tools and mail-tester.com to separate the infrastructure issues from the messaging issues before changing anything.</p>
+
+  <h2>Cause 1: Missing or Broken DNS Authentication</h2>
+  <p>SPF, DKIM, or DMARC records are missing, misconfigured, or conflicting. This is the most common cause of deliverability failure for founders setting up outbound for the first time.</p>
+  <p><strong>How to diagnose:</strong> Go to MXToolbox.com and run SPF Lookup, DKIM Lookup, and DMARC Lookup for your sending domain. Any failures, warnings, or missing records are the issue.</p>
+  <p><strong>How to fix it:</strong> Add the correct records for each. Your email provider (Google Workspace, Microsoft 365) has documentation for exactly what to add. Your sequencing tool (Instantly, Smartlead) also requires a DKIM record of its own — add it separately. Make sure you only have one SPF record per domain — multiple SPF records break authentication. After adding or changing any DNS record, wait 24 hours for propagation and re-run the MXToolbox checks.</p>
+
+  <h2>Cause 2: Sending from a New Inbox With No History</h2>
+  <p>A brand new inbox has no sending reputation. To Google and Microsoft, it looks exactly like a spam infrastructure setup — because it is one, objectively, until you prove otherwise. Sending cold outbound from a new inbox without warming it is almost guaranteed to result in spam placement.</p>
+  <p><strong>How to diagnose:</strong> If your inbox was created less than 4 weeks ago and has been idle (no natural sending activity), this is likely contributing. Check Postmaster Tools — a new domain will show &#8220;No data available&#8221; initially, which is itself a risk signal to receiving servers.</p>
+  <p><strong>How to fix it:</strong> Stop outbound sends immediately. Enable inbox warmup in your sequencing tool (Instantly and Smartlead both have this built in) and run it for 21&#8211;30 days before resuming. This isn&#8217;t optional — it&#8217;s the price of starting fresh. See our full guide on <a href="/blog/cold-email-warmup-guide">cold email warmup</a> for exact timelines and limits.</p>
+
+  <h2>Cause 3: Sending Volume Too High Too Fast</h2>
+  <p>Even from a warmed inbox on an authenticated domain, a sudden spike in sending volume is a red flag to mail servers. You might increase from 30 to 200 emails per day overnight. The algorithm notices. Deliverability suffers.</p>
+  <p><strong>How to diagnose:</strong> Check your send logs in your sequencing tool. If you increased volume significantly in the past 7&#8211;14 days, and open rates dropped around the same time, volume is likely the trigger.</p>
+  <p><strong>How to fix it:</strong> Reduce daily sends per inbox back to 30&#8211;40 and increase gradually — no more than 10&#8211;15% per week. To increase total volume without increasing per-inbox sends, add more inboxes across more sending domains. Never exceed 50 cold emails per inbox per day. Never exceed 500 emails per day from a single domain across all its inboxes.</p>
+
+  <h2>Cause 4: High Bounce Rate from an Unverified List</h2>
+  <p>Sending to email addresses that don&#8217;t exist or are inactive inflates your bounce rate. A bounce rate above 3% is a serious reputation signal. Above 5%, you risk your domain being flagged or blacklisted entirely.</p>
+  <p><strong>How to diagnose:</strong> Check your bounce rate in your sequencing tool. If it&#8217;s above 2%, your list has a hygiene problem. Apollo, Clay, and LinkedIn scrapes commonly produce lists with 10&#8211;20% invalid addresses.</p>
+  <p><strong>How to fix it:</strong> Run every list through <strong>MillionVerifier</strong> or <strong>NeverBounce</strong> before importing. Remove anything flagged Invalid or Risky. Send only to Verified addresses. If you&#8217;ve already been sending to an unverified list, pause the campaign, clean the list, and let the inbox warm back up before resuming. For lists with high catch-all rates (common in SMB targeting), be conservative — send to catch-alls in small batches and monitor bounce rates closely.</p>
+
+  <h2>Cause 5: Spam Complaint Rate Too High</h2>
+  <p>Recipients can mark any email as spam, and Google tracks this at the domain level. Their published threshold is 0.1% — one spam complaint per 1,000 emails sent. In practice, approaching 0.08% starts affecting reputation. Exceeding 0.1% causes rapid deterioration.</p>
+  <p><strong>How to diagnose:</strong> Google Postmaster Tools shows your spam rate directly. If it&#8217;s above 0.05%, you have a problem in progress. If it&#8217;s above 0.1%, pause sending immediately.</p>
+  <p><strong>How to fix it:</strong> The causes of high complaint rates are almost always targeting and tone. Your emails are reaching people who don&#8217;t see themselves as relevant prospects, or the messaging is aggressive or deceptive enough that they&#8217;d rather mark it spam than ignore it. Fix the ICP definition — get more specific about who you&#8217;re targeting. Audit your subject lines for anything that could read as clickbait. Reduce follow-up frequency. Add an easy one-click unsubscribe — it&#8217;s now required by Google for bulk senders, and complaints are always preferable to spam marks.</p>
+
+  <h2>Cause 6: Sending from Your Primary Business Domain</h2>
+  <p>Your company&#8217;s main domain — the one in your email signature, on your website, in your contracts — has a reputation built up over years. It&#8217;s associated with real business correspondence. Running cold outbound from it puts that reputation at risk.</p>
+  <p><strong>How to diagnose:</strong> Check which domain your campaigns are sending from. If it matches your primary website domain, this is the issue.</p>
+  <p><strong>How to fix it:</strong> Register separate sending domains (variants of your brand) and migrate your outbound campaigns to those. This is standard practice, not a workaround — every serious outbound operation uses dedicated sending domains. Keep your main domain clean for business communication.</p>
+
+  <h2>Cause 7: Your Domain Is on a Blacklist</h2>
+  <p>Sending domains can end up on third-party blacklists, which are databases of known spam sources that many mail servers reference. Being on a major blacklist can dramatically reduce inbox placement even if everything else looks clean.</p>
+  <p><strong>How to diagnose:</strong> Run your sending domains through MXToolbox&#8217;s blacklist checker (free). It checks against 100+ blacklists simultaneously. Any hits are shown with the specific list name and instructions for removal.</p>
+  <p><strong>How to fix it:</strong> Most blacklists have a delisting process — submit a delisting request through the specific list&#8217;s website. Some are automated and instant. Others require a manual review that takes days. For Spamhaus (the most influential blacklist), the process involves explaining how you&#8217;ll change your sending practices and committing to compliance. While waiting for delisting, switch sends to a clean domain and treat the blacklisted domain as a write-off.</p>
+
+  <div class="callout">
+    <p><strong>The diagnostic order:</strong> Check DNS records first (MXToolbox). Then check Google Postmaster Tools. Then check bounce rate in your sequencer. Then check blacklists. In most cases, the issue is one of the first three — and they&#8217;re all fixable within a week if you move quickly.</p>
+  </div>
+
+  <h2>What to Do Right Now</h2>
+  <ol>
+    <li>Go to mail-tester.com and send a test email. Note the score and any flagged issues.</li>
+    <li>Set up Google Postmaster Tools if you haven&#8217;t already — it takes 10 minutes.</li>
+    <li>Run your sending domains through MXToolbox SPF, DKIM, and DMARC checks.</li>
+    <li>Check your current bounce rate in your sequencing tool.</li>
+    <li>Run your current lead list through MillionVerifier before sending another email.</li>
+  </ol>
+  <p>Most deliverability problems are diagnosable within an hour and fixable within a week. The ones that take longer — blacklists, domain reputation rebuilding — are still fixable, just slower. None of them require starting from scratch.</p>
+
+  <hr class="post-divider">
+  <div class="post-cta">
+    <div class="eyebrow" style="justify-content:center">Done For You</div>
+    <h3>Rather have someone who knows this cold?</h3>
+    <p>GrowthStack builds and audits outbound infrastructure every week. Book a call — we&#8217;ll tell you what&#8217;s broken and how to fix it.</p>
+    <button data-cal-link="growthstackhq/discovery" data-cal-namespace="discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn btn-primary">Book a Discovery Call</button>
+  </div>
+</div>
+
+<div class="container"><div class="post-nav"><a href="/blog">&#8592; Back to Blog</a></div></div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><div class="nav__logo-bars" style="height:16px"><span style="height:7px"></span><span style="height:11px"></span><span style="height:16px"></span></div>GrowthStack</div><p>Done-for-you outbound for early-stage B2B startups.</p></div>
+      <div class="footer-col"><h5>Navigation</h5><div class="footer-links"><a href="/how-it-works">How It Works</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/contact">Contact</a></div></div>
+      <div class="footer-col"><h5>Contact</h5><p class="footer-email"><a href="mailto:hello@growthstackhq.com">hello@growthstackhq.com</a></p></div>
+    </div>
+    <div class="footer-bottom"><p>&#169; 2026 GrowthStack. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div></div>
+  </div>
+</footer>
+<script src="/main.js"></script>
+<script type="text/javascript">(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");Cal("init", "discovery", {origin:"https://app.cal.com"});Cal.ns.discovery("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#292929"},"dark":{"cal-brand":"#f25b45"}},"hideEventTypeDetails":false,"layout":"month_view"});</script>
+</body>
+</html>
