@@ -89,3 +89,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+
+/* ── Cal.com button click tracking via GTM dataLayer ─────────────────────── */
+(function() {
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('button[data-utm-content]');
+    if (!btn) return;
+    var utmContent = btn.getAttribute('data-utm-content');
+    var calLink    = btn.getAttribute('data-cal-link') || '';
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event:       'cal_book_click',
+        utm_content: utmContent,
+        cal_link:    calLink,
+        page_path:   window.location.pathname,
+      });
+    }
+  });
+})();
