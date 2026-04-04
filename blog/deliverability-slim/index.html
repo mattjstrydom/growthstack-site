@@ -17,6 +17,7 @@
   <meta property="og:image" content="https://www.growthstackhq.com/blog/deliverability-slim/og-image.png">
   <meta property="article:published_time" content="2025-08-22">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cold Email Deliverability: Why You&#8217;re Landing in Spam (and How to Fix It)","description":"Your cold email is landing in spam and you may not know it. Here are the exact infrastructure fixes — SPF, DKIM, warmup, list verification — that get you back in the inbox.","datePublished":"2025-08-22","author":{"@type":"Organization","name":"GrowthStack"},"publisher":{"@type":"Organization","name":"GrowthStack","url":"https://www.growthstackhq.com"},"url":"https://www.growthstackhq.com/blog/deliverability-slim"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does cold email land in spam?","acceptedAnswer":{"@type":"Answer","text":"Cold email lands in spam primarily because of infrastructure problems, not copy problems. The most common causes are missing or misconfigured SPF, DKIM, or DMARC DNS records; sending from a new inbox that has not been warmed up; sending too high a volume too quickly; high bounce rates from an unverified lead list; and spam complaint rates above 0.1 percent."}},{"@type":"Question","name":"Should I send cold email from my main business domain?","acceptedAnswer":{"@type":"Answer","text":"No. You should never use your primary business domain for cold outreach. If it gets blacklisted or its reputation is damaged, your transactional email \u2014 invoices, onboarding, customer communications \u2014 is affected too. Register dedicated sending domains (close variants of your brand) specifically for cold outbound."}},{"@type":"Question","name":"How do I set up SPF, DKIM, and DMARC for cold email?","acceptedAnswer":{"@type":"Answer","text":"Add a TXT record to your domain's DNS for SPF, specifying which mail servers are authorised to send for your domain. Your email provider (Google Workspace, Microsoft 365) provides the exact record. For DKIM, your sending tool generates a cryptographic key that you add as a DNS TXT record. For DMARC, add a TXT record starting with v=DMARC1 \u2014 begin with p=none to monitor, then move to p=quarantine once sending is clean. Verify all three with MXToolbox before sending."}},{"@type":"Question","name":"What tools should I use for inbox warmup?","acceptedAnswer":{"@type":"Answer","text":"The main inbox warmup tools are Instantly (built-in on all plans), Smartlead (built-in), Lemwarm (standalone, connects to any inbox), and Mailreach (premium with detailed reporting). All work on the same principle: they connect to your inbox via IMAP/SMTP and use their network to simulate real email activity, building sender reputation before you start outbound."}}]}</script>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/blog/blog-post.css">
 </head>
@@ -45,6 +46,9 @@
   </div>
 </section>
 <div class="post-body">
+
+  <p class="post-lede" id="post-answer"><strong>Cold email lands in spam because of infrastructure failures, not copy failures. The fix is a properly configured sending stack: dedicated domains, authenticated DNS records (SPF, DKIM, DMARC), warmed inboxes, verified lists, and inbox rotation. This post covers exactly what to build and in what order.</strong></p>
+
 
   <p>You wrote a solid email. The subject line is tight. The offer is clear. You hit send — and nothing happens. No replies. No bounces. Just silence.</p>
   <p>In most cases, the email didn&#8217;t land in spam because the copy was bad. It landed in spam because the <strong>infrastructure was never set up correctly</strong>. This is what we call &#8220;deliverability slim&#8221; &#8212; a campaign running on zero foundation, wondering why it isn&#8217;t working.</p>
@@ -110,6 +114,29 @@
   <h2>What Good Deliverability Actually Looks Like</h2>
   <p>With this stack in place, you should expect: inbox placement rate of 90%+ (test with mail-tester.com), open rates of 40&#8211;60% on well-targeted campaigns, bounce rate below 2%, spam complaint rate below 0.1%, and domain reputation showing &#8220;High&#8221; in Google Postmaster Tools.</p>
   <p>If your open rates are below 20%, deliverability is the first thing to fix &#8212; not the copy, not the offer, not the targeting. The emails aren&#8217;t being seen.</p>
+
+  
+  <section class="faq-block">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">Why does cold email land in spam?</h3>
+        <p class="faq-a">Cold email lands in spam primarily due to infrastructure failures, not copy. The most common causes are missing or misconfigured SPF, DKIM, or DMARC records; sending from a new unwarmed inbox; volume spikes; high bounce rates from unverified lists; and spam complaint rates above 0.1 percent.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Should I use my main business domain for cold email?</h3>
+        <p class="faq-a">No. If your primary domain gets blacklisted, your transactional email — invoices, onboarding, customer communications — goes down with it. Register dedicated sending domains (close variants of your brand) specifically for cold outbound.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How do I set up SPF, DKIM, and DMARC?</h3>
+        <p class="faq-a">Add a TXT record for SPF specifying which mail servers can send for your domain. Your email provider gives you the exact record. For DKIM, your sending tool generates a key you add as a DNS TXT record. For DMARC, add a TXT record starting with v=DMARC1 — begin with p=none to monitor, then p=quarantine once sending is clean. Verify all three with MXToolbox.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What inbox warmup tools should I use?</h3>
+        <p class="faq-a">The main options are Instantly (built-in on all plans), Smartlead (built-in), Lemwarm (standalone), and Mailreach (premium). All connect to your inbox via IMAP/SMTP and use a network of pre-warmed inboxes to build your sender reputation before you run outbound.</p>
+      </div>
+    </div>
+  </section>
 
   <hr class="post-divider">
   <div class="post-cta">

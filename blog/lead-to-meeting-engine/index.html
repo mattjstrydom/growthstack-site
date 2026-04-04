@@ -15,6 +15,8 @@
   <meta property="og:image" content="https://www.growthstackhq.com/blog/lead-to-meeting-engine/og-image.png">
   <meta property="article:published_time" content="2025-09-16">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Lead-to-Meeting Engine: Apollo, MillionVerifier, and Smartlead","description":"A step-by-step system for building a verified B2B lead list using Apollo and MillionVerifier, then loading it into a working cold outbound sequence in Smartlead or Instantly.","datePublished":"2025-09-16","author":{"@type":"Organization","name":"GrowthStack"},"publisher":{"@type":"Organization","name":"GrowthStack","url":"https://www.growthstackhq.com"},"url":"https://www.growthstackhq.com/blog/lead-to-meeting-engine"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Build a Lead-to-Meeting Outbound Engine","description":"A step-by-step system for building a verified lead list and loading it into a working cold email sequence using Apollo, MillionVerifier, and Smartlead.","step":[{"@type":"HowToStep","position":1,"name":"Define your ICP","text":"Before opening Apollo, define your ideal customer profile: industry, company size, funding stage, geography, job title, and the pain that makes them a buyer right now. Your list quality depends entirely on this definition."},{"@type":"HowToStep","position":2,"name":"Build your list in Apollo","text":"Use Apollo's company and contact filters to match your ICP. Apply filters for industry, headcount, funding stage, location, and job titles. Export 300 to 500 contacts as a CSV \u2014 enough for a 4 to 6 week campaign without overwhelming your inboxes."},{"@type":"HowToStep","position":3,"name":"Verify every email with MillionVerifier","text":"Upload your Apollo export to MillionVerifier. Remove all contacts flagged as Invalid or Risky. Send only to Verified addresses. This keeps your bounce rate below 2 percent and protects your domain reputation."},{"@type":"HowToStep","position":4,"name":"Import into Smartlead and build your sequence","text":"Import your verified CSV into Smartlead, map the fields, and connect your warmed sending inboxes. Write a 4-touch sequence: personalised opening email, value-add follow-up on day 3, second follow-up on day 7, break-up email on day 14."},{"@type":"HowToStep","position":5,"name":"Monitor and optimise","text":"After 100 to 200 sends, review open rate (target 40 percent plus), reply rate (target 3 percent plus), and positive reply rate (target 0.5 percent plus). If open rates are low, fix deliverability. If reply rates are low, rewrite the opening email."}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I build a B2B lead list for cold email?","acceptedAnswer":{"@type":"Answer","text":"Use Apollo to search and filter contacts matching your ICP \u2014 by industry, company size, funding stage, geography, and job title. Export 300 to 500 contacts per campaign. Then verify every email address with MillionVerifier before importing into your sequencing tool. Only send to addresses verified as Valid."}},{"@type":"Question","name":"Why should I verify email lists before cold email campaigns?","acceptedAnswer":{"@type":"Answer","text":"Sending to unverified lists produces bounce rates of 5 to 20 percent. A bounce rate above 3 percent damages your sender reputation significantly. Above 5 percent risks your sending domain being blacklisted. Verification with MillionVerifier or NeverBounce removes invalid and risky addresses before sending, keeping bounce rates under 2 percent."}},{"@type":"Question","name":"What is a good cold email open rate?","acceptedAnswer":{"@type":"Answer","text":"A good cold email open rate for a properly warmed inbox sending to a targeted, verified list is 40 to 65 percent. If your open rate is below 25 percent, the issue is almost always deliverability \u2014 emails landing in spam \u2014 rather than subject lines. Fix the infrastructure before changing the copy."}}]}</script>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/blog/blog-post.css">
 </head>
@@ -42,6 +44,9 @@
   </div>
 </section>
 <div class="post-body">
+
+  <p class="post-lede" id="post-answer"><strong>A cold email campaign that books meetings has three components working together: a verified lead list built from a precise ICP, authenticated sending infrastructure with warmed inboxes, and a short personalised sequence with a low-friction call to action. This post is a step-by-step guide to building all three using Apollo, MillionVerifier, and Smartlead.</strong></p>
+
 
   <p>Most outbound failures happen before the first email is sent. The lead list is wrong &#8212; wrong people, wrong companies, unverified emails. You build sequences on top of that broken foundation, wonder why reply rates are low, and blame the copy.</p>
   <p>This post lays out the exact system we use to build verified B2B lead lists and get them into a working outbound sequence. It uses three tools &#8212; Apollo, MillionVerifier, and Smartlead &#8212; and produces a list you can send to with confidence.</p>
@@ -116,6 +121,25 @@
     <li><strong>Bounce rate</strong> &#8212; Should be below 2% with verified lists. Above 3%: recheck your verification step.</li>
   </ul>
   <p>Optimise one variable at a time. Change the subject line and measure for 100 sends before changing anything else. If you change everything at once, you won&#8217;t know what worked.</p>
+
+  
+  <section class="faq-block">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">How do I build a B2B lead list for cold email?</h3>
+        <p class="faq-a">Use Apollo to filter contacts by industry, company size, funding stage, geography, and job title matching your ICP. Export 300–500 contacts per campaign. Verify every email with MillionVerifier before importing — only send to addresses flagged as Valid.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Why verify email lists before sending?</h3>
+        <p class="faq-a">Unverified lists produce bounce rates of 5–20 percent. Above 3 percent damages your sender reputation. Above 5 percent risks blacklisting. Verification keeps bounce rates under 2 percent and protects the domains you've invested weeks warming up.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What is a good cold email open rate?</h3>
+        <p class="faq-a">A properly warmed inbox sending to a targeted, verified list should achieve 40–65 percent open rates. Below 25 percent is a deliverability signal — emails are landing in spam, not passing through. Fix infrastructure before changing copy.</p>
+      </div>
+    </div>
+  </section>
 
   <hr class="post-divider">
   <div class="post-cta">
