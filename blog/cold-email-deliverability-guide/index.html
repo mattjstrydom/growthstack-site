@@ -17,6 +17,7 @@
   <meta property="og:image" content="https://www.growthstackhq.com/blog/cold-email-deliverability-guide/og-image.png">
   <meta property="article:published_time" content="2026-04-10">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cold Email Deliverability: The Complete Guide for B2B Founders","description":"Everything a B2B founder needs to know about cold email deliverability — DNS setup, inbox warmup, list hygiene, reputation monitoring, and scaling without burning domains.","datePublished":"2026-04-10","author":{"@type":"Organization","name":"GrowthStack"},"publisher":{"@type":"Organization","name":"GrowthStack","url":"https://www.growthstackhq.com"},"url":"https://www.growthstackhq.com/blog/cold-email-deliverability-guide"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is cold email deliverability?","acceptedAnswer":{"@type":"Answer","text":"Cold email deliverability refers to whether your emails reach the recipient's inbox rather than their spam folder. Delivery means the email was accepted by the mail server; deliverability means it reached the inbox. You can have high delivery rates but poor deliverability if emails land in spam."}},{"@type":"Question","name":"What are SPF, DKIM, and DMARC?","acceptedAnswer":{"@type":"Answer","text":"SPF (Sender Policy Framework) is a DNS record that tells receiving mail servers which servers are authorised to send email on behalf of your domain. DKIM adds a cryptographic signature to verify emails have not been tampered with. DMARC tells receiving servers what to do when SPF or DKIM checks fail. All three must be configured before running cold email campaigns."}},{"@type":"Question","name":"How long does inbox warmup take for cold email?","acceptedAnswer":{"@type":"Answer","text":"Inbox warmup takes a minimum of 14 days before sending any outbound cold email. 21 to 30 days is better. Starting outbound before warmup is complete significantly increases the risk of emails landing in spam."}},{"@type":"Question","name":"Why are my cold emails going to spam?","acceptedAnswer":{"@type":"Answer","text":"The most common causes are: missing or broken SPF, DKIM, or DMARC records; sending from a new inbox without warming it first; sending too much too quickly; high bounce rates from an unverified list; high spam complaint rates; using your primary domain for cold outreach; or your domain being on a blacklist."}},{"@type":"Question","name":"What bounce rate is acceptable for cold email?","acceptedAnswer":{"@type":"Answer","text":"A bounce rate below 2 percent is acceptable. Above 3 percent damages sender reputation. Above 5 percent risks blacklisting. Always verify lists with MillionVerifier before sending."}}]}</script>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/blog/blog-post.css">
 </head>
@@ -131,6 +132,33 @@
     <li><a href="/blog/cold-email-warmup-guide">Cold Email Warmup: How Long It Takes and How to Do It Properly</a></li>
     <li><a href="/blog/deliverability-slim">The Infrastructure Fixes That Get You Back in the Inbox</a></li>
   </ul>
+
+  
+  <section class="faq-block">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">What is cold email deliverability?</h3>
+        <p class="faq-a">Cold email deliverability refers to whether your emails reach the recipient's inbox rather than their spam folder. Delivery means the email was accepted by the mail server; deliverability means it reached the inbox. You can have high delivery rates but poor deliverability.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What are SPF, DKIM, and DMARC?</h3>
+        <p class="faq-a">SPF is a DNS record that authorises which servers can send email for your domain. DKIM adds a cryptographic signature to verify emails weren't tampered with. DMARC tells receiving servers what to do when SPF or DKIM fail. All three must be configured before running cold email campaigns.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How long does inbox warmup take?</h3>
+        <p class="faq-a">Inbox warmup takes a minimum of 14 days before sending outbound cold email. 21–30 days is better. Starting outbound before warmup is complete significantly increases the risk of emails landing in spam.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Why are my cold emails going to spam?</h3>
+        <p class="faq-a">The most common causes are: missing or broken SPF, DKIM, or DMARC records; sending from a new inbox without warming it; sending too much too quickly; high bounce rates from an unverified list; high spam complaint rates; using your primary domain for cold outreach; or your domain being blacklisted.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What bounce rate is acceptable for cold email?</h3>
+        <p class="faq-a">A bounce rate below 2 percent is acceptable. Above 3 percent damages sender reputation significantly. Above 5 percent risks blacklisting. Always verify lists with MillionVerifier before sending.</p>
+      </div>
+    </div>
+  </section>
 
   <hr class="post-divider">
   <div class="post-cta">

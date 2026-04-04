@@ -34,3 +34,12 @@
 .post-nav a { color: var(--color-primary); font-weight: 500; font-size: 0.9375rem; }
 .post-nav a:hover { color: var(--color-primary-hover); }
 @media(max-width:600px){ .post-body{ padding: 48px 20px 64px; } .post-hero h1{ font-size: 1.625rem; } }
+
+/* ── AEO: FAQ block inside blog posts ─────────────────────────────────────── */
+.faq-block { margin: 56px 0 0; }
+.faq-block h2 { font-size: clamp(1.375rem,2.5vw,1.75rem); color: var(--color-text); margin-bottom: 8px; letter-spacing: -0.02em; }
+.faq-block .faq-list { margin-top: 24px; }
+.faq-block .faq-item { padding: 22px 0; border-bottom: 1px solid var(--color-border); }
+.faq-block .faq-item:first-child { border-top: 1px solid var(--color-border); }
+.faq-block .faq-q { font-size: 1rem; font-weight: 600; color: var(--color-text); margin-bottom: 8px; }
+.faq-block .faq-a { font-size: 0.9875rem; color: var(--color-text-secondary); line-height: 1.75; margin: 0; }
