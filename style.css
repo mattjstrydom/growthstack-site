@@ -604,14 +604,14 @@ footer {
 .form-success h4 { color: var(--color-text); margin-bottom: 8px; }
 .form-success p { color: var(--color-text-secondary); font-size: 0.9375rem; }
 
-/* FAQ */
-.faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 680px; margin: 48px auto 0; }
-.faq-item { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--r-lg); overflow: hidden; transition: border-color var(--t); }
-.faq-item[open] { border-color: rgba(241,90,36,0.3); }
-.faq-item summary { padding: 20px 24px; font-weight: 600; font-size: 1rem; color: var(--color-text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-.faq-item summary::-webkit-details-marker { display: none; }
+/* FAQ — contact page accordion (details/summary) */
+.contact-faq .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 680px; margin: 48px auto 0; }
+details.faq-item { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--r-lg); overflow: hidden; transition: border-color var(--t); }
+details.faq-item[open] { border-color: rgba(241,90,36,0.3); }
+details.faq-item summary { padding: 20px 24px; font-weight: 600; font-size: 1rem; color: var(--color-text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+details.faq-item summary::-webkit-details-marker { display: none; }
 .faq-plus { color: var(--color-primary); font-size: 1.3rem; flex-shrink: 0; transition: transform var(--t); line-height: 1; }
-.faq-item[open] .faq-plus { transform: rotate(45deg); }
+details.faq-item[open] .faq-plus { transform: rotate(45deg); }
 .faq-body { padding: 0 24px 20px; font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.72; }
 
 /* ── Scroll reveal (HarvestOS: transition-all duration-700 opacity+translateY) ── */
@@ -671,7 +671,7 @@ footer {
 
 /* ── AEO: FAQ styles (pages) ───────────────────────────────────────────────── */
 .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
-.faq-item { padding: 28px 0; border-bottom: 1px solid var(--color-border); }
+.faq-item { padding: 28px 0; border-bottom: 1px solid var(--color-border); background: transparent; border-left: none; border-right: none; border-radius: 0; overflow: visible; }
 .faq-item:first-child { border-top: 1px solid var(--color-border); }
 .faq-q { font-size: 1.0625rem; font-weight: 600; color: var(--color-text); margin-bottom: 10px; letter-spacing: -0.01em; }
 .faq-a { font-size: 0.9875rem; color: var(--color-text-secondary); line-height: 1.75; margin: 0; }
