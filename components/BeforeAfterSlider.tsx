@@ -21,8 +21,8 @@ const AFTER = [
 function Panel({ side }: { side: 'before' | 'after' }) {
   const isBefore = side === 'before';
   const accent    = isBefore ? '#FF6060' : '#4ADE80';
-  const cardBg    = isBefore ? 'rgba(220,38,38,0.09)'  : 'rgba(34,197,94,0.09)';
-  const cardBord  = isBefore ? 'rgba(220,38,38,0.18)'  : 'rgba(34,197,94,0.18)';
+  const cardBg    = isBefore ? '#1a0c0c' : '#0a1a10';
+  const cardBord  = isBefore ? '#3d1515'  : '#0f3320';
   const metrics   = isBefore ? BEFORE : AFTER;
 
   return (
@@ -31,8 +31,8 @@ function Panel({ side }: { side: 'before' | 'after' }) {
         position : 'absolute',
         inset    : 0,
         background: isBefore
-          ? 'linear-gradient(140deg, rgba(180,20,20,0.10) 0%, #0A1520 100%)'
-          : 'linear-gradient(140deg, #0D1C2E 0%, rgba(20,120,60,0.08) 100%)',
+          ? '#0e1520'
+          : '#0c1a16',
         padding       : 'clamp(14px, 3vw, 22px) clamp(14px, 3vw, 24px) 14px',
         display       : 'flex',
         flexDirection : 'column',
