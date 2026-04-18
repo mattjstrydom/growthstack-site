@@ -1,6 +1,7 @@
 'use client';
 
 import BookDiscoveryButton from './BookDiscoveryButton';
+import BeforeAfterSlider from './BeforeAfterSlider';
 
 /* Extracted from growthstackhq.com CSS:
    bg: #0F1B2D
@@ -58,6 +59,9 @@ export default function Hero() {
           >
             GrowthStack builds and runs done-for-you outbound for early-stage B2B startups. We set up your cold email and LinkedIn system, build your lead lists, and manage campaigns monthly — so founders book meetings without doing it themselves. From zero to live campaign in 10 business days, from $2,500.
           </p>
+
+          {/* Before / After slider */}
+          <BeforeAfterSlider />
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
