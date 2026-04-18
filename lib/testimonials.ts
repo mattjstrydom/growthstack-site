@@ -67,7 +67,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 4,
     name: 'David Okafor',
-    company: 'Velocity Analytics',
+    company: 'Integrated Analytics',
     role: 'Founder',
     location: 'New York, NY',
     quote:
