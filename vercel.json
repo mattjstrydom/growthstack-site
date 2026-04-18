@@ -8,6 +8,20 @@
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/thank-you", "destination": "/thank-you.html" }
   ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "/blocked.html",
+      "statusCode": 307,
+      "has": [
+        {
+          "type": "header",
+          "key": "cf-ipcountry",
+          "value": "(?!US|CA|MX|GB|FR|DE|IT|ES|NL|BE|AT|CH|SE|NO|DK|FI|IE|PT|GR|CZ|PL|SK|HU|SI|LU|HR|RO|BG|JP|KR|SG|AU|NZ|TW|HK|IL|AE|QA)"
+        }
+      ]
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
