@@ -1,8 +1,5 @@
 {
   "buildCommand": "next build",
   "outputDirectory": ".next",
-  "installCommand": "npm ci",
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "installCommand": "npm ci"
 }
