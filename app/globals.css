@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── GrowthStack design tokens (extracted from growthstackhq.com) ── */
+
+  /* Brand */
+  --color-primary:       #F15A24;
+  --color-primary-hover: #D44E1E;
+
+  /* Dark surfaces (nav, hero, offer cards, CTA, footer) */
+  --color-dark-bg:      #0F1B2D;
+  --color-dark-surface: #162333;
+
+  /* Light surfaces */
+  --color-panel:  #F7F8F7;
+  --color-bg:     #FFFFFF;
+  --color-border: #E2E5E2;
+
+  /* Light text */
+  --color-text:           #1A1A1A;
+  --color-text-secondary: #4A4A4A;
+  --color-text-muted:     #888888;
+
+  /* Tailwind orange override → brand primary */
+  --color-orange-400: #f47340;
+  --color-orange-500: #F15A24;
+  --color-orange-600: #D44E1E;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+  font-size: 1rem;
+  line-height: 1.75;
+}
