@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <clipPath id="cp"><circle cx="100" cy="100" r="100"/></clipPath>
+    <radialGradient id="bg" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#162550"/>
+      <stop offset="100%" stop-color="#080f22"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#bg)" clip-path="url(#cp)"/>
+  <!-- Dark blazer -->
+  <path d="M10 200 L10 158 Q40 140 68 148 L100 162 L132 148 Q160 140 190 158 L190 200Z" fill="#0F1E38" clip-path="url(#cp)"/>
+  <!-- White shirt + tie suggestion -->
+  <path d="M88 150 L100 168 L112 150" fill="#F5F8FF" clip-path="url(#cp)"/>
+  <path d="M98 154 L100 168 L102 154 Q101 157 100 158 Q99 157 98 154Z" fill="#C0392B" clip-path="url(#cp)"/>
+  <!-- Neck -->
+  <rect x="88" y="136" width="24" height="20" rx="6" fill="#FAD9B4"/>
+  <!-- Face -->
+  <ellipse cx="100" cy="115" rx="38" ry="43" fill="#FAD9B4"/>
+  <!-- Hair - short dark brown, masculine cut -->
+  <path d="M62 108 Q65 67 100 60 Q135 67 138 108 Q122 95 100 97 Q78 95 62 108Z" fill="#3E2A18"/>
+  <!-- Side hair - close to head -->
+  <path d="M62 107 L60 128 Q61 132 64 131 L64 108Z" fill="#3E2A18" clip-path="url(#cp)"/>
+  <path d="M138 107 L140 128 Q139 132 136 131 L136 108Z" fill="#3E2A18" clip-path="url(#cp)"/>
+  <!-- Ears -->
+  <ellipse cx="62" cy="120" rx="7" ry="10" fill="#FAD9B4"/>
+  <ellipse cx="138" cy="120" rx="7" ry="10" fill="#FAD9B4"/>
+  <!-- Left eye -->
+  <ellipse cx="86" cy="115" rx="8" ry="5.5" fill="white"/>
+  <circle cx="86" cy="115" r="4" fill="#2A4A6E"/>
+  <circle cx="84.6" cy="113.5" r="1.4" fill="white"/>
+  <!-- Right eye -->
+  <ellipse cx="114" cy="115" rx="8" ry="5.5" fill="white"/>
+  <circle cx="114" cy="115" r="4" fill="#2A4A6E"/>
+  <circle cx="112.6" cy="113.5" r="1.4" fill="white"/>
+  <!-- Eyebrows - straighter, masculine -->
+  <path d="M77 105 Q86 102 95 104" stroke="#3E2A18" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M105 104 Q114 102 123 105" stroke="#3E2A18" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Nose -->
+  <path d="M98 120 Q95 130 98 134 Q100 136 102 134 Q105 130 102 120" stroke="#D4A882" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Lips - subtle masculine -->
+  <path d="M90 142 Q100 149 110 142" stroke="#B8896A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Subtle jawline / slight 5 o'clock shadow suggestion -->
+  <path d="M63 120 Q62 140 75 152 Q100 160 125 152 Q138 140 137 120" stroke="#E8C89A" stroke-width="0" fill="#F8D0AA" opacity="0.2"/>
+</svg>

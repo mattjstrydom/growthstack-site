@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <clipPath id="cp"><circle cx="100" cy="100" r="100"/></clipPath>
+    <radialGradient id="bg" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#1e3d7a"/>
+      <stop offset="100%" stop-color="#0a1628"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#bg)" clip-path="url(#cp)"/>
+  <!-- Blazer -->
+  <path d="M10 200 L10 162 Q42 146 70 152 L100 165 L130 152 Q158 146 190 162 L190 200Z" fill="#1B4F8A" clip-path="url(#cp)"/>
+  <!-- Shirt collar -->
+  <path d="M88 153 L100 170 L112 153" fill="#EEF4FF" clip-path="url(#cp)"/>
+  <!-- Neck -->
+  <rect x="88" y="138" width="24" height="22" rx="7" fill="#E6B49A"/>
+  <!-- Face -->
+  <ellipse cx="100" cy="116" rx="37" ry="42" fill="#E6B49A"/>
+  <!-- Hair top cap -->
+  <path d="M63 110 Q67 69 100 62 Q133 69 137 110 Q118 97 100 98 Q82 97 63 110Z" fill="#18100A"/>
+  <!-- Hair left side -->
+  <path d="M63 109 L60 175 Q62 179 66 178 L65 110Z" fill="#18100A" clip-path="url(#cp)"/>
+  <!-- Hair right side -->
+  <path d="M137 109 L140 175 Q138 179 134 178 L135 110Z" fill="#18100A" clip-path="url(#cp)"/>
+  <!-- Ears -->
+  <ellipse cx="63" cy="120" rx="7" ry="10" fill="#E6B49A"/>
+  <ellipse cx="137" cy="120" rx="7" ry="10" fill="#E6B49A"/>
+  <!-- Left eye white -->
+  <ellipse cx="86" cy="117" rx="8" ry="5.5" fill="white"/>
+  <circle cx="86" cy="117" r="4" fill="#2A1610"/>
+  <circle cx="84.6" cy="115.6" r="1.4" fill="white"/>
+  <!-- Right eye white -->
+  <ellipse cx="114" cy="117" rx="8" ry="5.5" fill="white"/>
+  <circle cx="114" cy="117" r="4" fill="#2A1610"/>
+  <circle cx="112.6" cy="115.6" r="1.4" fill="white"/>
+  <!-- Eyebrows -->
+  <path d="M77 108 Q86 104 95 107" stroke="#18100A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M105 107 Q114 104 123 108" stroke="#18100A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Nose -->
+  <path d="M98 122 Q95 131 98 135 Q100 137 102 135 Q105 131 102 122" stroke="#C07555" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Lips -->
+  <path d="M89 143 Q100 151 111 143" stroke="#B86850" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M92 143 Q100 147 108 143" fill="#D08878" opacity="0.55"/>
+</svg>
