@@ -209,7 +209,7 @@ export default function BeforeAfterSlider() {
   }, [updatePos]);
 
   return (
-    <div style={{ marginBottom: '32px' }}>
+    <div style={{ marginBottom: '40px' }}>
       {/* ── container ── */}
       <div
         ref={containerRef}
@@ -255,15 +255,7 @@ export default function BeforeAfterSlider() {
             pointerEvents: 'none',
             willChange: 'left',
           }}
-        >
-          {/* glow */}
-          <div style={{
-            position  : 'absolute',
-            inset     : 0,
-            background: 'rgba(241,90,36,0.4)',
-            filter    : 'blur(4px)',
-          }} />
-        </div>
+        />
 
         {/* ── drag handle ── */}
         <div

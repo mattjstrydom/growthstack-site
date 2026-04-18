@@ -59,10 +59,12 @@ export default function Hero() {
           >
             GrowthStack builds and runs done-for-you outbound for early-stage B2B startups. We set up your cold email and LinkedIn system, build your lead lists, and manage campaigns monthly — so founders book meetings without doing it themselves. From zero to live campaign in 10 business days, from $2,500.
           </p>
+        </div>
 
-          {/* Before / After slider */}
-          <BeforeAfterSlider />
+        {/* Before / After slider — full container width */}
+        <BeforeAfterSlider />
 
+        <div className="max-w-[720px]">
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
             <BookDiscoveryButton
@@ -108,8 +110,8 @@ export default function Hero() {
           <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)' }}>
             <strong style={{ color: 'rgba(255,255,255,0.75)' }}>Used by B2B founders</strong> in the US, UK, and East Africa to build their first reliable outbound motion.
           </p>
-        </div>
-      </div>
+        </div>{/* /max-w-[720px] CTAs */}
+      </div>{/* /max-w-[1100px] */}
 
       {/* Wave into panel section */}
       <div className="relative h-16 sm:h-20">
