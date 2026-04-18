@@ -13,8 +13,8 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <TriggerCards />
         <HowItWorks />
+        <TriggerCards />
         <Testimonials />
         <WhoItIsFor />
         <FAQ />
