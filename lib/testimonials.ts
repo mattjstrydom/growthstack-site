@@ -29,7 +29,7 @@ export const testimonials: Testimonial[] = [
       { value: '11.3%', label: 'response rate' },
       { value: '$4K/mo', label: 'saved vs SDR' },
     ],
-    image: '/headshots/aisha-chen.svg',
+    image: '/headshots/aisha-chen.jpg',
     stars: 5,
   },
   {
@@ -45,7 +45,7 @@ export const testimonials: Testimonial[] = [
       { value: '10.2%', label: 'response rate' },
       { value: '£1,200', label: 'monthly spend' },
     ],
-    image: '/headshots/james-richardson.svg',
+    image: '/headshots/james-richardson.jpg',
     stars: 5,
   },
   {
@@ -61,7 +61,7 @@ export const testimonials: Testimonial[] = [
       { value: '8.7%', label: 'response rate' },
       { value: '6 mo', label: 'contract signed' },
     ],
-    image: '/headshots/sofia-ramirez.svg',
+    image: '/headshots/sofia-ramirez.jpg',
     stars: 5,
   },
   {
@@ -77,7 +77,7 @@ export const testimonials: Testimonial[] = [
       { value: '90%', label: 'close rate' },
       { value: 'MRR', label: 'now recurring' },
     ],
-    image: '/headshots/david-okafor.svg',
+    image: '/headshots/david-okafor.jpg',
     stars: 5,
   },
   {
@@ -93,7 +93,7 @@ export const testimonials: Testimonial[] = [
       { value: '9.2%', label: 'response rate' },
       { value: '$8K/mo', label: 'at scale' },
     ],
-    image: '/headshots/elena-petrov.svg',
+    image: '/headshots/elena-petrov.jpg',
     stars: 5,
   },
 ];
