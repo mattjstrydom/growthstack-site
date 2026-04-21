@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Script from "next/script";
+import { jsonLd, siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const geist = Geist({
@@ -9,8 +10,34 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "GrowthStack | Outbound for Early-Stage Startups",
-  description: "Done-for-you outbound for early-stage startups. We build your cold email + LinkedIn system and run it monthly. From $2,500 — live in 10 days.",
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.title,
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 512,
+        height: 512,
+        alt: `${siteConfig.name} logo`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    creator: siteConfig.social.x,
+    images: [siteConfig.ogImage],
+  },
 };
 
 export default function RootLayout({
@@ -18,9 +45,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    email: siteConfig.email,
+    logo: `${siteConfig.url}${siteConfig.ogImage}`,
+  };
+
   return (
     <html lang="en" className={`${geist.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-[#1A1A1A]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(organizationJsonLd) }}
+        />
+
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-K9FXGZQ5"
@@ -32,7 +73,6 @@ export default function RootLayout({
 
         {children}
 
-        {/* Cal.com embed — loaded directly so popup is always available */}
         <Script
           id="cal-embed"
           strategy="afterInteractive"

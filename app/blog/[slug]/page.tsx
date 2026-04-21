@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import BookDiscoveryButton from '@/components/BookDiscoveryButton';
 import { getPost, getAllSlugs } from '@/lib/posts';
+import { absoluteUrl, jsonLd, siteConfig } from '@/lib/site';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -18,14 +19,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
+
   return {
     title: `${post.title} | GrowthStack`,
     description: post.description,
+    alternates: {
+      canonical: absoluteUrl(`/blog/${slug}`),
+    },
     openGraph: {
       title: post.title,
       description: post.description,
       type: 'article',
-      url: `https://www.growthstackhq.com/blog/${slug}`,
+      url: absoluteUrl(`/blog/${slug}`),
+    },
+    twitter: {
+      title: post.title,
+      description: post.description,
     },
   };
 }
@@ -35,11 +44,37 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPost(slug);
   if (!post) notFound();
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.h1,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: absoluteUrl(`/blog/${slug}`),
+    author: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: absoluteUrl(siteConfig.ogImage),
+      },
+    },
+  };
+
   return (
     <>
       <Navigation />
       <main style={{ paddingTop: '68px' }}>
-        {/* Post hero */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(articleJsonLd) }}
+        />
+
         <section style={{ background: '#0F1B2D', padding: '80px 0 56px' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <Link
@@ -54,12 +89,10 @@ export default async function BlogPostPage({ params }: Props) {
                 marginBottom: '28px',
                 transition: 'color 0.2s',
               }}
-              onMouseEnter={undefined}
             >
               ← Back to Blog
             </Link>
 
-            {/* Meta row */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '20px' }}>
               <span
                 style={{
@@ -92,7 +125,6 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Post body */}
         <div style={{ background: '#fff' }}>
           <div
             className="post-body"
@@ -101,7 +133,6 @@ export default async function BlogPostPage({ params }: Props) {
           />
         </div>
 
-        {/* CTA section */}
         <section
           style={{
             background: '#F7F8F7',
@@ -109,14 +140,12 @@ export default async function BlogPostPage({ params }: Props) {
             padding: '64px 0',
           }}
         >
-          <div
-            className="max-w-[640px] mx-auto px-6 lg:px-8 text-center"
-          >
+          <div className="max-w-[640px] mx-auto px-6 lg:px-8 text-center">
             <h2 style={{ fontSize: '1.625rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '12px' }}>
               Ready to build your outbound system?
             </h2>
             <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginBottom: '28px', lineHeight: 1.7 }}>
-              GrowthStack handles the full setup — infrastructure, lead lists, copywriting, and campaign management. Book a discovery call to see if we're a fit.
+              GrowthStack handles the full setup: infrastructure, lead lists, copywriting, and campaign management. Book a discovery call to see if we&apos;re a fit.
             </p>
             <BookDiscoveryButton
               utmContent={`blog_post_${slug}`}
@@ -138,7 +167,6 @@ export default async function BlogPostPage({ params }: Props) {
       </main>
       <Footer />
 
-      {/* Blog post styles */}
       <style>{`
         .post-body p { font-size: 1.0625rem; color: #444; line-height: 1.82; margin-bottom: 24px; }
         .post-body h2 { font-size: clamp(1.375rem,2.5vw,1.75rem); color: #1A1A1A; margin: 52px 0 16px; letter-spacing: -0.02em; font-weight: 700; }

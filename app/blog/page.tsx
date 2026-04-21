@@ -3,10 +3,23 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { posts } from '@/lib/posts';
+import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Blog | GrowthStack — Outbound, GTM & Cold Email for Startups',
+  title: 'Blog | GrowthStack - Outbound, GTM & Cold Email for Startups',
   description: 'Practical guides on cold email deliverability, outbound sequencing, CRM setup, and GTM strategy for early-stage B2B startups.',
+  alternates: {
+    canonical: absoluteUrl('/blog'),
+  },
+  openGraph: {
+    title: 'Blog | GrowthStack - Outbound, GTM & Cold Email for Startups',
+    description: 'Practical guides on cold email deliverability, outbound sequencing, CRM setup, and GTM strategy for early-stage B2B startups.',
+    url: absoluteUrl('/blog'),
+  },
+  twitter: {
+    title: 'Blog | GrowthStack - Outbound, GTM & Cold Email for Startups',
+    description: 'Practical guides on cold email deliverability, outbound sequencing, CRM setup, and GTM strategy for early-stage B2B startups.',
+  },
 };
 
 const EMOJI_MAP: Record<string, string> = {
@@ -24,10 +37,9 @@ const EMOJI_MAP: Record<string, string> = {
   'cold-email-warmup-guide': '🔥',
 };
 
-// Sort posts by date descending (newest first)
 function parseDate(d: string): number {
   const date = new Date(d);
-  return isNaN(date.getTime()) ? 0 : date.getTime();
+  return Number.isNaN(date.getTime()) ? 0 : date.getTime();
 }
 
 const sortedPosts = [...posts].sort((a, b) => parseDate(b.date) - parseDate(a.date));
@@ -37,7 +49,6 @@ export default function BlogPage() {
     <>
       <Navigation />
       <main style={{ paddingTop: '68px' }}>
-        {/* Hero */}
         <section
           style={{
             background: '#0F1B2D',
@@ -64,12 +75,11 @@ export default function BlogPage() {
               Outbound that actually works.
             </h1>
             <p style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.65)', maxWidth: '620px', lineHeight: 1.7 }}>
-              Practical guides on cold email, LinkedIn outreach, CRM setup, and GTM strategy — written for early-stage founders building their first sales motion.
+              Practical guides on cold email, LinkedIn outreach, CRM setup, and GTM strategy written for early-stage founders building their first sales motion.
             </p>
           </div>
         </section>
 
-        {/* Blog grid */}
         <section style={{ background: '#F7F8F7', padding: '64px 0 96px' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div
@@ -92,7 +102,6 @@ export default function BlogPage() {
                       transition: 'box-shadow 0.2s ease, transform 0.2s ease',
                     }}
                   >
-                    {/* Card image / emoji */}
                     <div
                       className="flex items-center justify-center"
                       style={{
@@ -104,7 +113,6 @@ export default function BlogPage() {
                       {EMOJI_MAP[post.slug] || '📝'}
                     </div>
 
-                    {/* Card body */}
                     <div className="flex flex-col flex-1 p-6">
                       <div
                         className="font-semibold uppercase tracking-[0.08em] mb-3"

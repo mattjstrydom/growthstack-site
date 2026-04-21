@@ -8,21 +8,26 @@ import BookDiscoveryButton from '@/components/BookDiscoveryButton';
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitting(true);
+    setSubmitError(null);
     const form = e.currentTarget;
     const data = new FormData(form);
     try {
-      await fetch('https://formspree.io/f/xjgpoggq', {
+      const response = await fetch('https://formspree.io/f/xjgpoggq', {
         method: 'POST',
         body: data,
         headers: { Accept: 'application/json' },
       });
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
       setSubmitted(true);
     } catch {
-      alert('Something went wrong. Please email hello@growthstackhq.com directly.');
+      setSubmitError('Something went wrong. Please email hello@growthstackhq.com directly.');
     } finally {
       setSubmitting(false);
     }
@@ -208,6 +213,11 @@ export default function ContactPage() {
                           </svg>
                         )}
                       </button>
+                      {submitError && (
+                        <p style={{ fontSize: '0.85rem', color: '#B42318', textAlign: 'center' }}>
+                          {submitError}
+                        </p>
+                      )}
                       <p style={{ fontSize: '0.8rem', color: 'rgba(0,0,0,0.4)', textAlign: 'center' }}>We reply within one business day. No unsolicited follow-ups.</p>
                     </form>
                   </>
