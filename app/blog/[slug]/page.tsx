@@ -68,6 +68,31 @@ export default async function BlogPostPage({ params }: Props) {
     },
   };
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: absoluteUrl('/'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: absoluteUrl('/blog'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.h1,
+        item: absoluteUrl(`/blog/${slug}`),
+      },
+    ],
+  };
+
   return (
     <>
       <Navigation />
@@ -75,6 +100,10 @@ export default async function BlogPostPage({ params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLd(articleJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbJsonLd) }}
         />
 
         <section style={{ background: '#0F1B2D', padding: '80px 0 56px' }}>

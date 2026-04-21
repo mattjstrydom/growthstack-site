@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   title: "Quick Chat | GrowthStack",
   description:
     "Book a short call with Matt at GrowthStack and pick a time that works for you.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   alternates: {
     canonical: absoluteUrl("/quick-chat"),
   },

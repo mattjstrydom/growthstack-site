@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import BookDiscoveryButton from '@/components/BookDiscoveryButton';
-import { absoluteUrl } from '@/lib/site';
+import { absoluteUrl, jsonLd, siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'HubSpot & RevOps | GrowthStack',
@@ -16,19 +17,118 @@ export const metadata: Metadata = {
     description:
       'HubSpot setup, cleanup, pipeline design, workflow automation, and RevOps support for early-stage B2B startups.',
     url: absoluteUrl('/hubspot-revops'),
+    images: [
+      {
+        url: absoluteUrl('/hubspot-revops/opengraph-image'),
+        width: 1200,
+        height: 630,
+        alt: 'GrowthStack HubSpot and RevOps preview image',
+      },
+    ],
   },
   twitter: {
     title: 'HubSpot & RevOps | GrowthStack',
     description:
       'HubSpot setup, cleanup, pipeline design, workflow automation, and RevOps support for early-stage B2B startups.',
+    images: [absoluteUrl('/hubspot-revops/twitter-image')],
   },
 };
 
 export default function HubspotRevopsPage() {
+  const faqItems = [
+    {
+      question: 'Can you work in an existing HubSpot portal?',
+      answer:
+        'Yes. GrowthStack can audit, clean up, and restructure an existing HubSpot setup so your pipeline, reporting, and workflows reflect how the team actually sells.',
+    },
+    {
+      question: 'Do you only help with HubSpot, or do you handle the surrounding system too?',
+      answer:
+        'We work on the broader GTM system as well: lifecycle stages, pipeline design, workflow automation, reporting, routing, and activation support where it fits.',
+    },
+    {
+      question: 'Is this only for larger teams?',
+      answer:
+        'No. This is designed for early-stage B2B teams that need a cleaner commercial system before adding more complexity, headcount, or volume.',
+    },
+    {
+      question: 'Do you manage outbound too?',
+      answer:
+        'Yes. Outbound can be activated once the CRM and workflow foundation are in place, so campaigns run inside a usable system instead of alongside one.',
+    },
+  ];
+
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'HubSpot Setup and RevOps Support',
+    url: absoluteUrl('/hubspot-revops'),
+    provider: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    areaServed: 'Global',
+    serviceType: [
+      'HubSpot setup',
+      'HubSpot cleanup',
+      'Pipeline design',
+      'Lifecycle stage design',
+      'Workflow automation',
+      'RevOps support',
+    ],
+    description:
+      'HubSpot setup, cleanup, pipeline design, workflow automation, and RevOps support for early-stage B2B startups.',
+  };
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: absoluteUrl('/'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'HubSpot & RevOps',
+        item: absoluteUrl('/hubspot-revops'),
+      },
+    ],
+  };
+
   return (
     <>
       <Navigation />
       <main style={{ paddingTop: '68px' }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(serviceJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(faqJsonLd) }}
+        />
         <section style={{ background: '#0F1B2D', padding: '80px 0 72px' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div
@@ -181,6 +281,108 @@ export default function HubspotRevopsPage() {
           </div>
         </section>
 
+        <section style={{ background: '#FCFAF7', borderTop: '1px solid #ECE6DE', borderBottom: '1px solid #ECE6DE', padding: '80px 0' }}>
+          <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
+            <div className="mb-10">
+              <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
+                Related Reading
+              </div>
+              <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A', marginBottom: '12px' }}>
+                Practical guides on HubSpot and RevOps
+              </h2>
+              <p style={{ fontSize: '1rem', color: '#555', lineHeight: 1.7, maxWidth: '700px' }}>
+                If you are evaluating whether your current setup needs cleanup or a
+                broader rebuild, start with these guides.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  href: '/blog/hubspot-setup-checklist-startups',
+                  category: 'HubSpot',
+                  title: 'HubSpot Setup Checklist for Early-Stage B2B Startups',
+                  body: 'A practical checklist covering lifecycle stages, pipelines, properties, workflows, and reporting.',
+                },
+                {
+                  href: '/blog/hubspot-lifecycle-stages-b2b-startups',
+                  category: 'RevOps',
+                  title: 'How to Define HubSpot Lifecycle Stages for B2B Startups',
+                  body: 'A clear guide to structuring lifecycle stages so routing, ownership, and reporting all make sense.',
+                },
+                {
+                  href: '/blog/revenue-infrastructure',
+                  category: 'Infrastructure',
+                  title: 'Why Revenue Infrastructure Matters Before You Scale',
+                  body: 'A broader piece on why systems, not disconnected tactics, are what make pipeline repeatable.',
+                },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                  <article
+                    style={{
+                      background: '#FFFFFF',
+                      border: '1px solid #ECE6DE',
+                      borderRadius: '16px',
+                      padding: '24px',
+                      height: '100%',
+                      transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                    }}
+                    className="hubspot-reading-card"
+                  >
+                    <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '14px' }}>
+                      {item.category}
+                    </div>
+                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.45, marginBottom: '12px' }}>
+                      {item.title}
+                    </h3>
+                    <p style={{ fontSize: '0.92rem', color: '#555', lineHeight: 1.7 }}>
+                      {item.body}
+                    </p>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section style={{ background: '#fff', padding: '80px 0' }}>
+          <div className="max-w-[900px] mx-auto px-6 lg:px-8">
+            <div className="mb-10">
+              <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
+                FAQ
+              </div>
+              <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A', marginBottom: '12px' }}>
+                Common questions about HubSpot and RevOps support
+              </h2>
+            </div>
+
+            <div style={{ display: 'grid', gap: '18px' }}>
+              {faqItems.map((item) => (
+                <div
+                  key={item.question}
+                  style={{
+                    background: '#F7F8F7',
+                    border: '1px solid #E2E5E2',
+                    borderRadius: '16px',
+                    padding: '24px',
+                  }}
+                >
+                  <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
+                    {item.question}
+                  </h3>
+                  <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.75 }}>
+                    {item.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section style={{ background: '#0F1B2D', padding: '80px 0', textAlign: 'center' }}>
           <div className="max-w-[640px] mx-auto px-6 lg:px-8">
             <h2 style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)', fontWeight: 700, color: '#fff', marginBottom: '16px' }}>
@@ -209,6 +411,12 @@ export default function HubspotRevopsPage() {
         </section>
       </main>
       <Footer />
+      <style>{`
+        .hubspot-reading-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 16px 34px rgba(23, 32, 51, 0.08);
+        }
+      `}</style>
     </>
   );
 }

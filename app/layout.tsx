@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: siteConfig.ogImage,
-        width: 512,
-        height: 512,
-        alt: `${siteConfig.name} logo`,
+        width: 1200,
+        height: 630,
+        alt: "GrowthStack GTM systems and RevOps preview image",
       },
     ],
   },
@@ -59,7 +59,7 @@ export default function RootLayout({
     name: siteConfig.name,
     url: siteConfig.url,
     email: siteConfig.email,
-    logo: `${siteConfig.url}${siteConfig.ogImage}`,
+    logo: `${siteConfig.url}/icon.png`,
   };
 
   return (

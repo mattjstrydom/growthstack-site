@@ -16,6 +16,27 @@ export default function Home() {
     url: siteConfig.url,
   };
 
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'GTM Systems and RevOps for Early-Stage B2B Startups',
+    provider: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    areaServed: 'Global',
+    serviceType: [
+      'HubSpot setup',
+      'RevOps support',
+      'Pipeline design',
+      'Workflow automation',
+      'Outbound activation',
+    ],
+    description:
+      'GrowthStack helps early-stage B2B startups build the systems behind repeatable pipeline: HubSpot setup, CRM design, reporting, automation, and outbound activation.',
+  };
+
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -70,6 +91,10 @@ export default function Home() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLd(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(serviceJsonLd) }}
         />
         <script
           type="application/ld+json"
