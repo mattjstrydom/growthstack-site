@@ -19,6 +19,7 @@ import {
 
 const navLinks = [
   { label: 'How It Works', href: '/how-it-works' },
+  { label: 'HubSpot & RevOps', href: '/hubspot-revops' },
   { label: 'About',        href: '/about' },
   { label: 'Blog',         href: '/blog' },
   { label: 'Contact',      href: '/contact' },

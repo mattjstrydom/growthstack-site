@@ -144,10 +144,12 @@ export default async function BlogPostPage({ params }: Props) {
         >
           <div className="max-w-[640px] mx-auto px-6 lg:px-8 text-center">
             <h2 style={{ fontSize: '1.625rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '12px' }}>
-              Ready to build your outbound system?
+              Ready to build a working GTM system?
             </h2>
             <p style={{ fontSize: '1rem', color: 'rgba(26,26,26,0.6)', marginBottom: '28px', lineHeight: 1.7 }}>
-              GrowthStack handles the full setup: infrastructure, lead lists, copywriting, and campaign management. Book a discovery call to see if we&apos;re a fit.
+              GrowthStack helps early-stage B2B teams build HubSpot, pipeline,
+              workflows, reporting, and activation into one usable commercial
+              system. Book a discovery call to see if we&apos;re a fit.
             </p>
             <BookDiscoveryButton
               utmContent={`blog_post_${slug}`}
@@ -191,7 +193,8 @@ export default async function BlogPostPage({ params }: Props) {
                     lineHeight: 1.7,
                   }}
                 >
-                  More practical reading on outbound systems, deliverability, and early-stage GTM decisions.
+                  More practical reading on HubSpot, RevOps, pipeline activation,
+                  and early-stage GTM decisions.
                 </p>
               </div>
 

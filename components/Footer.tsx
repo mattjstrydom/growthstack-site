@@ -25,7 +25,7 @@ export default function Footer() {
               GrowthStack
             </div>
             <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.7 }}>
-              Done-for-you outbound for early-stage B2B startups.
+              GTM systems, HubSpot, and RevOps for early-stage B2B startups.
             </p>
           </div>
 
@@ -39,6 +39,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               {[
                 { label: 'How It Works', href: '/how-it-works' },
+                { label: 'HubSpot & RevOps', href: '/hubspot-revops' },
                 { label: 'About', href: '/about' },
                 { label: 'Blog', href: '/blog' },
                 { label: 'Contact', href: '/contact' },

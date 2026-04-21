@@ -6,19 +6,19 @@ import { posts } from '@/lib/posts';
 import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Blog | GrowthStack - Outbound, GTM & Cold Email for Startups',
-  description: 'Practical guides on cold email deliverability, outbound sequencing, CRM setup, and GTM strategy for early-stage B2B startups.',
+  title: 'Blog | GrowthStack - GTM, RevOps, HubSpot and Pipeline Systems',
+  description: 'Practical guides on HubSpot setup, CRM structure, RevOps, outbound activation, and GTM systems for early-stage B2B startups.',
   alternates: {
     canonical: absoluteUrl('/blog'),
   },
   openGraph: {
-    title: 'Blog | GrowthStack - Outbound, GTM & Cold Email for Startups',
-    description: 'Practical guides on cold email deliverability, outbound sequencing, CRM setup, and GTM strategy for early-stage B2B startups.',
+    title: 'Blog | GrowthStack - GTM, RevOps, HubSpot and Pipeline Systems',
+    description: 'Practical guides on HubSpot setup, CRM structure, RevOps, outbound activation, and GTM systems for early-stage B2B startups.',
     url: absoluteUrl('/blog'),
   },
   twitter: {
-    title: 'Blog | GrowthStack - Outbound, GTM & Cold Email for Startups',
-    description: 'Practical guides on cold email deliverability, outbound sequencing, CRM setup, and GTM strategy for early-stage B2B startups.',
+    title: 'Blog | GrowthStack - GTM, RevOps, HubSpot and Pipeline Systems',
+    description: 'Practical guides on HubSpot setup, CRM structure, RevOps, outbound activation, and GTM systems for early-stage B2B startups.',
   },
 };
 
@@ -72,10 +72,12 @@ export default function BlogPage() {
               className="font-bold text-white leading-tight mb-4"
               style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700 }}
             >
-              Outbound that actually works.
+              GTM systems that actually work.
             </h1>
             <p style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.65)', maxWidth: '620px', lineHeight: 1.7 }}>
-              Practical guides on cold email, LinkedIn outreach, CRM setup, and GTM strategy written for early-stage founders building their first sales motion.
+              Practical guides on HubSpot, RevOps, pipeline design, activation, and
+              GTM strategy written for early-stage B2B teams building a repeatable
+              revenue motion.
             </p>
           </div>
         </section>

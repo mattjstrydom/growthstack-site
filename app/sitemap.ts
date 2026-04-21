@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/blog",
     "/contact",
+    "/hubspot-revops",
     "/how-it-works",
     "/quick-chat",
     "/privacy-policy",
