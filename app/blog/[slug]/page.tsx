@@ -4,8 +4,9 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import BookDiscoveryButton from '@/components/BookDiscoveryButton';
-import { getPost, getAllSlugs } from '@/lib/posts';
+import { getPost, getAllSlugs, getRelatedPosts } from '@/lib/posts';
 import { absoluteUrl, jsonLd, siteConfig } from '@/lib/site';
+import { Eyebrow, primaryButtonHoverStyle, primaryButtonStyle } from '@/components/MarketingPrimitives';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -43,6 +44,7 @@ export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) notFound();
+  const relatedPosts = getRelatedPosts(slug);
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -150,20 +152,116 @@ export default async function BlogPostPage({ params }: Props) {
             <BookDiscoveryButton
               utmContent={`blog_post_${slug}`}
               className="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-lg cursor-pointer"
-              style={{
-                background: '#F15A24',
-                padding: '14px 36px',
-                fontSize: '1rem',
-                fontWeight: 600,
-                borderRadius: '8px',
-                boxShadow: '0 2px 12px rgba(241,90,36,0.35)',
-              }}
-              hoverStyle={{ background: '#D44E1E', boxShadow: '0 4px 20px rgba(241,90,36,0.45)' }}
+              style={{ ...primaryButtonStyle, fontSize: '1rem' }}
+              hoverStyle={primaryButtonHoverStyle}
             >
               Book a Discovery Call
             </BookDiscoveryButton>
           </div>
         </section>
+
+        {relatedPosts.length > 0 && (
+          <section
+            style={{
+              background: '#FFFFFF',
+              borderTop: '1px solid rgba(0,0,0,0.07)',
+              padding: '64px 0 88px',
+            }}
+          >
+            <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
+              <div className="mb-10">
+                <div className="mb-3">
+                  <Eyebrow subtle>Keep Reading</Eyebrow>
+                </div>
+                <h2
+                  style={{
+                    fontSize: 'clamp(1.5rem,3vw,2.25rem)',
+                    fontWeight: 700,
+                    color: '#1A1A1A',
+                    marginBottom: '10px',
+                  }}
+                >
+                  Related guides worth reading next
+                </h2>
+                <p
+                  style={{
+                    fontSize: '1rem',
+                    color: '#555',
+                    maxWidth: '620px',
+                    lineHeight: 1.7,
+                  }}
+                >
+                  More practical reading on outbound systems, deliverability, and early-stage GTM decisions.
+                </p>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-3">
+                {relatedPosts.map((relatedPost) => (
+                  <Link
+                    key={relatedPost.slug}
+                    href={`/blog/${relatedPost.slug}`}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    <article
+                      className="related-post-card h-full"
+                      style={{
+                        background: '#F7F8F7',
+                        border: '1px solid #E2E5E2',
+                        borderRadius: '16px',
+                        padding: '24px',
+                        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: '0.72rem',
+                          fontWeight: 700,
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          color: '#F15A24',
+                          marginBottom: '14px',
+                        }}
+                      >
+                        {relatedPost.category}
+                      </div>
+                      <h3
+                        style={{
+                          fontSize: '1.05rem',
+                          fontWeight: 700,
+                          color: '#1A1A1A',
+                          lineHeight: 1.4,
+                          marginBottom: '12px',
+                        }}
+                      >
+                        {relatedPost.h1}
+                      </h3>
+                      <p
+                        style={{
+                          fontSize: '0.92rem',
+                          color: '#555',
+                          lineHeight: 1.7,
+                          marginBottom: '18px',
+                        }}
+                      >
+                        {relatedPost.lede.slice(0, 135)}...
+                      </p>
+                      <div
+                        style={{
+                          fontSize: '0.8rem',
+                          color: 'rgba(26,26,26,0.45)',
+                          paddingTop: '14px',
+                          borderTop: '1px solid rgba(0,0,0,0.08)',
+                        }}
+                      >
+                        {relatedPost.date} · {relatedPost.readTime}
+                      </div>
+                    </article>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
 
@@ -197,6 +295,7 @@ export default async function BlogPostPage({ params }: Props) {
         .post-body .faq-a { font-size: 0.9875rem; color: #444; line-height: 1.75; margin: 0; }
         .post-body .post-cta { display: none; }
         .post-body .post-nav { display: none; }
+        .related-post-card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
         @media(max-width:600px){
           .post-body{ padding: 48px 20px 64px; }
         }

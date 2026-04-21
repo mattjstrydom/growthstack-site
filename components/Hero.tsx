@@ -2,6 +2,11 @@
 
 import BookDiscoveryButton from './BookDiscoveryButton';
 import BeforeAfterSlider from './BeforeAfterSlider';
+import {
+  Eyebrow,
+  primaryButtonHoverStyle,
+  primaryButtonStyle,
+} from './MarketingPrimitives';
 
 /* Extracted from growthstackhq.com CSS:
    bg: #0F1B2D
@@ -29,17 +34,8 @@ export default function Hero() {
         <div className="max-w-[720px]">
 
           {/* Eyebrow badge */}
-          <div
-            className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full mb-6"
-            style={{
-              fontSize: '0.72rem',
-              color: '#F15A24',
-              background: 'rgba(241,90,36,0.12)',
-              padding: '6px 14px',
-              border: '1px solid rgba(241,90,36,0.25)',
-            }}
-          >
-            For B2B Startups That Just Raised
+          <div className="mb-6">
+            <Eyebrow>For B2B Startups That Just Raised</Eyebrow>
           </div>
 
           {/* h1 */}
@@ -70,15 +66,8 @@ export default function Hero() {
             <BookDiscoveryButton
               utmContent="homepage_hero"
               className="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-lg cursor-pointer transition-all"
-              style={{
-                background: '#F15A24',
-                padding: '14px 36px',
-                fontSize: '1.0625rem',
-                fontWeight: 600,
-                borderRadius: '8px',
-                boxShadow: '0 2px 12px rgba(241,90,36,0.35)',
-              }}
-              hoverStyle={{ background: '#D44E1E', boxShadow: '0 4px 20px rgba(241,90,36,0.45)' }}
+              style={primaryButtonStyle}
+              hoverStyle={primaryButtonHoverStyle}
             >
               Book a Discovery Call
               <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">

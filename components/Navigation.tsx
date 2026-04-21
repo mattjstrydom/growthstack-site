@@ -3,6 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import BookDiscoveryButton from './BookDiscoveryButton';
+import {
+  mobileButtonStyle,
+  navButtonHoverStyle,
+  navButtonStyle,
+} from './MarketingPrimitives';
 
 /* Extracted from growthstackhq.com CSS:
    --nav-bg: rgba(15,27,45,0.96)
@@ -63,15 +68,8 @@ export default function Navigation() {
             <BookDiscoveryButton
               utmContent="nav_desktop"
               className="inline-flex items-center gap-2 text-white font-semibold rounded-lg transition-colors cursor-pointer"
-              style={{
-                background: '#F15A24',
-                padding: '10px 24px',
-                fontSize: '0.9375rem',
-                fontWeight: 600,
-                borderRadius: '8px',
-                boxShadow: '0 2px 12px rgba(241,90,36,0.35)',
-              }}
-              hoverStyle={{ background: '#D44E1E', boxShadow: '0 4px 20px rgba(241,90,36,0.45)' }}
+              style={navButtonStyle}
+              hoverStyle={navButtonHoverStyle}
             />
           </div>
 
@@ -108,13 +106,7 @@ export default function Navigation() {
           <BookDiscoveryButton
             utmContent="nav_mobile"
             className="inline-flex justify-center items-center text-white font-semibold rounded-lg cursor-pointer mt-2"
-            style={{
-              background: '#F15A24',
-              padding: '12px 24px',
-              fontSize: '0.9375rem',
-              fontWeight: 600,
-              borderRadius: '8px',
-            }}
+            style={mobileButtonStyle}
           />
         </div>
       )}

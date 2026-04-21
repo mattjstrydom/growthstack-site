@@ -21,3 +21,17 @@ export function getPost(slug: string): Post | undefined {
 export function getAllSlugs(): string[] {
   return posts.map(p => p.slug);
 }
+
+export function getRelatedPosts(slug: string, limit = 3): Post[] {
+  const current = getPost(slug);
+  if (!current) return [];
+
+  const sameCategory = posts.filter(
+    (post) => post.slug !== slug && post.category === current.category
+  );
+  const fallback = posts.filter(
+    (post) => post.slug !== slug && post.category !== current.category
+  );
+
+  return [...sameCategory, ...fallback].slice(0, limit);
+}

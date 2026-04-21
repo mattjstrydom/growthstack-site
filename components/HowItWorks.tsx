@@ -1,5 +1,7 @@
 'use client';
 
+import { CardShell, Eyebrow } from './MarketingPrimitives';
+
 /* Extracted from growthstackhq.com CSS:
    Offer section bg: white (#FFFFFF), cards bg: #0F1B2D
    Scope section bg: #F7F8F7 (section-panel), border top/bottom: 1px solid #E2E5E2
@@ -42,12 +44,7 @@ export default function HowItWorks() {
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
 
           <div className="mb-12">
-            <div
-              className="font-bold uppercase tracking-[0.1em] mb-3"
-              style={{ fontSize: '0.72rem', color: '#F15A24' }}
-            >
-              How It Works
-            </div>
+            <div className="mb-3"><Eyebrow subtle>How It Works</Eyebrow></div>
             <h2
               className="font-bold text-[#1A1A1A]"
               style={{ fontSize: 'clamp(1.875rem, 3.5vw, 3rem)', fontWeight: 700, lineHeight: 1.2 }}
@@ -59,14 +56,7 @@ export default function HowItWorks() {
           {/* Phase cards */}
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             {/* Phase 1 */}
-            <div
-              className="rounded-2xl relative overflow-hidden"
-              style={{
-                background: '#0F1B2D',
-                border: '1px solid rgba(255,255,255,0.07)',
-                padding: '40px 36px',
-              }}
-            >
+            <CardShell dark>
               <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 80% 20%, rgba(241,90,36,0.08) 0%, transparent 70%)' }} />
               <div
                 className="inline-block font-bold uppercase tracking-[0.1em] rounded-full mb-5"
@@ -82,17 +72,10 @@ export default function HowItWorks() {
               <div className="font-bold text-white" style={{ fontSize: '1.625rem', fontWeight: 700 }}>
                 From $2,500 <span className="font-normal" style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.4)' }}>one-time</span>
               </div>
-            </div>
+            </CardShell>
 
             {/* Phase 2 */}
-            <div
-              className="rounded-2xl relative overflow-hidden"
-              style={{
-                background: '#0F1B2D',
-                border: '1px solid rgba(241,90,36,0.35)',
-                padding: '40px 36px',
-              }}
-            >
+            <CardShell highlighted>
               <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 80% 20%, rgba(241,90,36,0.08) 0%, transparent 70%)' }} />
               <div
                 className="inline-block font-bold uppercase tracking-[0.1em] rounded-full mb-5"
@@ -108,7 +91,7 @@ export default function HowItWorks() {
               <div className="font-bold text-white" style={{ fontSize: '1.625rem', fontWeight: 700 }}>
                 From $1,500 <span className="font-normal" style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.4)' }}>/ month</span>
               </div>
-            </div>
+            </CardShell>
           </div>
 
           <p style={{ fontSize: '0.9rem', color: '#4A4A4A' }}>
@@ -129,7 +112,7 @@ export default function HowItWorks() {
       >
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
           <div className="mb-10">
-            <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>Scope</div>
+            <div className="mb-3"><Eyebrow subtle>Scope</Eyebrow></div>
             <h2 className="font-bold text-[#1A1A1A] mb-2" style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700, lineHeight: 1.2 }}>
               What&apos;s included — and what isn&apos;t
             </h2>
@@ -199,7 +182,7 @@ export default function HowItWorks() {
       {/* ── Tool Stack ── white bg */}
       <section className="bg-white text-center" style={{ padding: '80px 0' }}>
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-          <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>Tool Stack</div>
+          <div className="mb-3"><Eyebrow subtle>Tool Stack</Eyebrow></div>
           <h2 className="font-bold text-[#1A1A1A] mb-2" style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700 }}>Built on tools that work</h2>
           <p className="mb-8 max-w-xl mx-auto" style={{ color: '#4A4A4A' }}>The same modern GTM stack as the best in-house teams — built to last and not locked to us.</p>
           <div className="flex flex-wrap justify-center gap-3">

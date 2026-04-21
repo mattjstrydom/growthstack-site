@@ -2,6 +2,11 @@
 
 import { useState } from 'react';
 import BookDiscoveryButton from './BookDiscoveryButton';
+import {
+  Eyebrow,
+  primaryButtonHoverStyle,
+  primaryButtonStyle,
+} from './MarketingPrimitives';
 
 /* Extracted from growthstackhq.com CSS:
    FAQ section bg: #F7F8F7 (section-panel), border top/bottom: 1px solid #E2E5E2
@@ -93,7 +98,7 @@ export default function FAQ() {
       >
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
           <div className="mb-10">
-            <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>FAQ</div>
+            <div className="mb-3"><Eyebrow subtle>FAQ</Eyebrow></div>
             <h2 className="font-bold text-[#1A1A1A]" style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700 }}>Common questions</h2>
           </div>
 
@@ -112,7 +117,7 @@ export default function FAQ() {
       >
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(241,90,36,0.07) 0%, transparent 65%)' }} />
         <div className="relative max-w-[1100px] mx-auto px-6 lg:px-8">
-          <div className="font-bold uppercase tracking-[0.1em] mb-4" style={{ fontSize: '0.72rem', color: '#F15A24' }}>Ready to start?</div>
+          <div className="mb-4"><Eyebrow subtle>Ready to start?</Eyebrow></div>
           <h2 className="font-bold text-white mb-4" style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700 }}>Outbound running by next week.</h2>
           <p className="mb-8 max-w-lg mx-auto leading-[1.75]" style={{ color: 'rgba(255,255,255,0.58)' }}>
             Book a 30-minute discovery call. We&apos;ll look at your ICP, your current setup, and tell you exactly what it takes to get your first campaign live — no obligation.
@@ -120,15 +125,8 @@ export default function FAQ() {
           <BookDiscoveryButton
             utmContent="homepage_cta"
             className="inline-flex items-center gap-2 text-white font-semibold rounded-lg cursor-pointer transition-all"
-            style={{
-              background: '#F15A24',
-              padding: '14px 36px',
-              fontSize: '1.0625rem',
-              fontWeight: 600,
-              borderRadius: '8px',
-              boxShadow: '0 2px 12px rgba(241,90,36,0.35)',
-            }}
-            hoverStyle={{ background: '#D44E1E', boxShadow: '0 4px 20px rgba(241,90,36,0.45)' }}
+            style={primaryButtonStyle}
+            hoverStyle={primaryButtonHoverStyle}
           >
             Book a Discovery Call
             <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
