@@ -38,6 +38,8 @@ export default function Footer() {
             </h5>
             <div className="flex flex-col gap-3">
               {[
+                { label: 'Services', href: '/services' },
+                { label: 'HubSpot Cleanup', href: '/hubspot-cleanup' },
                 { label: 'How It Works', href: '/how-it-works' },
                 { label: 'HubSpot & RevOps', href: '/hubspot-revops' },
                 { label: 'About', href: '/about' },

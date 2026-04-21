@@ -159,13 +159,17 @@ export default function HubspotRevopsPage() {
                 <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.2, marginBottom: '14px' }}>
                   We turn HubSpot from a partial setup into a usable operating layer.
                 </h2>
-                <p style={{ fontSize: '1rem', color: '#555', lineHeight: 1.8 }}>
-                  Most early-stage teams have some combination of the right tools and
-                  the wrong structure. Contact data is inconsistent, stages do not
-                  reflect reality, workflows are patchy, and founders still do too
-                  much manually. We fix that.
-                </p>
-              </div>
+              <p style={{ fontSize: '1rem', color: '#555', lineHeight: 1.8 }}>
+                Most early-stage teams have some combination of the right tools and
+                the wrong structure. Contact data is inconsistent, stages do not
+                reflect reality, workflows are patchy, and founders still do too
+                much manually. We fix that.
+              </p>
+              <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.75, marginTop: '14px' }}>
+                If your main problem is a messy live portal rather than a broader
+                systems build, start with <a href="/hubspot-cleanup" style={{ color: '#F15A24', textDecoration: 'none' }}>HubSpot Cleanup</a>.
+              </p>
+            </div>
               <div
                 style={{
                   background: '#F7F8F7',
