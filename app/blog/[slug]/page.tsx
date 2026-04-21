@@ -32,10 +32,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       type: 'article',
       url: absoluteUrl(`/blog/${slug}`),
+      images: [
+        {
+          url: absoluteUrl(`/blog/${slug}/opengraph-image`),
+          width: 1200,
+          height: 630,
+          alt: `${post.h1} preview image`,
+        },
+      ],
     },
     twitter: {
       title: post.title,
       description: post.description,
+      images: [absoluteUrl(`/blog/${slug}/twitter-image`)],
     },
   };
 }

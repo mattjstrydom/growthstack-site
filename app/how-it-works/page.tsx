@@ -3,6 +3,7 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import BookDiscoveryButton from '@/components/BookDiscoveryButton';
+import { absoluteUrl, jsonLd } from '@/lib/site';
 
 const foundationSteps = [
   { day: 'D1', label: 'Kickoff', title: 'GTM and CRM Audit', body: 'We review your current motion, HubSpot setup, funnel stages, reporting gaps, and where execution is breaking down. The goal is to understand the commercial system before changing anything.' },
@@ -110,10 +111,33 @@ function TimelineStep({ day, label, title, body, dark }: { day: string; label: s
 }
 
 export default function HowItWorksPage() {
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: absoluteUrl('/'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'How It Works',
+        item: absoluteUrl('/how-it-works'),
+      },
+    ],
+  };
+
   return (
     <>
       <Navigation />
       <main style={{ paddingTop: '68px' }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbJsonLd) }}
+        />
         <section style={{ background: '#0F1B2D', padding: '80px 0 72px' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div

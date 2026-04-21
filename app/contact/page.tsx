@@ -4,8 +4,28 @@ import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import BookDiscoveryButton from '@/components/BookDiscoveryButton';
+import { absoluteUrl, jsonLd } from '@/lib/site';
 
 export default function ContactPage() {
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: absoluteUrl('/'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Contact',
+        item: absoluteUrl('/contact'),
+      },
+    ],
+  };
+
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -56,6 +76,10 @@ export default function ContactPage() {
     <>
       <Navigation />
       <main style={{ paddingTop: '68px' }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbJsonLd) }}
+        />
         <section style={{ background: '#0F1B2D', padding: '80px 0 72px' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div
