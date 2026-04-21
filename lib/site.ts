@@ -6,7 +6,7 @@ export const siteConfig = {
   description:
     "Done-for-you outbound for early-stage startups. We build your cold email + LinkedIn system and run it monthly. From $2,500, live in 10 days.",
   email: "hello@growthstackhq.com",
-  ogImage: "/icon.png",
+  ogImage: "/opengraph-image",
   social: {
     x: "@growthstackhq",
   },
