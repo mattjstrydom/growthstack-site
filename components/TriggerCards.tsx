@@ -4,83 +4,84 @@ import { Eyebrow } from './MarketingPrimitives';
 
 const CARDS = [
   {
-    icon: 'Hourglass',
+    eyebrow: 'CRM trust',
     problem: {
-      headline: 'Been meaning to sort outbound for months.',
-      detail: 'It keeps getting pushed by product, hiring, and investor calls.',
+      headline: 'HubSpot exists, but no one trusts it.',
+      detail:
+        'Properties are inconsistent, stages are messy, and reporting does not reflect what is actually happening.',
     },
     solution: {
-      headline: 'Live in 10 business days.',
+      headline: 'Clean CRM structure founders can finally use.',
       detail:
-        'We handle the full setup: ICP, lists, infrastructure, copy, and launch.',
-      metric: '10 days',
-      metricLabel: 'to first send',
+        'We set up lifecycle stages, contact and deal properties, dashboards, and workflows that reflect the real motion.',
+      metric: '1 source',
+      metricLabel: 'of truth',
     },
   },
   {
-    icon: 'Replies',
+    eyebrow: 'Founder load',
     problem: {
-      headline: 'Tried cold email yourself. Low reply rates.',
+      headline: 'Sales still lives in the founder’s head.',
       detail:
-        'Generic sequences, no deliverability setup, wrong ICP. It felt like shouting into a void.',
+        'Follow-up, qualification, handoffs, and next steps depend too much on memory and manual effort.',
     },
     solution: {
-      headline: '9.2% response rate. Proven playbook.',
+      headline: 'A repeatable process the team can actually run.',
       detail:
-        'Verified lists, warmed domains, and sequences written against a real ICP.',
-      metric: '9.2%',
-      metricLabel: 'avg. response rate',
+        'We document the flow, automate routine steps, and turn ad hoc selling into an operational system.',
+      metric: 'Clear',
+      metricLabel: 'handoffs',
     },
   },
   {
-    icon: 'Cost',
+    eyebrow: 'Tool sprawl',
     problem: {
-      headline: 'An SDR hire costs $5K-$7K/month and takes 90 days to ramp.',
+      headline: 'The team has tools, not a system.',
       detail:
-        "You do not have the runway to wait three months to find out if it works.",
+        'HubSpot, Apollo, Clay, LinkedIn, inboxes, and spreadsheets exist, but they do not work together.',
     },
     solution: {
-      headline: 'From $1,500/month. Results immediately.',
+      headline: 'Connected GTM infrastructure.',
       detail:
-        'No salary, no ramp time, no wrong hire. Setup plus retainer from day one.',
-      metric: '$1,500',
-      metricLabel: 'per month to start',
+        'We connect the stack so enrichment, outreach, CRM updates, and reporting all feed one workflow.',
+      metric: 'Connected',
+      metricLabel: 'stack',
     },
   },
   {
-    icon: 'Stack',
+    eyebrow: 'Visibility',
     problem: {
-      headline: "Apollo, Instantly, HubSpot: they do not talk to each other.",
+      headline: 'Investors want pipeline visibility.',
       detail:
-        'Tools bought, half-configured, none connected. No one knows what is actually working.',
+        'But conversion stages, funnel reporting, and commercial metrics are still fuzzy or missing.',
     },
     solution: {
-      headline: 'Integrated system that actually works.',
+      headline: 'Reporting that shows what is actually moving.',
       detail:
-        'One connected stack: enrichment, sending, CRM sync, and reporting.',
-      metric: '1 system',
-      metricLabel: 'fully connected',
+        'Dashboards, pipeline views, and tracking built for founders who need signal, not more status updates.',
+      metric: 'Weekly',
+      metricLabel: 'clarity',
     },
   },
   {
-    icon: 'Pipeline',
+    eyebrow: 'Pipeline',
     problem: {
-      headline: 'Just raised. Investors are already asking about pipeline.',
+      headline: 'Outbound is happening in fragments.',
       detail:
-        'You have three months before the next check-in. Outbound is not optional anymore.',
+        'Campaigns, replies, and follow-up live outside the CRM, so pipeline generation never becomes a real motion.',
     },
     solution: {
-      headline: 'Pipeline built. Ready to present.',
+      headline: 'Outbound inside a usable GTM system.',
       detail:
-        'Weekly metrics reports delivered to your inbox. Meetings on the calendar by month two.',
-      metric: '~12',
-      metricLabel: 'meetings/month avg.',
+        'We activate outbound where it fits, with workflows, reporting, and ownership already in place.',
+      metric: 'Repeatable',
+      metricLabel: 'pipeline',
     },
   },
 ] as const;
 
 function TriggerCard({
-  icon,
+  eyebrow,
   problem,
   solution,
 }: (typeof CARDS)[number]) {
@@ -107,44 +108,40 @@ function TriggerCard({
           borderRight: '1px solid #eadfd5',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-          <span
-            style={{
-              fontSize: '0.75rem',
-              lineHeight: 1,
-              flexShrink: 0,
-              marginTop: '2px',
-              color: '#b86b60',
-              border: '1px solid #efdbd1',
-              background: '#ffffff',
-              padding: '7px 8px',
-              borderRadius: '9999px',
-              fontWeight: 700,
-              letterSpacing: '0.04em',
-              textTransform: 'uppercase',
-            }}
-          >
-            {icon}
-          </span>
-          <p
-            style={{
-              fontSize: 'clamp(0.875rem,1.6vw,1rem)',
-              fontWeight: 700,
-              color: '#7e3d34',
-              lineHeight: 1.35,
-              margin: 0,
-            }}
-          >
-            {problem.headline}
-          </p>
-        </div>
+        <span
+          style={{
+            display: 'inline-flex',
+            alignSelf: 'flex-start',
+            fontSize: '0.67rem',
+            fontWeight: 700,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color: '#b86b60',
+            border: '1px solid #efdbd1',
+            background: '#ffffff',
+            padding: '6px 9px',
+            borderRadius: '9999px',
+          }}
+        >
+          {eyebrow}
+        </span>
+        <p
+          style={{
+            fontSize: 'clamp(0.875rem,1.6vw,1rem)',
+            fontWeight: 700,
+            color: '#7e3d34',
+            lineHeight: 1.35,
+            margin: 0,
+          }}
+        >
+          {problem.headline}
+        </p>
         <p
           style={{
             fontSize: 'clamp(0.78rem,1.3vw,0.875rem)',
             color: '#716960',
             lineHeight: 1.6,
             margin: 0,
-            paddingLeft: '58px',
           }}
         >
           {problem.detail}
@@ -226,7 +223,6 @@ function TriggerCard({
 export default function TriggerCards() {
   return (
     <section
-      id="how-it-works"
       style={{
         background: '#FCFAF7',
         padding: '80px 0 88px',
@@ -236,7 +232,7 @@ export default function TriggerCards() {
       <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
         <div className="mb-10">
           <div className="mb-4">
-            <Eyebrow subtle>Sound Familiar?</Eyebrow>
+            <Eyebrow subtle>What Founders Are Really Dealing With</Eyebrow>
           </div>
           <h2
             className="font-bold text-[#172033]"
@@ -244,22 +240,23 @@ export default function TriggerCards() {
               fontSize: 'clamp(1.75rem,3.5vw,2.75rem)',
               fontWeight: 700,
               lineHeight: 1.2,
-              maxWidth: '640px',
+              maxWidth: '720px',
             }}
           >
-            Every founder hits the same wall.
+            Most early-stage teams do not need another tool. They need their
+            commercial system to work.
           </h2>
           <p
             style={{
               fontSize: '1rem',
               color: '#5C5852',
               marginTop: '12px',
-              maxWidth: '520px',
+              maxWidth: '620px',
               lineHeight: 1.65,
             }}
           >
-            Here&apos;s what we hear on almost every discovery call and what we do
-            about it.
+            GrowthStack turns scattered sales activity into a GTM engine you can
+            actually run, measure, and improve.
           </p>
         </div>
 
@@ -282,7 +279,7 @@ export default function TriggerCards() {
               color: '#b86b60',
             }}
           >
-            The problem
+            What is broken
           </div>
           <div
             style={{
@@ -293,7 +290,7 @@ export default function TriggerCards() {
               color: '#2d8f66',
             }}
           >
-            GrowthStack solves it
+            What GrowthStack builds
           </div>
         </div>
 

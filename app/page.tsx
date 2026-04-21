@@ -25,7 +25,7 @@ export default function Home() {
         name: 'What does GrowthStack do?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'GrowthStack builds and runs done-for-you outbound sales systems for early-stage B2B startups. We set up your cold email and LinkedIn outreach infrastructure, write the sequences, build your lead lists, and manage campaigns monthly so you book meetings without doing it yourself.',
+          text: 'GrowthStack helps early-stage B2B startups build the GTM and RevOps foundation behind repeatable pipeline. That includes HubSpot setup, pipeline design, lifecycle stages, workflow automation, reporting, and outbound activation.',
         },
       },
       {
@@ -33,15 +33,15 @@ export default function Home() {
         name: 'How much does GrowthStack cost?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The GTM Foundation starts at $2,500 as a one-time setup. The Outbound Management monthly retainer starts at $1,500 per month.',
+          text: 'The Foundation Build starts at $2,500 as a one-time setup. Pipeline Activation support starts at $1,500 per month.',
         },
       },
       {
         '@type': 'Question',
-        name: 'How quickly can you get outbound running?',
+        name: 'How quickly can you build the foundation?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The GTM Foundation is completed in 10 to 15 business days. That includes ICP definition, lead list building, email infrastructure, sequence writing, and the first campaign going live.',
+          text: 'The Foundation Build is completed in 10 to 15 business days. That includes HubSpot setup or cleanup, pipeline structure, key workflows, reporting, and the commercial system needed before activation.',
         },
       },
       {
@@ -49,15 +49,15 @@ export default function Home() {
         name: 'Who is GrowthStack for?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "GrowthStack is built for B2B startup founders who have recently raised, from pre-seed to Series A, and need a working outbound motion but cannot yet justify a full-time SDR hire.",
+          text: 'GrowthStack is built for early-stage B2B startups that need clearer pipeline, cleaner systems, and a more repeatable go-to-market motion.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Do I own the system you build?',
+        name: 'Do you manage outbound too?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. All sending domains, inboxes, CRM configurations, sequences, and contacts are built on your own accounts. If you end the engagement, you keep everything.',
+          text: 'Yes. GrowthStack can activate outbound once the right GTM and RevOps foundation is in place, so campaigns run inside a usable system instead of alongside one.',
         },
       },
     ],

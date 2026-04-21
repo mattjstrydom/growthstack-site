@@ -38,24 +38,10 @@ function TestimonialCard({ t }: { t: Testimonial }) {
           />
         </div>
         <div>
-          <div
-            style={{
-              fontWeight: 700,
-              fontSize: '0.9375rem',
-              color: '#1A1A1A',
-              lineHeight: 1.2,
-            }}
-          >
+          <div style={{ fontWeight: 700, fontSize: '0.9375rem', color: '#1A1A1A', lineHeight: 1.2 }}>
             {t.name}
           </div>
-          <div
-            style={{
-              fontSize: '0.8rem',
-              color: '#F15A24',
-              fontWeight: 600,
-              marginTop: '2px',
-            }}
-          >
+          <div style={{ fontSize: '0.8rem', color: '#F15A24', fontWeight: 600, marginTop: '2px' }}>
             {t.company}
           </div>
           <div style={{ fontSize: '0.75rem', color: '#888', marginTop: '1px' }}>
@@ -161,7 +147,7 @@ export default function Testimonials() {
       <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="mb-4">
-            <Eyebrow subtle>Results</Eyebrow>
+            <Eyebrow subtle>Proof</Eyebrow>
           </div>
           <h2
             className="font-bold"
@@ -172,20 +158,21 @@ export default function Testimonials() {
               lineHeight: 1.2,
             }}
           >
-            Founders building pipeline with GrowthStack
+            Built for teams creating their first repeatable revenue system
           </h2>
           <p
             style={{
               fontSize: '1.0625rem',
               color: '#666',
               marginTop: '12px',
-              maxWidth: '520px',
+              maxWidth: '640px',
               margin: '12px auto 0',
               lineHeight: 1.65,
             }}
           >
-            Real results from early-stage B2B founders across the US, UK, and East
-            Africa.
+            From CRM structure and reporting to pipeline activation, GrowthStack
+            helps early-stage teams turn scattered selling into measurable
+            pipeline.
           </p>
         </div>
 
@@ -199,9 +186,9 @@ export default function Testimonials() {
           }}
         >
           {[
-            { value: '9.2%', label: 'Average response rate' },
-            { value: '10 days', label: 'To first live campaign' },
-            { value: '3-4x', label: 'Lower cost than an SDR' },
+            { value: '10 days', label: 'To a working commercial foundation' },
+            { value: '1 system', label: 'For CRM, workflow, and pipeline visibility' },
+            { value: '3-4x lower', label: 'Cost than building the full function in-house' },
           ].map(({ value, label }) => (
             <div
               key={label}

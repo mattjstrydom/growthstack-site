@@ -8,40 +8,36 @@ import {
   primaryButtonStyle,
 } from './MarketingPrimitives';
 
-/* Extracted from growthstackhq.com CSS:
-   FAQ section bg: #F7F8F7 (section-panel), border top/bottom: 1px solid #E2E5E2
-   FAQ item: padding 28px 0, border-bottom 1px solid #E2E5E2
-   FAQ q: 1.0625rem / weight 600 / color #1A1A1A
-   FAQ a: 0.9875rem / color #4A4A4A / line-height 1.75
-   CTA section: bg #0F1B2D, padding 100px 0
-   CTA h2: #FFFFFF / p: rgba(255,255,255,0.58) / note: rgba(255,255,255,0.28)
-   CTA glow: radial-gradient(circle, rgba(241,90,36,0.07) 0%, transparent 65%)
-*/
-
 const faqs = [
   {
     question: 'What does GrowthStack do?',
-    answer: 'GrowthStack builds and runs done-for-you outbound sales systems for early-stage B2B startups. We set up your cold email and LinkedIn outreach infrastructure, write the sequences, build your lead lists, and manage campaigns monthly — so you book meetings without doing it yourself.',
+    answer:
+      'GrowthStack helps early-stage B2B startups build the GTM and RevOps foundation behind repeatable pipeline. That includes HubSpot setup, pipeline design, lifecycle stages, workflow automation, reporting, and outbound activation.',
   },
   {
-    question: 'How much does GrowthStack cost?',
-    answer: 'The GTM Foundation — a one-time setup that gets your outbound system built and live — starts at $2,500. The Outbound Management monthly retainer starts at $1,500 per month.',
+    question: 'Is GrowthStack an outbound agency or a RevOps partner?',
+    answer:
+      'We are closer to a GTM systems and RevOps partner. Outbound is one of the ways we help generate pipeline, but it sits inside a broader commercial system.',
   },
   {
-    question: 'How quickly can you get outbound running?',
-    answer: 'The GTM Foundation is completed in 10 to 15 business days. That covers ICP definition, lead list building, email infrastructure, sequence writing, and the first campaign going live.',
+    question: 'Do you only work in HubSpot?',
+    answer:
+      'HubSpot is our preferred CRM environment for early-stage teams because it gives founders a strong operational core. We also work with the surrounding tool stack that feeds and supports it.',
   },
   {
-    question: 'Who is GrowthStack for?',
-    answer: "GrowthStack is built for B2B startup founders who have recently raised (pre-seed to Series A) and need a working outbound motion but can't yet justify a full-time SDR hire.",
+    question: 'Can you help if our HubSpot is already live but messy?',
+    answer:
+      'Yes. We can audit, clean up, and restructure an existing HubSpot setup so your pipeline, reporting, and automations reflect how the business actually sells.',
   },
   {
-    question: 'Is GrowthStack cheaper than hiring an SDR?',
-    answer: "Yes. A fully loaded junior SDR in the US costs $7,000–$10,000 per month in year one. GrowthStack's setup plus retainer costs a fraction of that, with results starting in weeks rather than months.",
+    question: 'Do you manage outbound too?',
+    answer:
+      'Yes. We can activate outbound once the right GTM and RevOps foundation is in place, so campaigns run inside a usable system instead of alongside one.',
   },
   {
-    question: 'Do I own the system you build?',
-    answer: 'Yes. All sending domains, inboxes, CRM configurations, sequences, and contacts are built on your own accounts. If you end the engagement, you keep everything.',
+    question: 'Who is GrowthStack best for?',
+    answer:
+      'Early-stage B2B startups that need clearer pipeline, cleaner systems, and a more repeatable go-to-market motion.',
   },
 ];
 
@@ -77,7 +73,9 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         </span>
       </button>
       {open && (
-        <p className="mt-3 leading-[1.75]" style={{ fontSize: '0.9875rem', color: '#4A4A4A' }}>{answer}</p>
+        <p className="mt-3 leading-[1.75]" style={{ fontSize: '0.9875rem', color: '#4A4A4A' }}>
+          {answer}
+        </p>
       )}
     </div>
   );
@@ -86,7 +84,6 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 export default function FAQ() {
   return (
     <>
-      {/* ── FAQ ── panel bg */}
       <section
         id="faq"
         style={{
@@ -98,8 +95,12 @@ export default function FAQ() {
       >
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
           <div className="mb-10">
-            <div className="mb-3"><Eyebrow subtle>FAQ</Eyebrow></div>
-            <h2 className="font-bold text-[#1A1A1A]" style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700 }}>Common questions</h2>
+            <div className="mb-3">
+              <Eyebrow subtle>FAQ</Eyebrow>
+            </div>
+            <h2 className="font-bold text-[#1A1A1A]" style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700 }}>
+              Common questions
+            </h2>
           </div>
 
           <div className="max-w-3xl">
@@ -110,17 +111,22 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* ── CTA ── dark bg */}
       <section
         className="relative overflow-hidden text-center"
         style={{ background: '#0F1B2D', padding: '100px 0' }}
       >
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(241,90,36,0.07) 0%, transparent 65%)' }} />
         <div className="relative max-w-[1100px] mx-auto px-6 lg:px-8">
-          <div className="mb-4"><Eyebrow subtle>Ready to start?</Eyebrow></div>
-          <h2 className="font-bold text-white mb-4" style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700 }}>Outbound running by next week.</h2>
+          <div className="mb-4">
+            <Eyebrow subtle>Ready to start?</Eyebrow>
+          </div>
+          <h2 className="font-bold text-white mb-4" style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700 }}>
+            Turn sales chaos into a working GTM engine.
+          </h2>
           <p className="mb-8 max-w-lg mx-auto leading-[1.75]" style={{ color: 'rgba(255,255,255,0.58)' }}>
-            Book a 30-minute discovery call. We&apos;ll look at your ICP, your current setup, and tell you exactly what it takes to get your first campaign live — no obligation.
+            Book a discovery call and we&apos;ll look at your current GTM setup,
+            HubSpot structure, pipeline flow, and where the biggest gaps are.
+            You&apos;ll leave with a clearer view of what needs fixing first.
           </p>
           <BookDiscoveryButton
             utmContent="homepage_cta"
@@ -134,7 +140,7 @@ export default function FAQ() {
             </svg>
           </BookDiscoveryButton>
           <p className="mt-4" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.28)' }}>
-            No pitch deck. No proposal until you ask. Just a useful conversation.
+            No pitch deck. No generic audit. Just a useful working session.
           </p>
         </div>
       </section>

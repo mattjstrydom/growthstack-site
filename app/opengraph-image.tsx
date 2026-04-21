@@ -84,7 +84,7 @@ export default function Image() {
               marginBottom: "18px",
             }}
           >
-            Outbound for Early-Stage Startups
+            GTM Systems and RevOps for Early-Stage B2B
           </div>
           <div
             style={{
@@ -97,8 +97,8 @@ export default function Image() {
               marginBottom: "22px",
             }}
           >
-            <div style={{ display: "flex" }}>Build pipeline without</div>
-            <div style={{ display: "flex" }}>hiring too soon.</div>
+            <div style={{ display: "flex" }}>From founder-led sales</div>
+            <div style={{ display: "flex" }}>to a working GTM engine.</div>
           </div>
           <div
             style={{
@@ -107,8 +107,8 @@ export default function Image() {
               color: "rgba(255,255,255,0.72)",
             }}
           >
-            Done-for-you cold email and LinkedIn systems, live in 10 business
-            days.
+            HubSpot setup, CRM design, automation, reporting, and pipeline
+            activation built into one working system.
           </div>
         </div>
       </div>

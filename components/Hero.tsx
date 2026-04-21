@@ -28,32 +28,38 @@ export default function Hero() {
       />
 
       <div className="relative max-w-[1100px] mx-auto px-6 lg:px-8 pb-[120px]">
-        <div className="max-w-[720px]">
+        <div className="max-w-[760px]">
           <div className="mb-6">
-            <Eyebrow>For B2B Startups That Just Raised</Eyebrow>
+            <Eyebrow>GTM Systems and RevOps for Early-Stage B2B</Eyebrow>
           </div>
 
           <h1
             className="font-bold text-white leading-tight mb-6"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 700 }}
           >
-            You raised.
+            From founder-led sales
             <br />
             <em className="not-italic" style={{ color: '#F15A24' }}>
-              Now you need pipeline.
+              to a working GTM engine.
             </em>
           </h1>
 
           <p
-            className="mb-8 leading-[1.75] max-w-[600px]"
+            className="mb-5 leading-[1.75] max-w-[660px]"
             id="gs-what-we-do"
-            style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.7)' }}
+            style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.74)' }}
           >
-            GrowthStack builds and runs done-for-you outbound for early-stage B2B
-            startups. We set up your cold email and LinkedIn system, build your
-            lead lists, and manage campaigns monthly so founders book meetings
-            without doing it themselves. From zero to live campaign in 10 business
-            days, from $2,500.
+            GrowthStack helps early-stage B2B startups set up HubSpot, structure
+            pipeline, automate workflows, and activate outbound inside one working
+            system.
+          </p>
+
+          <p
+            className="mb-8 leading-[1.75] max-w-[640px]"
+            style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.58)' }}
+          >
+            CRM, pipeline, automation, reporting, and outbound built for founders
+            who need a system, not more scattered tools.
           </p>
         </div>
 
@@ -101,16 +107,15 @@ export default function Hero() {
                 e.currentTarget.style.color = '#FFFFFF';
               }}
             >
-              See how it works
+              See How It Works
             </a>
           </div>
 
           <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)' }}>
             <strong style={{ color: 'rgba(255,255,255,0.84)' }}>
-              Used by B2B founders
+              Used by early-stage B2B teams
             </strong>{' '}
-            in the US, UK, and East Africa to build their first reliable outbound
-            motion.
+            building their first repeatable revenue motion.
           </p>
         </div>
       </div>

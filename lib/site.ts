@@ -2,9 +2,9 @@ export const siteConfig = {
   name: "GrowthStack",
   shortName: "GrowthStack",
   url: "https://www.growthstackhq.com",
-  title: "GrowthStack | Outbound for Early-Stage Startups",
+  title: "GrowthStack | GTM Systems and RevOps for Early-Stage B2B Startups",
   description:
-    "Done-for-you outbound for early-stage startups. We build your cold email + LinkedIn system and run it monthly. From $2,500, live in 10 days.",
+    "GrowthStack helps early-stage B2B startups build the systems behind repeatable pipeline: HubSpot setup, CRM design, reporting, automation, and outbound activation.",
   email: "hello@growthstackhq.com",
   ogImage: "/opengraph-image",
   social: {
