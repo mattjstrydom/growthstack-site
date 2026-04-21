@@ -15,7 +15,7 @@ export default function Hero() {
       style={{
         background:
           'radial-gradient(circle at 62% 18%, rgba(241,90,36,0.12) 0%, transparent 30%), linear-gradient(180deg, #102033 0%, #16283d 62%, #f6efe6 100%)',
-        paddingTop: '160px',
+        paddingTop: '136px',
         paddingBottom: '0',
       }}
     >
@@ -27,7 +27,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-[1100px] mx-auto px-6 lg:px-8 pb-[120px]">
+      <div className="relative max-w-[1100px] mx-auto px-6 lg:px-8 pb-[96px] sm:pb-[120px]">
         <div className="max-w-[760px]">
           <div className="mb-6">
             <Eyebrow>GTM Systems and RevOps for Early-Stage B2B</Eyebrow>

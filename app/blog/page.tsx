@@ -86,7 +86,7 @@ export default function BlogPage() {
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div
               className="grid gap-6"
-              style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))' }}
+              style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}
             >
               {sortedPosts.map((post) => (
                 <Link

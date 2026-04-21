@@ -14,7 +14,10 @@ export default function Footer() {
       }}
     >
       <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-        <div className="grid sm:grid-cols-3 gap-12 mb-12" style={{ gridTemplateColumns: '1.4fr 1fr 1fr' }}>
+        <div
+          className="grid gap-12 mb-12 md:grid-cols-3"
+          style={{}}
+        >
           <div>
             <div className="flex items-center gap-[10px] font-bold text-white mb-3" style={{ fontSize: '1rem' }}>
               <div className="flex items-end gap-[3px]">
@@ -39,9 +42,9 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               {[
                 { label: 'Services', href: '/services' },
+                { label: 'HubSpot & RevOps', href: '/hubspot-revops' },
                 { label: 'HubSpot Cleanup', href: '/hubspot-cleanup' },
                 { label: 'How It Works', href: '/how-it-works' },
-                { label: 'HubSpot & RevOps', href: '/hubspot-revops' },
                 { label: 'About', href: '/about' },
                 { label: 'Blog', href: '/blog' },
                 { label: 'Contact', href: '/contact' },
@@ -84,7 +87,7 @@ export default function Footer() {
           style={{ borderTop: '1px solid rgba(255,255,255,0.07)', fontSize: '0.8rem', color: 'rgba(255,255,255,0.22)' }}
         >
           <p>&copy; 2026 GrowthStack. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link href="/privacy-policy" className="transition-colors hover:text-white/50">
               Privacy Policy
             </Link>
