@@ -1,6 +1,6 @@
 'use client';
 
-import { CSSProperties, useState } from 'react';
+import { CSSProperties, useRef, useState } from 'react';
 
 type CalNamespaceApi = ((...args: unknown[]) => void) & { q?: unknown[] };
 type CalApi = ((...args: unknown[]) => void) & {
@@ -46,7 +46,7 @@ function ensureCalLoaded() {
       resolve();
     };
 
-    if (window.Cal?.loaded && window.Cal?.ns?.discovery) {
+    if (window.Cal?.loaded) {
       onReady();
       return;
     }
@@ -87,7 +87,9 @@ function ensureCalLoaded() {
     const existing = document.querySelector<HTMLScriptElement>('script[data-growthstack-cal="true"]');
     if (existing) {
       existing.addEventListener('load', onReady, { once: true });
-      existing.addEventListener('error', () => reject(new Error('Failed to load Cal.com')), { once: true });
+      existing.addEventListener('error', () => reject(new Error('Failed to load Cal.com')), {
+        once: true,
+      });
       return;
     }
 
@@ -111,7 +113,7 @@ export default function BookDiscoveryButton({
   children,
 }: Props) {
   const [hovered, setHovered] = useState(false);
-
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const calLink = `growthstackhq/discovery?utm_source=growthstackhq&utm_medium=website&utm_campaign=discovery_call&utm_content=${utmContent}`;
 
   const handleClick = async () => {
@@ -124,19 +126,18 @@ export default function BookDiscoveryButton({
       });
     }
 
-    await ensureCalLoaded();
-
-    window.Cal?.ns?.discovery?.('modal', {
-      calLink,
-      config: {
-        layout: 'month_view',
-        useSlotsViewOnSmallScreen: true,
-      },
-    });
+    if (!window.Cal?.loaded) {
+      await ensureCalLoaded();
+      buttonRef.current?.click();
+    }
   };
 
   return (
     <button
+      ref={buttonRef}
+      data-cal-link={calLink}
+      data-cal-namespace="discovery"
+      data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
       onClick={() => {
         void handleClick();
       }}
