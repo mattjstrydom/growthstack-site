@@ -2,6 +2,7 @@
 
 import BookDiscoveryButton from './BookDiscoveryButton';
 import BeforeAfterSlider from './BeforeAfterSlider';
+import Link from 'next/link';
 import {
   Eyebrow,
   primaryButtonHoverStyle,
@@ -85,8 +86,8 @@ export default function Hero() {
               </svg>
             </BookDiscoveryButton>
 
-            <a
-              href="#how-it-works"
+            <Link
+              href="/how-it-works"
               className="inline-flex items-center justify-center font-semibold rounded-lg"
               style={{
                 padding: '14px 36px',
@@ -97,6 +98,7 @@ export default function Hero() {
                 color: '#FFFFFF',
                 transition: 'border-color 0.2s ease, color 0.2s ease',
                 cursor: 'pointer',
+                textDecoration: 'none',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(255,255,255,0.65)';
@@ -108,7 +110,7 @@ export default function Hero() {
               }}
             >
               See How It Works
-            </a>
+            </Link>
           </div>
 
           <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)' }}>
