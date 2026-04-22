@@ -1,356 +1,305 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-
-/* ─── data ─────────────────────────────────────────────────────── */
-const BEFORE = [
-  { value: '0',      label: 'Qualified Leads' },
-  { value: '2%',     label: 'Response Rate'   },
-  { value: '0 /mo',  label: 'Meetings Booked' },
-  { value: 'Manual', label: 'Effort'          },
+const systemLayers = [
+  {
+    title: 'HubSpot foundation',
+    body: 'Lifecycle stages, pipelines, properties, and views set up so the CRM reflects how revenue actually moves.',
+    accent: '#F15A24',
+  },
+  {
+    title: 'Workflow automation',
+    body: 'Routing, handoffs, task creation, and core automations reduce founder dependence and manual admin.',
+    accent: '#4ADE80',
+  },
+  {
+    title: 'Reporting and visibility',
+    body: 'Dashboards and source-to-pipeline views show what is moving, where deals stall, and what needs attention.',
+    accent: '#7DD3FC',
+  },
 ];
 
-const AFTER = [
-  { value: '38',     label: 'Qualified Leads' },
-  { value: '9.2%',   label: 'Response Rate'   },
-  { value: '12 /mo', label: 'Meetings Booked' },
-  { value: 'Auto',   label: 'Effort'          },
+const outcomes = [
+  { value: '1', label: 'usable system' },
+  { value: 'Clear', label: 'handoffs' },
+  { value: 'Live', label: 'pipeline visibility' },
+  { value: 'Ready', label: 'for activation' },
 ];
 
-/* ─── inner panel ───────────────────────────────────────────────── */
-function Panel({ side }: { side: 'before' | 'after' }) {
-  const isBefore = side === 'before';
-  const accent    = isBefore ? '#FF6060' : '#4ADE80';
-  const cardBg    = isBefore ? '#1a0c0c' : '#0a1a10';
-  const cardBord  = isBefore ? '#3d1515'  : '#0f3320';
-  const metrics   = isBefore ? BEFORE : AFTER;
-
-  return (
-    <div
-      style={{
-        position : 'absolute',
-        inset    : 0,
-        background: isBefore
-          ? '#0e1520'
-          : '#0c1a16',
-        padding       : 'clamp(14px, 3vw, 22px) clamp(14px, 3vw, 24px) 14px',
-        display       : 'flex',
-        flexDirection : 'column',
-        gap           : '12px',
-      }}
-    >
-      {/* ── header row ── */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '7px', flexWrap: 'nowrap' }}>
-        <span style={{ fontSize: '0.85rem', lineHeight: 1, flexShrink: 0 }}>
-          {isBefore ? '❌' : '✅'}
-        </span>
-        <span
-          style={{
-            fontSize     : 'clamp(0.58rem, 1.4vw, 0.68rem)',
-            fontWeight   : 700,
-            letterSpacing: '0.09em',
-            textTransform: 'uppercase',
-            color        : accent,
-            whiteSpace   : 'nowrap',
-          }}
-        >
-          {isBefore ? 'Without GrowthStack' : 'With GrowthStack'}
-        </span>
-
-        {/* status pill */}
-        <span
-          style={{
-            marginLeft  : 'auto',
-            display     : 'inline-flex',
-            alignItems  : 'center',
-            gap         : '4px',
-            fontSize    : 'clamp(0.55rem, 1.2vw, 0.62rem)',
-            color       : 'rgba(255,255,255,0.38)',
-            whiteSpace  : 'nowrap',
-            flexShrink  : 0,
-          }}
-        >
-          <span
-            style={{
-              width       : '6px',
-              height      : '6px',
-              borderRadius: '50%',
-              background  : accent,
-              boxShadow   : `0 0 6px ${accent}`,
-              display     : 'inline-block',
-              flexShrink  : 0,
-            }}
-          />
-          {isBefore ? 'STRUGGLING' : 'GROWING'}
-        </span>
-      </div>
-
-      {/* ── metric cards ── */}
-      <div
-        style={{
-          display            : 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap                : 'clamp(5px, 1vw, 8px)',
-          flex               : 1,
-        }}
-      >
-        {metrics.map((m, i) => (
-          <div
-            key={i}
-            style={{
-              background   : cardBg,
-              border       : `1px solid ${cardBord}`,
-              borderRadius : '8px',
-              padding      : 'clamp(8px, 1.5vw, 12px) clamp(6px, 1.2vw, 10px)',
-              display      : 'flex',
-              flexDirection: 'column',
-              gap          : '4px',
-            }}
-          >
-            <div
-              style={{
-                fontSize           : 'clamp(1.1rem, 2.8vw, 1.7rem)',
-                fontWeight         : 800,
-                color              : accent,
-                lineHeight         : 1,
-                fontVariantNumeric : 'tabular-nums',
-                letterSpacing      : '-0.02em',
-              }}
-            >
-              {m.value}
-            </div>
-            <div
-              style={{
-                fontSize  : 'clamp(0.58rem, 1.3vw, 0.66rem)',
-                color     : 'rgba(255,255,255,0.38)',
-                lineHeight: 1.3,
-                fontWeight: 500,
-              }}
-            >
-              {m.label}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── footer note ── */}
-      <div
-        style={{
-          fontSize  : 'clamp(0.58rem, 1.3vw, 0.68rem)',
-          color     : 'rgba(255,255,255,0.28)',
-          fontStyle : 'italic',
-          lineHeight: 1.3,
-        }}
-      >
-        {isBefore
-          ? 'Hours lost to manual prospecting. No predictable system.'
-          : 'Pipeline running while you focus on building the product.'}
-      </div>
-    </div>
-  );
-}
-
-/* ─── main component ────────────────────────────────────────────── */
 export default function BeforeAfterSlider() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isDragging   = useRef(false);
-  const [pos, setPos]         = useState(50);   // 0–100 %
-  const [hintDone, setHintDone] = useState(false);
-
-  /* intro nudge animation: 50 → 35 → 50 in the first 1.8 s */
-  useEffect(() => {
-    const tid = setTimeout(() => {
-      let frame = 0;
-      const FRAMES = 60;
-      const tick = () => {
-        frame++;
-        if (isDragging.current) { setHintDone(true); return; }
-        // ease out then ease back
-        const t = frame / FRAMES;
-        const eased = t < 0.5
-          ? 2 * t * t
-          : 1 - Math.pow(-2 * t + 2, 2) / 2;
-        const target = frame <= FRAMES / 2 ? 35 : 50;
-        setPos(prev => prev + (target - prev) * 0.12);
-        if (frame < FRAMES) requestAnimationFrame(tick);
-        else { setPos(50); setHintDone(true); }
-      };
-      requestAnimationFrame(tick);
-    }, 900);
-    return () => clearTimeout(tid);
-  }, []);
-
-  const updatePos = useCallback((clientX: number) => {
-    if (!containerRef.current) return;
-    const { left, width } = containerRef.current.getBoundingClientRect();
-    setPos(Math.min(95, Math.max(5, ((clientX - left) / width) * 100)));
-  }, []);
-
-  useEffect(() => {
-    const onMove     = (e: MouseEvent)  => { if (isDragging.current) updatePos(e.clientX); };
-    const onUp       = ()               => { isDragging.current = false; };
-    const onTouchMove = (e: TouchEvent) => {
-      if (!isDragging.current) return;
-      e.preventDefault();
-      updatePos(e.touches[0].clientX);
-    };
-    const onTouchEnd = () => { isDragging.current = false; };
-
-    window.addEventListener('mousemove',  onMove);
-    window.addEventListener('mouseup',    onUp);
-    window.addEventListener('touchmove',  onTouchMove, { passive: false });
-    window.addEventListener('touchend',   onTouchEnd);
-    return () => {
-      window.removeEventListener('mousemove',  onMove);
-      window.removeEventListener('mouseup',    onUp);
-      window.removeEventListener('touchmove',  onTouchMove);
-      window.removeEventListener('touchend',   onTouchEnd);
-    };
-  }, [updatePos]);
-
   return (
     <div style={{ marginBottom: '40px' }}>
-      {/* ── container ── */}
       <div
-        ref={containerRef}
+        className="hero-system-preview"
         style={{
-          position    : 'relative',
-          height      : 'clamp(190px, 28vw, 230px)',
-          borderRadius: '14px',
-          overflow    : 'hidden',
-          cursor      : 'ew-resize',
-          userSelect  : 'none',
-          border      : '1px solid rgba(255,255,255,0.09)',
-          touchAction : 'none',
+          position: 'relative',
+          overflow: 'hidden',
+          borderRadius: '20px',
+          border: '1px solid rgba(255,255,255,0.1)',
+          background:
+            'linear-gradient(180deg, rgba(8,16,28,0.92) 0%, rgba(12,22,36,0.96) 100%)',
+          boxShadow: '0 30px 70px rgba(7,12,20,0.38)',
         }}
-        onMouseDown={e  => { isDragging.current = true; updatePos(e.clientX); }}
-        onTouchStart={e => { isDragging.current = true; updatePos(e.touches[0].clientX); }}
       >
-        {/* before — base layer */}
-        <Panel side="before" />
-
-        {/* after — revealed from the right */}
         <div
+          className="absolute inset-0 pointer-events-none"
           style={{
-            position : 'absolute',
-            inset    : 0,
-            clipPath : `inset(0 0 0 ${pos}%)`,
-            willChange: 'clip-path',
-          }}
-        >
-          <Panel side="after" />
-        </div>
-
-        {/* ── vertical divider line ── */}
-        <div
-          style={{
-            position  : 'absolute',
-            top       : 0,
-            bottom    : 0,
-            left      : `${pos}%`,
-            width     : '2px',
-            transform : 'translateX(-50%)',
-            background: '#F15A24',
-            zIndex    : 20,
-            pointerEvents: 'none',
-            willChange: 'left',
+            background:
+              'radial-gradient(circle at top right, rgba(241,90,36,0.16) 0%, transparent 32%), radial-gradient(circle at 20% 80%, rgba(125,211,252,0.08) 0%, transparent 34%)',
           }}
         />
 
-        {/* ── drag handle ── */}
         <div
+          className="hero-system-grid"
           style={{
-            position  : 'absolute',
-            top       : '50%',
-            left      : `${pos}%`,
-            transform : 'translate(-50%, -50%)',
-            zIndex    : 30,
-            pointerEvents: 'auto',
-            willChange: 'left',
+            position: 'relative',
+            display: 'grid',
+            gridTemplateColumns: '1.1fr 0.9fr',
           }}
         >
           <div
             style={{
-              width       : '40px',
-              height      : '40px',
-              borderRadius: '50%',
-              background  : '#F15A24',
-              display     : 'flex',
-              alignItems  : 'center',
-              justifyContent: 'center',
-              boxShadow   : '0 0 0 3px rgba(241,90,36,0.25), 0 0 20px rgba(241,90,36,0.55), 0 2px 10px rgba(0,0,0,0.5)',
-              cursor      : 'ew-resize',
-              /* pulse on first load until user interacts */
-              animation   : hintDone ? 'none' : 'gs-pulse 1.4s ease-in-out infinite',
+              padding: 'clamp(22px,4vw,34px)',
+              borderRight: '1px solid rgba(255,255,255,0.08)',
             }}
           >
-            {/* ←→ arrows */}
-            <svg viewBox="0 0 22 14" width="22" height="14" fill="none">
-              <path d="M1 7h20M6 2L1 7l5 5M16 2l5 5-5 5"
-                stroke="white" strokeWidth="1.8"
-                strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          {/* "drag" hint label — fades out after interaction */}
-          {!hintDone && (
             <div
               style={{
-                position   : 'absolute',
-                top        : '110%',
-                left       : '50%',
-                transform  : 'translateX(-50%)',
-                marginTop  : '6px',
-                fontSize   : '0.58rem',
-                fontWeight : 700,
-                letterSpacing: '0.08em',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '0.72rem',
+                fontWeight: 700,
+                letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color      : 'rgba(255,255,255,0.45)',
-                whiteSpace : 'nowrap',
-                pointerEvents: 'none',
+                color: '#F15A24',
+                marginBottom: '18px',
               }}
             >
-              drag
+              <span
+                style={{
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: '9999px',
+                  background: '#F15A24',
+                  boxShadow: '0 0 12px rgba(241,90,36,0.8)',
+                }}
+              />
+              What GrowthStack builds
             </div>
-          )}
-        </div>
 
-        {/* ── corner labels ── */}
-        <div style={{
-          position    : 'absolute',
-          bottom      : '10px',
-          left        : '12px',
-          fontSize    : '0.6rem',
-          fontWeight  : 700,
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          color       : 'rgba(255,100,100,0.5)',
-          pointerEvents: 'none',
-          zIndex      : 5,
-        }}>
-          BEFORE
-        </div>
-        <div style={{
-          position    : 'absolute',
-          bottom      : '10px',
-          right       : '12px',
-          fontSize    : '0.6rem',
-          fontWeight  : 700,
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          color       : 'rgba(74,222,128,0.5)',
-          pointerEvents: 'none',
-          zIndex      : 5,
-        }}>
-          AFTER
+            <div style={{ display: 'grid', gap: '12px' }}>
+              {systemLayers.map((layer, index) => (
+                <div
+                  key={layer.title}
+                  className="hero-system-layer"
+                  style={{
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    borderRadius: '16px',
+                    padding: '18px 18px 16px',
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      marginBottom: '8px',
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: '26px',
+                        height: '26px',
+                        borderRadius: '9999px',
+                        background: 'rgba(255,255,255,0.06)',
+                        border: `1px solid ${layer.accent}44`,
+                        color: layer.accent,
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '0.78rem',
+                        fontWeight: 700,
+                        flexShrink: 0,
+                      }}
+                    >
+                      0{index + 1}
+                    </span>
+                    <div
+                      style={{
+                        fontSize: '1rem',
+                        fontWeight: 700,
+                        color: '#FFFFFF',
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {layer.title}
+                    </div>
+                  </div>
+                  <p
+                    style={{
+                      margin: 0,
+                      fontSize: '0.9rem',
+                      color: 'rgba(255,255,255,0.62)',
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    {layer.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div
+            style={{
+              padding: 'clamp(22px,4vw,34px)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              gap: '20px',
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,0.42)',
+                  marginBottom: '14px',
+                }}
+              >
+                The result
+              </div>
+              <h3
+                style={{
+                  fontSize: 'clamp(1.35rem,2.6vw,1.9rem)',
+                  fontWeight: 700,
+                  lineHeight: 1.18,
+                  color: '#FFFFFF',
+                  marginBottom: '12px',
+                }}
+              >
+                A GTM system founders can actually run, trust, and scale.
+              </h3>
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: '0.95rem',
+                  color: 'rgba(255,255,255,0.62)',
+                  lineHeight: 1.75,
+                  maxWidth: '440px',
+                }}
+              >
+                Instead of scattered tools and manual follow-up, you get one
+                operating layer for CRM structure, workflow logic, reporting, and
+                activation.
+              </p>
+            </div>
+
+            <div
+              className="hero-system-outcomes"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+                gap: '12px',
+              }}
+            >
+              {outcomes.map((item) => (
+                <div
+                  key={item.label}
+                  style={{
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    borderRadius: '14px',
+                    padding: '16px 14px',
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: '1.1rem',
+                      fontWeight: 800,
+                      color: '#F6C7B6',
+                      lineHeight: 1.1,
+                      marginBottom: '4px',
+                    }}
+                  >
+                    {item.value}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: '0.73rem',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      color: 'rgba(255,255,255,0.42)',
+                      lineHeight: 1.45,
+                    }}
+                  >
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                flexWrap: 'wrap',
+                paddingTop: '6px',
+              }}
+            >
+              {['HubSpot', 'Pipelines', 'Automation', 'Reporting'].map((item) => (
+                <span
+                  key={item}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    padding: '8px 12px',
+                    borderRadius: '9999px',
+                    background: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    fontSize: '0.78rem',
+                    color: 'rgba(255,255,255,0.72)',
+                  }}
+                >
+                  <span
+                    style={{
+                      width: '6px',
+                      height: '6px',
+                      borderRadius: '9999px',
+                      background: '#F15A24',
+                      display: 'inline-block',
+                    }}
+                  />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* ── keyframes injected once ── */}
       <style>{`
-        @keyframes gs-pulse {
-          0%, 100% { box-shadow: 0 0 0 3px rgba(241,90,36,0.25), 0 0 20px rgba(241,90,36,0.55), 0 2px 10px rgba(0,0,0,0.5); }
-          50%       { box-shadow: 0 0 0 6px rgba(241,90,36,0.15), 0 0 32px rgba(241,90,36,0.70), 0 2px 10px rgba(0,0,0,0.5); }
+        @media (max-width: 860px) {
+          .hero-system-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .hero-system-preview {
+            border-radius: 16px !important;
+          }
+          .hero-system-layer {
+            border-radius: 14px !important;
+          }
+          .hero-system-outcomes {
+            grid-template-columns: 1fr 1fr !important;
+          }
         }
       `}</style>
     </div>
