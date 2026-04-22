@@ -1,67 +1,39 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { CardShell, Eyebrow } from './MarketingPrimitives';
 
 const tools = [
   {
     name: 'HubSpot',
-    icon: (
-      <svg viewBox="0 0 32 32" width="22" height="22" fill="none" aria-hidden="true">
-        <circle cx="14" cy="18" r="6" stroke="#FF7A59" strokeWidth="2.8" />
-        <circle cx="24.5" cy="8.5" r="3.5" fill="#FF7A59" />
-        <path d="M18.5 13.5l3.6-3.1M20 19h7M9.5 23.5L6 27" stroke="#FF7A59" strokeWidth="2.8" strokeLinecap="round" />
-      </svg>
-    ),
-    wordmark: 'HubSpot',
-    wordmarkStyle: { color: '#1A1A1A', fontWeight: 700, letterSpacing: '-0.03em' },
+    src: '/tool-logos/Hubspot.svg',
+    width: 116,
+    height: 28,
   },
   {
     name: 'Clay',
-    icon: (
-      <svg viewBox="0 0 32 32" width="22" height="22" fill="none" aria-hidden="true">
-        <rect x="5" y="5" width="10" height="10" rx="5" fill="#F59E0B" />
-        <rect x="17" y="5" width="10" height="10" rx="5" fill="#111827" />
-        <rect x="5" y="17" width="10" height="10" rx="5" fill="#111827" />
-        <rect x="17" y="17" width="10" height="10" rx="5" fill="#F59E0B" />
-      </svg>
-    ),
-    wordmark: 'Clay',
-    wordmarkStyle: { color: '#111827', fontWeight: 700, letterSpacing: '-0.03em' },
+    src: '/tool-logos/Clay.png',
+    width: 88,
+    height: 28,
   },
   {
     name: 'Apollo',
-    icon: (
-      <svg viewBox="0 0 32 32" width="22" height="22" fill="none" aria-hidden="true">
-        <circle cx="16" cy="16" r="11" stroke="#6D5EFC" strokeWidth="2.6" />
-        <path d="M16 8l5.5 13h-3.4l-1.1-2.8h-6L10 21H6.7L12.2 8h3.8zm-.1 4.2l-1.9 4.8h3.8l-1.9-4.8z" fill="#6D5EFC" />
-      </svg>
-    ),
-    wordmark: 'Apollo',
-    wordmarkStyle: { color: '#2A225F', fontWeight: 700, letterSpacing: '-0.03em' },
+    src: '/tool-logos/Apollo.svg',
+    width: 108,
+    height: 28,
   },
   {
     name: 'Instantly',
-    icon: (
-      <svg viewBox="0 0 32 32" width="22" height="22" fill="none" aria-hidden="true">
-        <path d="M17 4L8 18h6l-1 10 9-14h-6l1-10z" fill="#22C55E" />
-      </svg>
-    ),
-    wordmark: 'instantly',
-    wordmarkStyle: { color: '#0F172A', fontWeight: 700, letterSpacing: '-0.03em' },
+    src: '/tool-logos/Instantly.svg',
+    width: 120,
+    height: 28,
   },
   {
     name: 'n8n',
-    icon: (
-      <svg viewBox="0 0 32 32" width="28" height="20" fill="none" aria-hidden="true">
-        <circle cx="7" cy="16" r="4" fill="#EA580C" />
-        <circle cx="16" cy="10" r="4" fill="#EA580C" />
-        <circle cx="25" cy="16" r="4" fill="#EA580C" />
-        <path d="M10.4 14l2.4-1.7M19.2 12.3L21.6 14" stroke="#EA580C" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-    wordmark: 'n8n',
-    wordmarkStyle: { color: '#111827', fontWeight: 800, letterSpacing: '-0.05em' },
+    src: '/tool-logos/N8N.svg',
+    width: 86,
+    height: 28,
   },
 ] as const;
 
@@ -270,22 +242,22 @@ export default function HowItWorks() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: '10px',
-                    minHeight: '28px',
+                    minHeight: '36px',
                   }}
                 >
-                  <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    {tool.icon}
-                  </span>
-                  <span
+                  <Image
+                    src={tool.src}
+                    alt={tool.name}
+                    width={tool.width}
+                    height={tool.height}
+                    className="tool-logo-image"
                     style={{
-                      fontSize: '1.05rem',
-                      lineHeight: 1,
-                      ...tool.wordmarkStyle,
+                      width: 'auto',
+                      height: '28px',
+                      maxWidth: '100%',
+                      objectFit: 'contain',
                     }}
-                  >
-                    {tool.wordmark}
-                  </span>
+                  />
                 </div>
               </div>
             ))}
