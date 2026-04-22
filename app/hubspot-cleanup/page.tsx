@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -117,11 +118,32 @@ export default function HubspotCleanupPage() {
 
         <section style={{ background: '#0F1B2D', padding: '80px 0 72px' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-            <div
-              className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full mb-6"
-              style={{ fontSize: '0.72rem', color: '#F15A24', background: 'rgba(241,90,36,0.12)', padding: '6px 14px', border: '1px solid rgba(241,90,36,0.25)' }}
-            >
-              HubSpot Cleanup
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '24px' }}>
+              <div
+                className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full"
+                style={{ fontSize: '0.72rem', color: '#F15A24', background: 'rgba(241,90,36,0.12)', padding: '6px 14px', border: '1px solid rgba(241,90,36,0.25)' }}
+              >
+                HubSpot Cleanup
+              </div>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: '#fff',
+                  borderRadius: '12px',
+                  padding: '10px 14px',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                }}
+              >
+                <Image
+                  src="/tool-logos/Hubspot.svg"
+                  alt="HubSpot"
+                  width={116}
+                  height={28}
+                  style={{ width: 'auto', height: '24px' }}
+                />
+              </div>
             </div>
             <h1 className="font-bold text-white leading-tight mb-5" style={{ fontSize: 'clamp(2rem,4vw,3rem)', maxWidth: '840px' }}>
               Clean up the HubSpot you already have before you add more motion on top of it.
