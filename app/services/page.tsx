@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import BookDiscoveryButton from '@/components/BookDiscoveryButton';
@@ -200,8 +201,29 @@ export default function ServicesPage() {
               ))}
             </div>
 
-            <div style={{ marginTop: '20px', fontSize: '0.95rem', color: '#555', lineHeight: 1.75 }}>
-              Already have HubSpot live but messy? Start with <a href="/hubspot-cleanup" style={{ color: '#F15A24', textDecoration: 'none' }}>HubSpot Cleanup</a>.
+            <div
+              style={{
+                marginTop: '22px',
+                background: '#FCFAF7',
+                border: '1px solid #ECE6DE',
+                borderRadius: '18px',
+                padding: '22px',
+              }}
+            >
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '10px' }}>
+                Already have HubSpot live?
+              </div>
+              <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
+                Start with HubSpot cleanup instead of a broader rebuild
+              </h3>
+              <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.75, marginBottom: '14px' }}>
+                If the portal is already there but the structure is messy, the faster
+                path is usually cleanup: lifecycle stages, fields, workflows,
+                reporting, and ownership logic made usable again.
+              </p>
+              <Link href="/hubspot-cleanup" style={{ color: '#F15A24', textDecoration: 'none', fontSize: '0.95rem', fontWeight: 600 }}>
+                See HubSpot cleanup →
+              </Link>
             </div>
           </div>
         </section>
@@ -264,29 +286,43 @@ export default function ServicesPage() {
                 {
                   title: 'Start with HubSpot cleanup',
                   body: 'For teams that already have motion but need cleaner structure, lifecycle logic, and better visibility.',
+                  href: '/hubspot-cleanup',
                 },
                 {
                   title: 'Add activation once the system is ready',
                   body: 'For teams that want outbound or workflow-driven pipeline generation on top of a usable setup.',
+                  href: '/services',
                 },
               ].map((item) => (
-                <div
+                <Link
                   key={item.title}
+                  href={item.href ?? '/services'}
                   className="services-buy-card"
                   style={{
-                    background: '#F7F8F7',
-                    border: '1px solid #E2E5E2',
-                    borderRadius: '16px',
-                    padding: '22px',
+                    textDecoration: 'none',
+                    color: 'inherit',
                   }}
                 >
-                  <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: '0.92rem', color: '#555', lineHeight: 1.7 }}>
-                    {item.body}
-                  </p>
-                </div>
+                  <div
+                    style={{
+                      background: '#F7F8F7',
+                      border: '1px solid #E2E5E2',
+                      borderRadius: '16px',
+                      padding: '22px',
+                      height: '100%',
+                    }}
+                  >
+                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
+                      {item.title}
+                    </h3>
+                    <p style={{ fontSize: '0.92rem', color: '#555', lineHeight: 1.7, marginBottom: '14px' }}>
+                      {item.body}
+                    </p>
+                    <div style={{ fontSize: '0.9rem', color: '#F15A24', fontWeight: 600 }}>
+                      Learn more →
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

@@ -220,6 +220,64 @@ export default function HubspotRevopsPage() {
                 </div>
               </div>
             </div>
+
+            <div
+              style={{
+                marginTop: '24px',
+                background: '#FCFAF7',
+                border: '1px solid #ECE6DE',
+                borderRadius: '18px',
+                padding: '22px',
+              }}
+            >
+              <div className="grid md:grid-cols-2 gap-5">
+                <div
+                  style={{
+                    background: '#FFFFFF',
+                    border: '1px solid #ECE6DE',
+                    borderRadius: '16px',
+                    padding: '20px',
+                  }}
+                >
+                  <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '10px' }}>
+                    Need the broader system
+                  </div>
+                  <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
+                    HubSpot and RevOps support
+                  </h3>
+                  <p style={{ fontSize: '0.92rem', color: '#555', lineHeight: 1.7 }}>
+                    Best when the team needs structure, workflow logic, reporting,
+                    and the wider operating model improved together.
+                  </p>
+                </div>
+
+                <Link href="/hubspot-cleanup" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <article
+                    style={{
+                      background: '#FFFFFF',
+                      border: '1px solid rgba(241,90,36,0.24)',
+                      borderRadius: '16px',
+                      padding: '20px',
+                      height: '100%',
+                    }}
+                  >
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '10px' }}>
+                      Need cleanup first
+                    </div>
+                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
+                      Start with HubSpot cleanup
+                    </h3>
+                    <p style={{ fontSize: '0.92rem', color: '#555', lineHeight: 1.7, marginBottom: '12px' }}>
+                      Best when HubSpot is already live but the fields, stages,
+                      workflows, and reporting are no longer usable.
+                    </p>
+                    <div style={{ fontSize: '0.9rem', color: '#F15A24', fontWeight: 600 }}>
+                      See HubSpot cleanup →
+                    </div>
+                  </article>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
