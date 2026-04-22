@@ -45,7 +45,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div style={{ borderBottom: '1px solid #E2E5E2', padding: '28px 0' }}>
+    <div style={{ borderBottom: '1px solid #E2E5E2', padding: '22px 0' }}>
       <button
         className="w-full flex items-center justify-between text-left gap-4 group"
         onClick={() => setOpen(!open)}
@@ -90,7 +90,7 @@ export default function FAQ() {
           background: '#F7F8F7',
           borderTop: '1px solid #E2E5E2',
           borderBottom: '1px solid #E2E5E2',
-          padding: '80px 0',
+          padding: '72px 0',
         }}
       >
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
@@ -113,7 +113,7 @@ export default function FAQ() {
 
       <section
         className="relative overflow-hidden text-center"
-        style={{ background: '#0F1B2D', padding: '100px 0' }}
+        style={{ background: '#0F1B2D', padding: '80px 0' }}
       >
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(241,90,36,0.07) 0%, transparent 65%)' }} />
         <div className="relative max-w-[1100px] mx-auto px-6 lg:px-8">

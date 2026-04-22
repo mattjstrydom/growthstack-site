@@ -119,7 +119,7 @@ export default function ServicesPage() {
           dangerouslySetInnerHTML={{ __html: jsonLd(faqJsonLd) }}
         />
 
-        <section style={{ background: '#0F1B2D', padding: '80px 0 72px' }}>
+        <section style={{ background: '#0F1B2D', padding: '72px 0 64px' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div
               className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full mb-6"
@@ -138,7 +138,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section style={{ background: '#fff', padding: '80px 0' }}>
+        <section style={{ background: '#fff', padding: '72px 0' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div className="mb-12">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
@@ -154,7 +154,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-5 sm:gap-6">
               {[
                 {
                   title: 'GTM Foundation',
@@ -179,11 +179,12 @@ export default function ServicesPage() {
               ].map((item) => (
                 <div
                   key={item.title}
+                  className="services-offer-card"
                   style={{
                     background: '#F7F8F7',
                     border: '1px solid #E2E5E2',
                     borderRadius: '18px',
-                    padding: '28px',
+                    padding: '24px',
                   }}
                 >
                   <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
@@ -199,13 +200,13 @@ export default function ServicesPage() {
               ))}
             </div>
 
-            <div style={{ marginTop: '24px', fontSize: '0.95rem', color: '#555', lineHeight: 1.75 }}>
+            <div style={{ marginTop: '20px', fontSize: '0.95rem', color: '#555', lineHeight: 1.75 }}>
               Already have HubSpot live but messy? Start with <a href="/hubspot-cleanup" style={{ color: '#F15A24', textDecoration: 'none' }}>HubSpot Cleanup</a>.
             </div>
           </div>
         </section>
 
-        <section style={{ background: '#F7F8F7', borderTop: '1px solid #E2E5E2', borderBottom: '1px solid #E2E5E2', padding: '80px 0' }}>
+        <section style={{ background: '#F7F8F7', borderTop: '1px solid #E2E5E2', borderBottom: '1px solid #E2E5E2', padding: '72px 0' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
@@ -216,7 +217,7 @@ export default function ServicesPage() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {[
                 'HubSpot exists, but no one trusts the data',
                 'Pipeline depends too much on the founder',
@@ -225,11 +226,12 @@ export default function ServicesPage() {
               ].map((item) => (
                 <div
                   key={item}
+                  className="services-problem-card"
                   style={{
                     background: '#fff',
                     border: '1px solid #E2E5E2',
                     borderRadius: '16px',
-                    padding: '22px',
+                    padding: '20px',
                     fontSize: '0.95rem',
                     lineHeight: 1.7,
                     color: '#333',
@@ -242,7 +244,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section style={{ background: '#fff', padding: '80px 0' }}>
+        <section style={{ background: '#fff', padding: '72px 0' }}>
           <div className="max-w-[900px] mx-auto px-6 lg:px-8">
             <div className="mb-10">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
@@ -253,7 +255,7 @@ export default function ServicesPage() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
                   title: 'Start with a foundation build',
@@ -270,11 +272,12 @@ export default function ServicesPage() {
               ].map((item) => (
                 <div
                   key={item.title}
+                  className="services-buy-card"
                   style={{
                     background: '#F7F8F7',
                     border: '1px solid #E2E5E2',
                     borderRadius: '16px',
-                    padding: '24px',
+                    padding: '22px',
                   }}
                 >
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
@@ -289,7 +292,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section style={{ background: '#FCFAF7', borderTop: '1px solid #ECE6DE', borderBottom: '1px solid #ECE6DE', padding: '80px 0' }}>
+        <section style={{ background: '#FCFAF7', borderTop: '1px solid #ECE6DE', borderBottom: '1px solid #ECE6DE', padding: '72px 0' }}>
           <div className="max-w-[900px] mx-auto px-6 lg:px-8">
             <div className="mb-10">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
@@ -308,7 +311,7 @@ export default function ServicesPage() {
                     background: '#FFFFFF',
                     border: '1px solid #ECE6DE',
                     borderRadius: '16px',
-                    padding: '24px',
+                    padding: '22px',
                   }}
                 >
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
@@ -323,7 +326,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section style={{ background: '#0F1B2D', padding: '80px 0', textAlign: 'center' }}>
+        <section style={{ background: '#0F1B2D', padding: '72px 0', textAlign: 'center' }}>
           <div className="max-w-[640px] mx-auto px-6 lg:px-8">
             <h2 style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)', fontWeight: 700, color: '#fff', marginBottom: '16px' }}>
               Need help deciding which service fits?
@@ -352,6 +355,15 @@ export default function ServicesPage() {
         </section>
       </main>
       <Footer />
+      <style>{`
+        @media (max-width: 640px) {
+          .services-offer-card,
+          .services-problem-card,
+          .services-buy-card {
+            border-radius: 14px !important;
+          }
+        }
+      `}</style>
     </>
   );
 }

@@ -225,7 +225,7 @@ export default function TriggerCards() {
     <section
       style={{
         background: '#FCFAF7',
-        padding: '80px 0 88px',
+        padding: '72px 0 80px',
         borderTop: '1px solid #ECE6DE',
       }}
     >
@@ -261,6 +261,7 @@ export default function TriggerCards() {
         </div>
 
         <div
+          className="trigger-card-headings"
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
@@ -307,8 +308,12 @@ export default function TriggerCards() {
           box-shadow: 0 18px 38px rgba(23, 32, 51, 0.08);
         }
         @media (max-width: 640px) {
+          .trigger-card-headings {
+            display: none !important;
+          }
           .trigger-card {
             grid-template-columns: 1fr !important;
+            border-radius: 14px !important;
           }
           .trigger-card > div:first-child {
             border-right: none !important;

@@ -129,7 +129,7 @@ export default function HubspotRevopsPage() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLd(faqJsonLd) }}
         />
-        <section style={{ background: '#0F1B2D', padding: '80px 0 72px' }}>
+        <section style={{ background: '#0F1B2D', padding: '72px 0 64px' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div
               className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full mb-6"
@@ -149,9 +149,9 @@ export default function HubspotRevopsPage() {
           </div>
         </section>
 
-        <section style={{ background: '#fff', padding: '80px 0' }}>
+        <section style={{ background: '#fff', padding: '72px 0' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-start">
               <div>
                 <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
                   What We Do
@@ -171,11 +171,12 @@ export default function HubspotRevopsPage() {
               </p>
             </div>
               <div
+                className="hubspot-outcomes-card"
                 style={{
                   background: '#F7F8F7',
                   border: '1px solid #E2E5E2',
                   borderRadius: '18px',
-                  padding: '28px',
+                  padding: '24px',
                 }}
               >
                 <div style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '14px' }}>
@@ -200,7 +201,7 @@ export default function HubspotRevopsPage() {
           </div>
         </section>
 
-        <section style={{ background: '#F7F8F7', borderTop: '1px solid #E2E5E2', borderBottom: '1px solid #E2E5E2', padding: '80px 0' }}>
+        <section style={{ background: '#F7F8F7', borderTop: '1px solid #E2E5E2', borderBottom: '1px solid #E2E5E2', padding: '72px 0' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
@@ -210,7 +211,7 @@ export default function HubspotRevopsPage() {
                 Where we usually help
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {[
                 {
                   title: 'HubSpot setup or cleanup',
@@ -229,7 +230,7 @@ export default function HubspotRevopsPage() {
                   body: 'Dashboards, visibility, and the operational layer needed before outbound or other pipeline motions scale.',
                 },
               ].map((item) => (
-                <div key={item.title} style={{ background: '#fff', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '24px' }}>
+                <div key={item.title} className="hubspot-service-card" style={{ background: '#fff', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '22px' }}>
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>{item.title}</h3>
                   <p style={{ fontSize: '0.92rem', color: '#555', lineHeight: 1.7 }}>{item.body}</p>
                 </div>
@@ -238,7 +239,7 @@ export default function HubspotRevopsPage() {
           </div>
         </section>
 
-        <section style={{ background: '#fff', padding: '80px 0' }}>
+        <section style={{ background: '#fff', padding: '72px 0' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div className="mb-10">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
@@ -248,8 +249,8 @@ export default function HubspotRevopsPage() {
                 This is usually a fit if...
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div style={{ background: '#F7F8F7', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '28px' }}>
+            <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
+              <div className="hubspot-fit-card" style={{ background: '#F7F8F7', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '24px' }}>
                 <div style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '14px' }}>
                   Good fit
                 </div>
@@ -265,7 +266,7 @@ export default function HubspotRevopsPage() {
                   </div>
                 ))}
               </div>
-              <div style={{ background: '#F7F8F7', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '28px' }}>
+              <div className="hubspot-fit-card" style={{ background: '#F7F8F7', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '24px' }}>
                 <div style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#888', marginBottom: '14px' }}>
                   Not a fit
                 </div>
@@ -285,7 +286,7 @@ export default function HubspotRevopsPage() {
           </div>
         </section>
 
-        <section style={{ background: '#FCFAF7', borderTop: '1px solid #ECE6DE', borderBottom: '1px solid #ECE6DE', padding: '80px 0' }}>
+        <section style={{ background: '#FCFAF7', borderTop: '1px solid #ECE6DE', borderBottom: '1px solid #ECE6DE', padding: '72px 0' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div className="mb-10">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
@@ -300,7 +301,7 @@ export default function HubspotRevopsPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
                   href: '/blog/hubspot-setup-checklist-startups',
@@ -331,7 +332,7 @@ export default function HubspotRevopsPage() {
                       background: '#FFFFFF',
                       border: '1px solid #ECE6DE',
                       borderRadius: '16px',
-                      padding: '24px',
+                      padding: '22px',
                       height: '100%',
                       transition: 'transform 0.2s ease, box-shadow 0.2s ease',
                     }}
@@ -353,7 +354,7 @@ export default function HubspotRevopsPage() {
           </div>
         </section>
 
-        <section style={{ background: '#fff', padding: '80px 0' }}>
+        <section style={{ background: '#fff', padding: '72px 0' }}>
           <div className="max-w-[900px] mx-auto px-6 lg:px-8">
             <div className="mb-10">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
@@ -372,7 +373,7 @@ export default function HubspotRevopsPage() {
                     background: '#F7F8F7',
                     border: '1px solid #E2E5E2',
                     borderRadius: '16px',
-                    padding: '24px',
+                    padding: '22px',
                   }}
                 >
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
@@ -387,7 +388,7 @@ export default function HubspotRevopsPage() {
           </div>
         </section>
 
-        <section style={{ background: '#0F1B2D', padding: '80px 0', textAlign: 'center' }}>
+        <section style={{ background: '#0F1B2D', padding: '72px 0', textAlign: 'center' }}>
           <div className="max-w-[640px] mx-auto px-6 lg:px-8">
             <h2 style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)', fontWeight: 700, color: '#fff', marginBottom: '16px' }}>
               Need help cleaning up HubSpot or fixing your GTM system?
@@ -419,6 +420,14 @@ export default function HubspotRevopsPage() {
         .hubspot-reading-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 16px 34px rgba(23, 32, 51, 0.08);
+        }
+        @media (max-width: 640px) {
+          .hubspot-outcomes-card,
+          .hubspot-service-card,
+          .hubspot-fit-card,
+          .hubspot-reading-card {
+            border-radius: 14px !important;
+          }
         }
       `}</style>
     </>

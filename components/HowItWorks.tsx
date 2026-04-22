@@ -28,7 +28,7 @@ const tools = ['HubSpot', 'Clay', 'Apollo', 'Instantly', 'n8n', 'LinkedIn'];
 export default function HowItWorks() {
   return (
     <>
-      <section id="how-it-works" className="bg-white" style={{ padding: '80px 0' }}>
+      <section id="how-it-works" className="bg-white" style={{ padding: '72px 0' }}>
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
           <div className="mb-12">
             <div className="mb-3">
@@ -49,7 +49,7 @@ export default function HowItWorks() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="grid md:grid-cols-2 gap-5 sm:gap-6 mb-6">
             <CardShell dark>
               <div
                 className="absolute inset-0 pointer-events-none"
@@ -169,7 +169,7 @@ export default function HowItWorks() {
           background: '#F7F8F7',
           borderTop: '1px solid #E2E5E2',
           borderBottom: '1px solid #E2E5E2',
-          padding: '80px 0',
+          padding: '72px 0',
         }}
       >
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
@@ -189,7 +189,7 @@ export default function HowItWorks() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-7">
+          <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4
                 className="font-bold uppercase tracking-[0.08em] mb-4 pb-3"
@@ -249,7 +249,7 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      <section className="bg-white text-center" style={{ padding: '80px 0' }}>
+      <section className="bg-white text-center" style={{ padding: '72px 0' }}>
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
           <div className="mb-3">
             <Eyebrow subtle>Tool Stack</Eyebrow>

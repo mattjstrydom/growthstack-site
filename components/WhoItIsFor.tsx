@@ -26,7 +26,7 @@ export default function WhoItIsFor() {
           background: '#FBF6EF',
           borderTop: '1px solid #ECE2D4',
           borderBottom: '1px solid #ECE2D4',
-          padding: '80px 0',
+          padding: '72px 0',
         }}
       >
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
@@ -47,13 +47,13 @@ export default function WhoItIsFor() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-5 sm:gap-6">
             <div
               className="rounded-2xl"
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #ECE2D4',
-                padding: '28px 24px',
+                padding: '24px 22px',
                 boxShadow: '0 10px 28px rgba(23, 32, 51, 0.04)',
               }}
             >
@@ -103,7 +103,7 @@ export default function WhoItIsFor() {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #ECE2D4',
-                padding: '28px 24px',
+                padding: '24px 22px',
                 boxShadow: '0 10px 28px rgba(23, 32, 51, 0.04)',
               }}
             >
@@ -151,14 +151,14 @@ export default function WhoItIsFor() {
         </div>
       </section>
 
-      <div style={{ background: '#FBF6EF', padding: '0 0 56px' }}>
+      <div style={{ background: '#FBF6EF', padding: '0 0 48px' }}>
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
           <div
             style={{
               background: 'linear-gradient(180deg, #fff7ee 0%, #ffffff 100%)',
               border: '1px solid #ECE2D4',
               borderRadius: '20px',
-              padding: '36px 28px',
+              padding: '28px 22px',
               textAlign: 'center',
               boxShadow: '0 18px 40px rgba(23, 32, 51, 0.05)',
             }}

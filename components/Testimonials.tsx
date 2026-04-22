@@ -10,7 +10,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
         background: '#FFFFFF',
         border: '1px solid #ECE6DE',
         borderRadius: '18px',
-        padding: '28px 24px',
+        padding: '24px 22px',
         display: 'flex',
         flexDirection: 'column',
         gap: '16px',
@@ -141,7 +141,7 @@ export default function Testimonials() {
         background: '#FFFFFF',
         borderTop: '1px solid #ECE6DE',
         borderBottom: '1px solid #ECE6DE',
-        padding: '80px 0 88px',
+        padding: '72px 0 80px',
       }}
     >
       <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
@@ -249,6 +249,9 @@ export default function Testimonials() {
           .testimonial-grid,
           .testimonial-stats {
             grid-template-columns: 1fr !important;
+          }
+          .testimonial-card {
+            border-radius: 14px !important;
           }
         }
       `}</style>
