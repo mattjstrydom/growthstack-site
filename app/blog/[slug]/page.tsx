@@ -175,7 +175,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         <section
           style={{
-            background: '#F7F8F7',
+            background: '#FDFAF6',
             borderTop: '1px solid rgba(0,0,0,0.07)',
             padding: '64px 0',
           }}
@@ -246,7 +246,7 @@ export default async function BlogPostPage({ params }: Props) {
                     <article
                       className="related-post-card h-full"
                       style={{
-                        background: '#F7F8F7',
+                        background: '#FDFAF6',
                         border: '1px solid #E2E5E2',
                         borderRadius: '16px',
                         padding: '24px',
@@ -319,13 +319,13 @@ export default async function BlogPostPage({ params }: Props) {
         .post-body strong { color: #1A1A1A; font-weight: 600; }
         .post-body a { color: #F15A24; text-decoration: underline; text-underline-offset: 3px; }
         .post-body a:hover { color: #D44E1E; }
-        .post-body blockquote { margin: 36px 0; padding: 24px 28px; background: #F7F8F7; border-left: 3px solid #F15A24; border-radius: 0 8px 8px 0; }
+        .post-body blockquote { margin: 36px 0; padding: 24px 28px; background: #FDFAF6; border-left: 3px solid #F15A24; border-radius: 0 8px 8px 0; }
         .post-body blockquote p { margin: 0; font-size: 1.0625rem; color: #1A1A1A; font-style: italic; }
         .post-body .callout { margin: 36px 0; padding: 24px 28px; background: #0F1B2D; border-radius: 12px; }
         .post-body .callout p { color: rgba(255,255,255,0.78); margin: 0; font-size: 1.0625rem; }
         .post-body .callout strong { color: #fff; }
         .post-body .post-divider { border: none; border-top: 1px solid rgba(0,0,0,0.08); margin: 48px 0; }
-        .post-body .post-lede { background: #F7F8F7; border-left: 3px solid #F15A24; border-radius: 0 8px 8px 0; padding: 18px 22px; margin-bottom: 32px; }
+        .post-body .post-lede { background: #FDFAF6; border-left: 3px solid #F15A24; border-radius: 0 8px 8px 0; padding: 18px 22px; margin-bottom: 32px; }
         .post-body .post-lede strong { color: #1A1A1A; font-weight: 500; line-height: 1.75; }
         .post-body .faq-block { margin: 56px 0 0; }
         .post-body .faq-block h2 { font-size: clamp(1.375rem,2.5vw,1.75rem); color: #1A1A1A; margin-bottom: 8px; letter-spacing: -0.02em; }

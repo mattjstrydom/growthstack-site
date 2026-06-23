@@ -87,7 +87,7 @@ export default function FAQ() {
       <section
         id="faq"
         style={{
-          background: '#F7F8F7',
+          background: '#FDFAF6',
           borderTop: '1px solid #E2E5E2',
           borderBottom: '1px solid #E2E5E2',
           padding: '72px 0',

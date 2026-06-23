@@ -5,13 +5,15 @@ export const primaryButtonStyle: CSSProperties = {
   padding: '14px 36px',
   fontSize: '1.0625rem',
   fontWeight: 600,
-  borderRadius: '8px',
-  boxShadow: '0 6px 28px rgba(241,90,36,0.5)',
+  borderRadius: '4px',
+  boxShadow: 'none',
+  color: '#ffffff',
+  transition: 'background 0.15s ease',
 };
 
 export const primaryButtonHoverStyle: CSSProperties = {
-  background: '#D44E1E',
-  boxShadow: '0 8px 36px rgba(241,90,36,0.65)',
+  background: '#d94e1a',
+  boxShadow: 'none',
 };
 
 export const navButtonStyle: CSSProperties = {
@@ -19,13 +21,15 @@ export const navButtonStyle: CSSProperties = {
   padding: '10px 24px',
   fontSize: '0.9375rem',
   fontWeight: 600,
-  borderRadius: '8px',
-  boxShadow: '0 4px 20px rgba(241,90,36,0.45)',
+  borderRadius: '4px',
+  boxShadow: 'none',
+  color: '#ffffff',
+  transition: 'background 0.15s ease',
 };
 
 export const navButtonHoverStyle: CSSProperties = {
-  background: '#D44E1E',
-  boxShadow: '0 6px 24px rgba(241,90,36,0.6)',
+  background: '#d94e1a',
+  boxShadow: 'none',
 };
 
 export const mobileButtonStyle: CSSProperties = {
@@ -49,11 +53,12 @@ export function Eyebrow({
       style={{
         fontSize: '0.72rem',
         color: '#F15A24',
-        background: 'rgba(241,90,36,0.08)',
-        padding: '5px 12px',
-        border: '1px solid rgba(241,90,36,0.25)',
-        borderRadius: '9999px',
-        letterSpacing: '0.08em',
+        background: 'transparent',
+        padding: '5px 13px',
+        border: '1px dashed rgba(241,90,36,0.6)',
+        borderRadius: '4px',
+        letterSpacing: '0.1em',
+        fontWeight: 600,
       }}
     >
       {children}
@@ -83,7 +88,7 @@ export function CardShell({
           ? '1px solid rgba(241,90,36,0.65)'
           : isDark
             ? '1px solid rgba(255,255,255,0.07)'
-            : '1px solid #E2E5E2',
+            : '1px solid #e5e7eb',
         padding,
         boxShadow: highlighted
           ? '0 0 0 1px rgba(241,90,36,0.15), inset 0 1px 0 rgba(255,255,255,0.04)'

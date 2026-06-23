@@ -221,7 +221,7 @@ export default function ServicesPage() {
                   key={item.title}
                   className="services-offer-card"
                   style={{
-                    background: '#F7F8F7',
+                    background: '#FDFAF6',
                     border: '1px solid #E2E5E2',
                     borderRadius: '18px',
                     padding: '24px',
@@ -343,9 +343,9 @@ export default function ServicesPage() {
                 fontSize: '1.0625rem',
                 fontWeight: 600,
                 borderRadius: '8px',
-                boxShadow: '0 6px 28px rgba(241,90,36,0.5)',
+                boxShadow: '0 8px 24px rgba(15,27,45,0.16)',
               }}
-              hoverStyle={{ background: '#D44E1E', boxShadow: '0 8px 36px rgba(241,90,36,0.65)' }}
+              hoverStyle={{ background: '#D44E1E', boxShadow: '0 10px 28px rgba(15,27,45,0.2)' }}
             >
               Book a Discovery Call
             </BookDiscoveryButton>

@@ -103,7 +103,7 @@ export default function ContactPage() {
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ background: '#F7F8F7', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '28px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                <div style={{ background: '#FDFAF6', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '28px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
                   <div style={{ fontSize: '1.5rem', flexShrink: 0 }}>Email</div>
                   <div>
                     <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '6px' }}>Email Us Directly</h4>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                     <a href="mailto:hello@growthstackhq.com" style={{ color: '#F15A24', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none' }}>hello@growthstackhq.com</a>
                   </div>
                 </div>
-                <div style={{ background: '#F7F8F7', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '28px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                <div style={{ background: '#FDFAF6', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '28px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
                   <div style={{ fontSize: '1.5rem', flexShrink: 0 }}>Scope</div>
                   <div>
                     <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '6px' }}>What we can help with</h4>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                       borderRadius: '8px',
                       background: '#F15A24',
                       color: '#fff',
-                      boxShadow: '0 4px 20px rgba(241,90,36,0.45)',
+                      boxShadow: '0 8px 24px rgba(15,27,45,0.16)',
                     }}
                     hoverStyle={{ background: '#D44E1E' }}
                   >
@@ -155,7 +155,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div style={{ background: '#F7F8F7', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '36px' }}>
+              <div style={{ background: '#FDFAF6', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '36px' }}>
                 {submitted ? (
                   <div style={{ textAlign: 'center', padding: '40px 0' }}>
                     <div style={{ fontSize: '3rem', marginBottom: '16px', color: '#F15A24' }}>+</div>
@@ -230,7 +230,7 @@ export default function ContactPage() {
                           border: 'none',
                           borderRadius: '8px',
                           cursor: submitting ? 'not-allowed' : 'pointer',
-                          boxShadow: '0 6px 28px rgba(241,90,36,0.5)',
+                          boxShadow: '0 8px 24px rgba(15,27,45,0.16)',
                           transition: 'background 0.2s',
                         }}
                       >

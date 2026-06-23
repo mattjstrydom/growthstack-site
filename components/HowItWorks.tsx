@@ -171,7 +171,7 @@ export default function HowItWorks() {
           <div
             className="rounded-2xl"
             style={{
-              background: '#F7F8F7',
+              background: '#FDFAF6',
               border: '1px solid #E2E5E2',
               padding: '24px',
             }}

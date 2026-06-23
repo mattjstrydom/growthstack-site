@@ -43,16 +43,16 @@ export default function Navigation() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm"
       style={{
-        background: 'rgba(15,27,45,0.96)',
-        borderBottom: '1px solid rgba(255,255,255,0.07)',
+        background: 'rgba(255,255,255,0.97)',
+        borderBottom: '1px solid rgba(0,0,0,0.06)',
       }}
     >
       <div className="max-w-[1180px] mx-auto px-5 lg:px-8">
         <div className="flex items-center justify-between" style={{ height: '68px' }}>
           <Link
             href="/"
-            className="flex items-center gap-[10px] font-bold text-white shrink-0"
-            style={{ fontSize: '1.1rem' }}
+            className="flex items-center gap-[10px] font-bold shrink-0"
+            style={{ fontSize: '1.1rem', color: '#1a1a1a' }}
           >
             <div className="flex items-end gap-[3px]">
               <span className="rounded-sm bg-[#F15A24]" style={{ width: '4px', height: '8px',  display: 'block' }} />
@@ -70,12 +70,12 @@ export default function Navigation() {
                 style={{
                   fontSize: '0.875rem',
                   fontWeight: 500,
-                  color: isActive(href) ? '#FFFFFF' : 'rgba(255,255,255,0.65)',
+                  color: '#1a1a1a',
                   transition: 'color 0.2s ease',
                   whiteSpace: 'nowrap',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.color = '#FFFFFF')}
-                onMouseLeave={e => (e.currentTarget.style.color = isActive(href) ? '#FFFFFF' : 'rgba(255,255,255,0.65)')}
+                onMouseEnter={e => (e.currentTarget.style.color = '#1a1a1a')}
+                onMouseLeave={e => (e.currentTarget.style.color = '#1a1a1a')}
               >
                 {label}
               </Link>
@@ -98,9 +98,9 @@ export default function Navigation() {
             aria-expanded={mobileOpen}
             aria-controls="mobile-navigation"
           >
-            <span className={`block bg-white rounded-sm transition-transform origin-center ${mobileOpen ? 'rotate-45 translate-y-[7px]' : ''}`} style={{ width: '20px', height: '2px' }} />
-            <span className={`block bg-white rounded-sm transition-opacity ${mobileOpen ? 'opacity-0' : ''}`} style={{ width: '20px', height: '2px' }} />
-            <span className={`block bg-white rounded-sm transition-transform origin-center ${mobileOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} style={{ width: '20px', height: '2px' }} />
+            <span className={`block bg-[#1a1a1a] rounded-sm transition-transform origin-center ${mobileOpen ? 'rotate-45 translate-y-[7px]' : ''}`} style={{ width: '20px', height: '2px' }} />
+            <span className={`block bg-[#1a1a1a] rounded-sm transition-opacity ${mobileOpen ? 'opacity-0' : ''}`} style={{ width: '20px', height: '2px' }} />
+            <span className={`block bg-[#1a1a1a] rounded-sm transition-transform origin-center ${mobileOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} style={{ width: '20px', height: '2px' }} />
           </button>
         </div>
       </div>

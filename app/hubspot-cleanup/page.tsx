@@ -182,7 +182,7 @@ export default function HubspotCleanupPage() {
               </div>
               <div
                 style={{
-                  background: '#F7F8F7',
+                  background: '#FDFAF6',
                   border: '1px solid #E2E5E2',
                   borderRadius: '18px',
                   padding: '28px',
@@ -210,7 +210,7 @@ export default function HubspotCleanupPage() {
           </div>
         </section>
 
-        <section style={{ background: '#F7F8F7', borderTop: '1px solid #E2E5E2', borderBottom: '1px solid #E2E5E2', padding: '80px 0' }}>
+        <section style={{ background: '#FDFAF6', borderTop: '1px solid #E2E5E2', borderBottom: '1px solid #E2E5E2', padding: '80px 0' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
@@ -273,7 +273,7 @@ export default function HubspotCleanupPage() {
                 <div
                   key={item.question}
                   style={{
-                    background: '#F7F8F7',
+                    background: '#FDFAF6',
                     border: '1px solid #E2E5E2',
                     borderRadius: '16px',
                     padding: '24px',
@@ -313,9 +313,9 @@ export default function HubspotCleanupPage() {
                 fontSize: '1.0625rem',
                 fontWeight: 600,
                 borderRadius: '8px',
-              boxShadow: '0 6px 28px rgba(241,90,36,0.5)',
+              boxShadow: '0 8px 24px rgba(15,27,45,0.16)',
               }}
-              hoverStyle={{ background: '#D44E1E', boxShadow: '0 8px 36px rgba(241,90,36,0.65)' }}
+              hoverStyle={{ background: '#D44E1E', boxShadow: '0 10px 28px rgba(15,27,45,0.2)' }}
             >
               Book a Discovery Call
             </BookDiscoveryButton>

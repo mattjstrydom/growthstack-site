@@ -15,19 +15,11 @@ export default function Hero() {
       className="relative overflow-hidden"
       style={{
         background:
-          'radial-gradient(circle at 62% 18%, rgba(241,90,36,0.12) 0%, transparent 30%), linear-gradient(180deg, #102033 0%, #16283d 62%, #f6efe6 100%)',
+          '#ffffff url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23e5e7eb\' fill-opacity=\'0.5\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
         paddingTop: '136px',
         paddingBottom: '0',
       }}
     >
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(circle at 60% 36%, rgba(255,255,255,0.06) 0%, transparent 60%)',
-        }}
-      />
-
       <div className="relative max-w-[1100px] mx-auto px-6 lg:px-8 pb-[96px] sm:pb-[120px]">
         <div className="max-w-[760px]">
           <div className="mb-6">
@@ -35,8 +27,8 @@ export default function Hero() {
           </div>
 
           <h1
-            className="font-bold text-white mb-6"
-            style={{ fontSize: 'clamp(2.75rem, 5.5vw, 5rem)', fontWeight: 700, lineHeight: 1.1 }}
+            className="font-extrabold text-[#1a1a1a] mb-6"
+            style={{ fontSize: 'clamp(2.5rem, 5.5vw, 5rem)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.02em' }}
           >
             Your pipeline is still
             <br />
@@ -48,7 +40,7 @@ export default function Hero() {
           <p
             className="mb-5 leading-[1.75] max-w-[660px]"
             id="gs-what-we-do"
-            style={{ fontSize: 'clamp(1.15rem,2.2vw,1.45rem)', color: 'rgba(255,255,255,0.74)', lineHeight: 1.65 }}
+            style={{ fontSize: 'clamp(1.15rem,2.2vw,1.4rem)', color: '#555555', lineHeight: 1.65 }}
           >
             You have HubSpot. You have Clay. You&apos;ve watched the tutorials. But
             deals are still tracked in someone&apos;s inbox, follow-up depends on who
@@ -58,7 +50,7 @@ export default function Hero() {
 
           <p
             className="mb-8 leading-[1.75] max-w-[640px]"
-            style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.58)' }}
+            style={{ fontSize: '1rem', color: '#555555' }}
           >
             GrowthStack builds the operating layer that fixes that — CRM
             structure, workflow logic, outbound activation, and reporting — in 10
@@ -96,27 +88,27 @@ export default function Hero() {
                 fontSize: '1.0625rem',
                 fontWeight: 600,
                 borderRadius: '8px',
-                border: '2px solid rgba(255,255,255,0.3)',
-                color: '#FFFFFF',
+                border: '2px solid rgba(26,26,26,0.3)',
+                color: '#1a1a1a',
                 transition: 'border-color 0.2s ease, color 0.2s ease',
                 cursor: 'pointer',
                 textDecoration: 'none',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.65)';
-                e.currentTarget.style.color = '#FFFFFF';
+                e.currentTarget.style.borderColor = 'rgba(26,26,26,0.65)';
+                e.currentTarget.style.color = '#1a1a1a';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)';
-                e.currentTarget.style.color = '#FFFFFF';
+                e.currentTarget.style.borderColor = 'rgba(26,26,26,0.3)';
+                e.currentTarget.style.color = '#1a1a1a';
               }}
             >
               See How It Works
             </Link>
           </div>
 
-          <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)' }}>
-            <strong style={{ color: 'rgba(255,255,255,0.84)' }}>
+          <p style={{ fontSize: '0.875rem', color: '#666666' }}>
+            <strong style={{ color: '#1a1a1a' }}>
               Fixed scope.
             </strong>{' '}
             10-day delivery. Full handover at the end.
@@ -130,10 +122,7 @@ export default function Hero() {
           preserveAspectRatio="none"
           className="absolute inset-0 w-full h-full"
         >
-          <path
-            d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"
-            fill="#FDFAF6"
-          />
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff" />
         </svg>
       </div>
     </section>

@@ -34,7 +34,7 @@ export default function BeforeAfterSlider() {
           position: 'relative',
           overflow: 'hidden',
           borderRadius: '20px',
-          border: '1px solid rgba(255,255,255,0.1)',
+          border: '1px solid rgba(0,0,0,0.15)',
           background:
             'linear-gradient(180deg, rgba(8,16,28,0.92) 0%, rgba(12,22,36,0.96) 100%)',
           boxShadow: '0 30px 70px rgba(7,12,20,0.38)',
@@ -44,7 +44,7 @@ export default function BeforeAfterSlider() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(circle at top right, rgba(241,90,36,0.16) 0%, transparent 32%), radial-gradient(circle at 20% 80%, rgba(241,90,36,0.05) 0%, transparent 34%)',
+          'radial-gradient(circle at top right, rgba(241,90,36,0.16) 0%, transparent 32%), radial-gradient(circle at 20% 80%, rgba(241,90,36,0.05) 0%, transparent 34%)',
           }}
         />
 
@@ -71,7 +71,7 @@ export default function BeforeAfterSlider() {
                 fontWeight: 700,
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: '#F15A24',
+                      color: '#F15A24',
                 marginBottom: '18px',
               }}
             >

@@ -12,8 +12,8 @@
   --color-dark-surface: #162333;
 
   /* Light surfaces */
-  --color-panel:  #F7F8F7;
-  --color-bg:     #FFFFFF;
+  --color-panel:  #ffffff;
+  --color-bg:     #ffffff;
   --color-border: #E2E5E2;
 
   /* Light text */
@@ -35,8 +35,26 @@ html {
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #1A1A1A;
   font-size: 1rem;
   line-height: 1.75;
+}
+
+h1, h2 {
+  letter-spacing: -0.02em;
+}
+
+nav {
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+:root {
+  --section-bg-primary: #ffffff;
+  --section-bg-secondary: #f8fafc;
+  --section-border: #e5e7eb;
+  --text-primary: #1a1a1a;
+  --text-muted: #555555;
+  --accent: #F15A24;
+  --dark: #0F1B2D;
 }
