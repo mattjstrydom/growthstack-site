@@ -30,24 +30,24 @@ function ProofCard({
     <article
       className="testimonial-card"
       style={{
-        background: '#FFFFFF',
-        border: '1px solid #ECE6DE',
+        background: 'rgba(255,255,255,0.05)',
+        border: '1px solid rgba(255,255,255,0.1)',
         borderRadius: '18px',
         padding: '24px 22px',
         display: 'flex',
         flexDirection: 'column',
         gap: '16px',
         transition: 'transform 0.22s ease, box-shadow 0.22s ease',
-        boxShadow: '0 12px 32px rgba(23, 32, 51, 0.04)',
       }}
     >
       <div
         style={{
           fontSize: 'clamp(2rem, 4vw, 3rem)',
-          fontWeight: 700,
+          fontWeight: 800,
           color: '#F15A24',
           lineHeight: 1,
-          letterSpacing: '-0.02em',
+          letterSpacing: '-0.03em',
+          fontStyle: 'italic',
         }}
       >
         {stat}
@@ -56,7 +56,7 @@ function ProofCard({
         style={{
           fontSize: 'clamp(0.78rem, 1.3vw, 0.875rem)',
           fontWeight: 500,
-          color: '#6B6B6B',
+          color: 'rgba(255,255,255,0.45)',
           letterSpacing: '0.04em',
           textTransform: 'uppercase',
           marginTop: '6px',
@@ -68,7 +68,7 @@ function ProofCard({
       <p
         style={{
           fontSize: '0.9375rem',
-          color: '#4A4A4A',
+          color: 'rgba(255,255,255,0.7)',
           lineHeight: 1.7,
           margin: 0,
           flex: 1,
@@ -79,9 +79,9 @@ function ProofCard({
       <div
         style={{
           fontSize: '0.75rem',
-          color: '#7D776F',
+          color: 'rgba(255,255,255,0.35)',
           paddingTop: '4px',
-          borderTop: '1px solid #F1ECE5',
+          borderTop: '1px solid rgba(255,255,255,0.1)',
           fontWeight: 600,
         }}
       >
@@ -95,10 +95,10 @@ export default function Testimonials() {
   return (
     <section
       style={{
-        background: '#FDFAF6',
-        borderTop: '1px solid #EAE4DB',
-        borderBottom: '1px solid #EAE4DB',
-        padding: '72px 0 80px',
+        background: '#0F1B2D',
+        borderTop: 'none',
+        borderBottom: 'none',
+        padding: '80px 0',
       }}
     >
       <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
@@ -111,7 +111,7 @@ export default function Testimonials() {
             style={{
               fontSize: 'clamp(1.875rem,3.5vw,3rem)',
               fontWeight: 700,
-              color: '#1A1A1A',
+              color: '#ffffff',
               lineHeight: 1.2,
             }}
           >
@@ -120,7 +120,7 @@ export default function Testimonials() {
           <p
             style={{
               fontSize: '1.0625rem',
-              color: '#666',
+              color: 'rgba(255,255,255,0.6)',
               marginTop: '12px',
               maxWidth: '700px',
               margin: '12px auto 0',
@@ -149,7 +149,7 @@ export default function Testimonials() {
         <p
           style={{
             fontSize: '0.95rem',
-            color: '#666',
+            color: 'rgba(255,255,255,0.55)',
             lineHeight: 1.7,
             maxWidth: '860px',
             margin: '28px auto 0',

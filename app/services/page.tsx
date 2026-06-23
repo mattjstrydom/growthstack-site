@@ -185,18 +185,18 @@ export default function ServicesPage() {
           dangerouslySetInnerHTML={{ __html: jsonLd(faqJsonLd) }}
         />
 
-        <section style={{ background: '#0F1B2D', padding: '72px 0 64px' }}>
+        <section style={{ background: '#ffffff url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23e5e7eb\' fill-opacity=\'0.5\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")', padding: '72px 0 64px' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div
-              className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full mb-6"
-              style={{ fontSize: '0.72rem', color: '#F15A24', background: 'rgba(241,90,36,0.08)', padding: '5px 12px', border: '1px solid rgba(241,90,36,0.25)', letterSpacing: '0.08em' }}
+              className="inline-flex items-center font-bold uppercase tracking-[0.1em] mb-6"
+              style={{ fontSize: '0.72rem', color: '#F15A24', background: 'transparent', padding: '5px 13px', border: '1px dashed rgba(241,90,36,0.6)', borderRadius: '4px', letterSpacing: '0.1em', fontWeight: 600 }}
             >
               Services
             </div>
-            <h1 className="font-bold text-white leading-tight mb-5" style={{ fontSize: 'clamp(2rem,4vw,3rem)', maxWidth: '840px' }}>
+            <h1 className="font-bold text-[#1a1a1a] mb-5" style={{ fontSize: 'clamp(2rem,4vw,3rem)', maxWidth: '840px' }}>
               The GTM system your team can actually run.
             </h1>
-            <p style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.65)', maxWidth: '720px', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '1.125rem', color: '#555555', maxWidth: '720px', lineHeight: 1.7 }}>
               Not a strategy engagement. Not an ongoing retainer. A working
               commercial infrastructure — built, documented, and handed over in 10
               days.

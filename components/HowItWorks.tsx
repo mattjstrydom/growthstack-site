@@ -60,7 +60,7 @@ export default function HowItWorks() {
           <div className="grid md:grid-cols-3 gap-5 sm:gap-6 mb-8">
             <CardShell dark>
               <div
-                className="inline-block font-bold uppercase tracking-[0.1em] rounded-full mb-5"
+              className="inline-block font-bold uppercase tracking-[0.1em] rounded-full mb-5"
                 style={{
                   fontSize: '0.72rem',
                   color: '#F15A24',
@@ -147,19 +147,19 @@ export default function HowItWorks() {
                 Step 3
               </div>
               <h3
-                className="font-semibold text-[#1A1A1A] mb-1"
+                className="font-semibold text-white mb-1"
                 style={{ fontSize: 'clamp(1.1rem,2vw,1.375rem)', fontWeight: 600 }}
               >
                 Handover and activate (Days 9–10)
               </h3>
               <p
                 className="mb-5"
-                style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)' }}
+                style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)' }}
               >
               </p>
               <p
                 className="leading-[1.75]"
-                style={{ color: '#555', fontSize: '0.9375rem' }}
+                style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9375rem' }}
               >
                 You get a fully documented system with clear ownership rules, a
                 working reporting setup, and a team that knows how to use it. No
@@ -171,8 +171,8 @@ export default function HowItWorks() {
           <div
             className="rounded-2xl"
             style={{
-              background: '#FDFAF6',
-              border: '1px solid #E2E5E2',
+              background: '#ffffff',
+              border: '1px solid #e5e7eb',
               padding: '24px',
             }}
           >

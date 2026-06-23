@@ -143,14 +143,16 @@ export default function Home() {
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div className="mb-10">
               <div
-                className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full mb-3"
+                className="inline-flex items-center font-bold uppercase tracking-[0.1em] mb-3"
                 style={{
                   fontSize: '0.72rem',
                   color: '#F15A24',
-                  background: 'rgba(241,90,36,0.08)',
-                  padding: '5px 12px',
-                  border: '1px solid rgba(241,90,36,0.25)',
-                  letterSpacing: '0.08em',
+                  background: 'transparent',
+                  padding: '5px 13px',
+                  border: '1px dashed rgba(241,90,36,0.6)',
+                  borderRadius: '4px',
+                  letterSpacing: '0.1em',
+                  fontWeight: 600,
                 }}
               >
                 Common Starting Points

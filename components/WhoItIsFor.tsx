@@ -97,24 +97,25 @@ export default function WhoItIsFor() {
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
           <div
             style={{
-              background: 'linear-gradient(180deg, #fff7ee 0%, #ffffff 100%)',
-              border: '1px solid #ECE2D4',
-              borderRadius: '20px',
-              padding: '28px 22px',
-              textAlign: 'center',
-              boxShadow: '0 18px 40px rgba(23, 32, 51, 0.05)',
+              background: 'transparent',
+              border: 'none',
+              borderLeft: '4px solid #F15A24',
+              borderRadius: '0',
+              padding: '12px 0 12px 24px',
+              textAlign: 'left',
+              boxShadow: 'none',
             }}
           >
             <blockquote
               className="mx-auto max-w-2xl italic leading-[1.75] mb-3"
-              style={{ fontSize: 'clamp(1rem,2vw,1.25rem)', color: '#3E464F' }}
+              style={{ fontSize: 'clamp(1.1rem,2vw,1.35rem)', color: '#1a1a1a', lineHeight: 1.5, fontStyle: 'italic', textAlign: 'left' }}
             >
               &ldquo;The goal isn&apos;t more activity. It&apos;s a GTM system your team can
               trust, measure, and actually run.&rdquo;
             </blockquote>
             <cite
               className="not-italic font-semibold"
-              style={{ fontSize: '0.875rem', color: '#F15A24' }}
+              style={{ fontSize: '0.85rem', fontWeight: 700, color: '#F15A24', marginTop: '12px', fontStyle: 'normal' }}
             >
               GrowthStack
             </cite>
