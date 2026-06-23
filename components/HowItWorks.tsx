@@ -131,7 +131,7 @@ export default function HowItWorks() {
               </p>
             </CardShell>
 
-            <CardShell>
+            <CardShell dark>
               <div
                 className="inline-block font-bold uppercase tracking-[0.1em] rounded-full mb-5"
                 style={{
