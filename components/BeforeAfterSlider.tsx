@@ -14,7 +14,7 @@ const systemLayers = [
   {
     title: 'Reporting and visibility',
     body: 'Dashboards and source-to-pipeline views show what is moving, where deals stall, and what needs attention.',
-    accent: '#7DD3FC',
+    accent: '#F15A24',
   },
 ];
 
@@ -44,7 +44,7 @@ export default function BeforeAfterSlider() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(circle at top right, rgba(241,90,36,0.16) 0%, transparent 32%), radial-gradient(circle at 20% 80%, rgba(125,211,252,0.08) 0%, transparent 34%)',
+              'radial-gradient(circle at top right, rgba(241,90,36,0.16) 0%, transparent 32%), radial-gradient(circle at 20% 80%, rgba(241,90,36,0.05) 0%, transparent 34%)',
           }}
         />
 
@@ -96,7 +96,7 @@ export default function BeforeAfterSlider() {
                     background: 'rgba(255,255,255,0.04)',
                     border: '1px solid rgba(255,255,255,0.08)',
                     borderRadius: '16px',
-                    padding: '18px 18px 16px',
+                    padding: '24px 20px',
                   }}
                 >
                   <div
@@ -113,7 +113,7 @@ export default function BeforeAfterSlider() {
                         height: '26px',
                         borderRadius: '9999px',
                         background: 'rgba(255,255,255,0.06)',
-                        border: `1px solid ${layer.accent}44`,
+                        border: index === 2 ? '1px solid rgba(241,90,36,0.27)' : `1px solid ${layer.accent}44`,
                         color: layer.accent,
                         display: 'inline-flex',
                         alignItems: 'center',
@@ -214,7 +214,7 @@ export default function BeforeAfterSlider() {
                     background: 'rgba(255,255,255,0.04)',
                     border: '1px solid rgba(255,255,255,0.08)',
                     borderRadius: '14px',
-                    padding: '16px 14px',
+                    padding: '22px 18px',
                   }}
                 >
                   <div

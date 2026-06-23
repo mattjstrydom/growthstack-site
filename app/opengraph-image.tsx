@@ -84,7 +84,7 @@ export default function Image() {
               marginBottom: "18px",
             }}
           >
-            GTM Systems and RevOps for Early-Stage B2B
+            GTM Infrastructure for Early-Stage B2B
           </div>
           <div
             style={{
@@ -97,8 +97,8 @@ export default function Image() {
               marginBottom: "22px",
             }}
           >
-            <div style={{ display: "flex" }}>From founder-led sales</div>
-            <div style={{ display: "flex" }}>to a working GTM engine.</div>
+            <div style={{ display: "flex" }}>Your pipeline is still</div>
+            <div style={{ display: "flex" }}>living in the founder&apos;s head.</div>
           </div>
           <div
             style={{
@@ -107,8 +107,8 @@ export default function Image() {
               color: "rgba(255,255,255,0.72)",
             }}
           >
-            HubSpot setup, CRM design, automation, reporting, and pipeline
-            activation built into one working system.
+            HubSpot setup, outbound systems, workflow automation, and CRM
+            architecture built into one working GTM operating layer.
           </div>
         </div>
       </div>

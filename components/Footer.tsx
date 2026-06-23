@@ -28,7 +28,7 @@ export default function Footer() {
               GrowthStack
             </div>
             <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.7 }}>
-              GTM systems, HubSpot, and RevOps for early-stage B2B startups.
+              GTM infrastructure for early-stage B2B teams. Built, documented, and handed over — not managed indefinitely.
             </p>
           </div>
 

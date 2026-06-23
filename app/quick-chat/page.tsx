@@ -56,17 +56,18 @@ export default function QuickChatPage() {
                 style={{
                   fontSize: "0.72rem",
                   color: "#F15A24",
-                  background: "rgba(241,90,36,0.12)",
-                  padding: "6px 14px",
+                  background: "rgba(241,90,36,0.08)",
+                  padding: "5px 12px",
                   border: "1px solid rgba(241,90,36,0.25)",
+                  letterSpacing: "0.08em",
                 }}
               >
                 Quick Chat
               </div>
 
               <h1
-                className="font-bold text-white leading-tight mb-4"
-                style={{ fontSize: "clamp(2.2rem,4.8vw,4rem)" }}
+                className="font-bold text-white mb-4"
+                style={{ fontSize: "clamp(2.2rem,4.8vw,4rem)", lineHeight: 1.1 }}
               >
                 Book a short call with Matt @ GrowthStack.
               </h1>

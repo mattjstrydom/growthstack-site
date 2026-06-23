@@ -31,36 +31,38 @@ export default function Hero() {
       <div className="relative max-w-[1100px] mx-auto px-6 lg:px-8 pb-[96px] sm:pb-[120px]">
         <div className="max-w-[760px]">
           <div className="mb-6">
-            <Eyebrow>GTM Systems and RevOps for Early-Stage B2B</Eyebrow>
+            <Eyebrow>GTM Infrastructure for Early-Stage B2B</Eyebrow>
           </div>
 
           <h1
-            className="font-bold text-white leading-tight mb-6"
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 700 }}
+            className="font-bold text-white mb-6"
+            style={{ fontSize: 'clamp(2.75rem, 5.5vw, 5rem)', fontWeight: 700, lineHeight: 1.1 }}
           >
-            From founder-led sales
+            Your pipeline is still
             <br />
             <em className="not-italic" style={{ color: '#F15A24' }}>
-              to a working GTM engine.
+              living in the founder&apos;s head.
             </em>
           </h1>
 
           <p
             className="mb-5 leading-[1.75] max-w-[660px]"
             id="gs-what-we-do"
-            style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.74)' }}
+            style={{ fontSize: 'clamp(1.15rem,2.2vw,1.45rem)', color: 'rgba(255,255,255,0.74)', lineHeight: 1.65 }}
           >
-            GrowthStack helps early-stage B2B startups set up HubSpot, structure
-            pipeline, automate workflows, and activate outbound inside one working
-            system.
+            You have HubSpot. You have Clay. You&apos;ve watched the tutorials. But
+            deals are still tracked in someone&apos;s inbox, follow-up depends on who
+            remembers, and no one can tell you what&apos;s actually in the pipeline
+            without asking around.
           </p>
 
           <p
             className="mb-8 leading-[1.75] max-w-[640px]"
             style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.58)' }}
           >
-            CRM, pipeline, automation, reporting, and outbound built for founders
-            who need a system, not more scattered tools.
+            GrowthStack builds the operating layer that fixes that — CRM
+            structure, workflow logic, outbound activation, and reporting — in 10
+            days, not 10 months.
           </p>
         </div>
 
@@ -115,9 +117,9 @@ export default function Hero() {
 
           <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)' }}>
             <strong style={{ color: 'rgba(255,255,255,0.84)' }}>
-              Used by early-stage B2B teams
+              Fixed scope.
             </strong>{' '}
-            building their first repeatable revenue motion.
+            10-day delivery. Full handover at the end.
           </p>
         </div>
       </div>
@@ -130,7 +132,7 @@ export default function Hero() {
         >
           <path
             d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"
-            fill="#FCFAF7"
+            fill="#FDFAF6"
           />
         </svg>
       </div>

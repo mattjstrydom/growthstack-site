@@ -6,16 +6,16 @@ import BookDiscoveryButton from '@/components/BookDiscoveryButton';
 import { absoluteUrl, jsonLd, siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Services | GrowthStack',
+  title: 'GTM & HubSpot RevOps Services for B2B SaaS Startups | GrowthStack',
   description:
-    'GrowthStack services for early-stage B2B startups: GTM foundation, HubSpot and RevOps, pipeline activation, and ongoing optimisation.',
+    'GrowthStack builds HubSpot foundations, workflow automation, outbound infrastructure, and GTM systems for early-stage B2B teams. Fixed scope. 10-day delivery. You own everything.',
   alternates: {
     canonical: absoluteUrl('/services'),
   },
   openGraph: {
-    title: 'Services | GrowthStack',
+    title: 'GTM & HubSpot RevOps Services for B2B SaaS Startups | GrowthStack',
     description:
-      'GrowthStack services for early-stage B2B startups: GTM foundation, HubSpot and RevOps, pipeline activation, and ongoing optimisation.',
+      'GrowthStack builds HubSpot foundations, workflow automation, outbound infrastructure, and GTM systems for early-stage B2B teams. Fixed scope. 10-day delivery. You own everything.',
     url: absoluteUrl('/services'),
     images: [
       {
@@ -27,37 +27,103 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: 'Services | GrowthStack',
+    title: 'GTM & HubSpot RevOps Services for B2B SaaS Startups | GrowthStack',
     description:
-      'GrowthStack services for early-stage B2B startups: GTM foundation, HubSpot and RevOps, pipeline activation, and ongoing optimisation.',
+      'GrowthStack builds HubSpot foundations, workflow automation, outbound infrastructure, and GTM systems for early-stage B2B teams. Fixed scope. 10-day delivery. You own everything.',
     images: [absoluteUrl('/services/twitter-image')],
   },
 };
 
-export default function ServicesPage() {
-  const faqItems = [
-    {
-      question: 'What service do most teams start with?',
-      answer:
-        'Most early-stage teams start with either a GTM foundation build or a HubSpot cleanup, depending on whether the bigger issue is missing structure or a messy existing system.',
-    },
-    {
-      question: 'Can you help with HubSpot without managing outbound?',
-      answer:
-        'Yes. GrowthStack can work purely on HubSpot, lifecycle stages, pipeline design, workflows, and reporting without taking on outbound execution.',
-    },
-    {
-      question: 'Do you offer ongoing support after the initial build?',
-      answer:
-        'Yes. Ongoing support can cover CRM hygiene, workflow refinement, reporting improvements, pipeline visibility, and activation support once the system is in place.',
-    },
-    {
-      question: 'How do we know which service fits?',
-      answer:
-        'That is usually what the discovery call is for. We look at your current setup and recommend the shortest path to a usable commercial system.',
-    },
-  ];
+const faqItems = [
+  {
+    question: 'What service do most teams start with?',
+    answer:
+      'Most teams start with either the GTM Audit or the GTM Foundation Build. The right starting point depends on whether the bigger issue is knowing what is broken or already knowing it needs to be rebuilt.',
+  },
+  {
+    question: 'Can you help with HubSpot without rebuilding the full GTM motion?',
+    answer:
+      'Yes. HubSpot Cleanup & RevOps Rebuild is designed for teams whose main problem is the CRM layer rather than the entire outbound and activation stack.',
+  },
+  {
+    question: 'Do you do implementation or only recommendations?',
+    answer:
+      'Implementation. Every offer is built around delivering working infrastructure in your tools, with documentation and handover included.',
+  },
+  {
+    question: 'How do we know which service fits?',
+    answer:
+      'That is usually what the discovery call or audit is for. We look at the current setup and recommend the shortest path to a system your team can actually run.',
+  },
+];
 
+const serviceCards = [
+  {
+    title: 'GTM Foundation Build',
+    who: "Teams that are past founder-led selling but haven't formalised the system yet. The CRM exists but doesn't reflect how revenue moves. Follow-up is inconsistent. No one can tell you conversion rates by stage without pulling numbers manually.",
+    items: [
+      'HubSpot contact, company, and deal property architecture',
+      'Lifecycle stage design matched to your actual funnel',
+      'Pipeline setup with stage-specific exit criteria',
+      'Lead ownership and routing rules',
+      'Core dashboards: source-to-pipeline, stage conversion, deal velocity',
+      'Workflow automation for routing, task creation, and handoffs',
+      'Full documentation of everything built',
+    ],
+    outcome:
+      'A CRM your team trusts, a pipeline they can act on, and reporting that answers the questions leadership actually asks.',
+    delivery: '10 days from kickoff',
+  },
+  {
+    title: 'HubSpot Cleanup & RevOps Rebuild',
+    who: "Teams that already have HubSpot live but it's no longer working. Duplicate properties. Broken workflows. Lifecycle stages that haven't been touched since the original setup. Dashboards nobody looks at because nobody trusts them.",
+    items: [
+      'Full audit of current portal structure before any changes',
+      'Property consolidation and archive of redundant fields',
+      'Workflow audit — what stays, what gets fixed, what gets cut',
+      'Lifecycle stage and pipeline rebuild to match current motion',
+      'Reporting rebuild with dashboards that answer real questions',
+      'Documentation of what changed and why',
+    ],
+    outcome:
+      "A portal that reflects what's actually happening in the business — and guardrails so it stays clean.",
+    delivery: '5–15 days depending on portal complexity',
+  },
+  {
+    title: 'Outbound Infrastructure Build',
+    who: "Teams that know outbound needs to happen properly but haven't been able to build it. You've tried some version of cold email. Results were underwhelming. You're not sure if the problem was the list, the copy, the tooling, or all three.",
+    items: [
+      'ICP definition and segmentation framework',
+      'Clay enrichment workflow for signal-based lead building',
+      'Apollo or Instantly sending infrastructure setup',
+      'Multi-channel sequence architecture (email + LinkedIn where relevant)',
+      'CRM integration so replies, statuses, and next steps flow back into HubSpot automatically',
+      'Reporting to track open rate, reply rate, meetings booked, and pipeline generated',
+      'Full documentation and handover',
+    ],
+    outcome:
+      "A working outbound system that generates pipeline inside your CRM — not in someone's inbox.",
+    delivery: '10–15 days from kickoff',
+  },
+  {
+    title: 'GTM Audit',
+    price: '$1,200',
+    who: "Teams that aren't sure what to fix first. You know the commercial system has problems but you don't know whether the priority is the CRM, the outbound motion, the reporting, or all of it.",
+    items: [
+      'Review of current CRM structure, lifecycle stages, and pipeline',
+      'Outbound motion audit — tooling, sequences, CRM connection',
+      'Reporting and visibility assessment',
+      'Prioritised fix list with clear sequencing',
+      '60-minute working session to walk through findings',
+    ],
+    outcome:
+      "A clear map of what's broken, what to fix first, and why — with specific scope for whatever build makes sense next.",
+    note:
+      'The audit fee applies as a credit toward any subsequent build engagement.',
+  },
+] as const;
+
+export default function ServicesPage() {
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -70,7 +136,7 @@ export default function ServicesPage() {
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'GTM Systems and RevOps Services',
+    name: 'GTM & HubSpot RevOps Services',
     url: absoluteUrl('/services'),
     provider: {
       '@type': 'Organization',
@@ -79,15 +145,14 @@ export default function ServicesPage() {
     },
     areaServed: 'Global',
     serviceType: [
-      'GTM foundation',
-      'HubSpot setup',
-      'RevOps support',
-      'Pipeline activation',
-      'Workflow automation',
-      'Reporting and optimisation',
+      'GTM foundation build',
+      'HubSpot cleanup',
+      'RevOps rebuild',
+      'Outbound infrastructure',
+      'GTM audit',
     ],
     description:
-      'GrowthStack services for early-stage B2B startups: GTM foundation, HubSpot and RevOps, pipeline activation, and ongoing optimisation.',
+      'GrowthStack builds HubSpot foundations, workflow automation, outbound infrastructure, and GTM systems for early-stage B2B teams. Fixed scope. 10-day delivery. You own everything.',
   };
 
   const faqJsonLd = {
@@ -124,17 +189,17 @@ export default function ServicesPage() {
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div
               className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full mb-6"
-              style={{ fontSize: '0.72rem', color: '#F15A24', background: 'rgba(241,90,36,0.12)', padding: '6px 14px', border: '1px solid rgba(241,90,36,0.25)' }}
+              style={{ fontSize: '0.72rem', color: '#F15A24', background: 'rgba(241,90,36,0.08)', padding: '5px 12px', border: '1px solid rgba(241,90,36,0.25)', letterSpacing: '0.08em' }}
             >
               Services
             </div>
             <h1 className="font-bold text-white leading-tight mb-5" style={{ fontSize: 'clamp(2rem,4vw,3rem)', maxWidth: '840px' }}>
-              The systems behind repeatable pipeline, packaged for early-stage B2B teams.
+              The GTM system your team can actually run.
             </h1>
             <p style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.65)', maxWidth: '720px', lineHeight: 1.7 }}>
-              GrowthStack helps founders move from scattered sales activity to a
-              working GTM engine through CRM structure, HubSpot setup, workflow
-              automation, reporting, and activation support.
+              Not a strategy engagement. Not an ongoing retainer. A working
+              commercial infrastructure — built, documented, and handed over in 10
+              days.
             </p>
           </div>
         </section>
@@ -143,41 +208,15 @@ export default function ServicesPage() {
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div className="mb-12">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
-                Core Offers
+                Service Blocks
               </div>
               <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A', marginBottom: '12px' }}>
-                What we actually deliver
+                Four ways to fix the system.
               </h2>
-              <p style={{ fontSize: '1rem', color: '#555', lineHeight: 1.7, maxWidth: '760px' }}>
-                These offers are designed to solve the most common early-stage
-                commercial problems: messy CRM structure, weak reporting, unclear
-                pipeline ownership, and activation running outside the system.
-              </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-5 sm:gap-6">
-              {[
-                {
-                  title: 'GTM Foundation',
-                  body: 'ICP definition, pipeline structure, lifecycle stages, reporting logic, and the commercial architecture behind repeatable pipeline.',
-                  note: 'Best for teams moving from founder-led selling into a clearer operating model.',
-                },
-                {
-                  title: 'HubSpot and RevOps',
-                  body: 'HubSpot setup or cleanup, core properties, automations, routing, dashboards, and operational fixes that make the CRM usable.',
-                  note: 'Best for teams with an underused or messy CRM that no one fully trusts.',
-                },
-                {
-                  title: 'Pipeline Activation',
-                  body: 'Outbound, enrichment, workflow-connected execution, and activation support layered onto a system that is already structured properly.',
-                  note: 'Best for teams that need pipeline generation to live inside the CRM instead of outside it.',
-                },
-                {
-                  title: 'Ongoing Optimisation',
-                  body: 'Monthly support for CRM hygiene, conversion visibility, workflow refinement, reporting improvements, and GTM iteration.',
-                  note: 'Best for teams that have the basics in place and want the system to keep improving.',
-                },
-              ].map((item) => (
+              {serviceCards.map((item) => (
                 <div
                   key={item.title}
                   className="services-offer-card"
@@ -188,15 +227,38 @@ export default function ServicesPage() {
                     padding: '24px',
                   }}
                 >
-                  <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
+                  {'price' in item && item.price && (
+                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#F15A24', marginBottom: '10px' }}>
+                      {item.price}
+                    </div>
+                  )}
+                  <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '14px' }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.75, marginBottom: '12px' }}>
-                    {item.body}
+                  <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.75, marginBottom: '14px' }}>
+                    {item.who}
                   </p>
-                  <p style={{ fontSize: '0.86rem', color: '#8a8a8a', lineHeight: 1.6 }}>
-                    {item.note}
+                  <div style={{ display: 'grid', gap: '10px', marginBottom: '14px' }}>
+                    {item.items.map((bullet) => (
+                      <div key={bullet} style={{ display: 'flex', gap: '10px', fontSize: '0.92rem', color: '#333', lineHeight: 1.65 }}>
+                        <span style={{ color: '#F15A24', fontWeight: 700 }}>+</span>
+                        {bullet}
+                      </div>
+                    ))}
+                  </div>
+                  <p style={{ fontSize: '0.9rem', color: '#1A1A1A', lineHeight: 1.7, marginBottom: '10px', fontWeight: 600 }}>
+                    {item.outcome}
                   </p>
+                  {'delivery' in item && item.delivery && (
+                    <p style={{ fontSize: '0.86rem', color: '#8a8a8a', lineHeight: 1.6, marginBottom: 0 }}>
+                      Delivery: {item.delivery}
+                    </p>
+                  )}
+                  {'note' in item && item.note && (
+                    <p style={{ fontSize: '0.86rem', color: '#8a8a8a', lineHeight: 1.6, marginBottom: 0 }}>
+                      {item.note}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
@@ -204,7 +266,7 @@ export default function ServicesPage() {
             <div
               style={{
                 marginTop: '22px',
-                background: '#FCFAF7',
+                background: '#FDFAF6',
                 border: '1px solid #ECE6DE',
                 borderRadius: '18px',
                 padding: '22px',
@@ -228,107 +290,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section style={{ background: '#F7F8F7', borderTop: '1px solid #E2E5E2', borderBottom: '1px solid #E2E5E2', padding: '72px 0' }}>
-          <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
-                Typical Problems
-              </div>
-              <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A' }}>
-                When teams usually bring us in
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-              {[
-                'HubSpot exists, but no one trusts the data',
-                'Pipeline depends too much on the founder',
-                'Workflows and handoffs are inconsistent',
-                'Outbound and reporting sit outside the CRM',
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="services-problem-card"
-                  style={{
-                    background: '#fff',
-                    border: '1px solid #E2E5E2',
-                    borderRadius: '16px',
-                    padding: '20px',
-                    fontSize: '0.95rem',
-                    lineHeight: 1.7,
-                    color: '#333',
-                  }}
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section style={{ background: '#fff', padding: '72px 0' }}>
-          <div className="max-w-[900px] mx-auto px-6 lg:px-8">
-            <div className="mb-10">
-              <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
-                How To Buy
-              </div>
-              <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A', marginBottom: '12px' }}>
-                The usual starting points
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
-              {[
-                {
-                  title: 'Start with a foundation build',
-                  body: 'For teams that need the CRM, workflow, and reporting layer fixed before adding more execution.',
-                },
-                {
-                  title: 'Start with HubSpot cleanup',
-                  body: 'For teams that already have motion but need cleaner structure, lifecycle logic, and better visibility.',
-                  href: '/hubspot-cleanup',
-                },
-                {
-                  title: 'Add activation once the system is ready',
-                  body: 'For teams that want outbound or workflow-driven pipeline generation on top of a usable setup.',
-                  href: '/services',
-                },
-              ].map((item) => (
-                <Link
-                  key={item.title}
-                  href={item.href ?? '/services'}
-                  className="services-buy-card"
-                  style={{
-                    textDecoration: 'none',
-                    color: 'inherit',
-                  }}
-                >
-                  <div
-                    style={{
-                      background: '#F7F8F7',
-                      border: '1px solid #E2E5E2',
-                      borderRadius: '16px',
-                      padding: '22px',
-                      height: '100%',
-                    }}
-                  >
-                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
-                      {item.title}
-                    </h3>
-                    <p style={{ fontSize: '0.92rem', color: '#555', lineHeight: 1.7, marginBottom: '14px' }}>
-                      {item.body}
-                    </p>
-                    <div style={{ fontSize: '0.9rem', color: '#F15A24', fontWeight: 600 }}>
-                      Learn more →
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section style={{ background: '#FCFAF7', borderTop: '1px solid #ECE6DE', borderBottom: '1px solid #ECE6DE', padding: '72px 0' }}>
+        <section style={{ background: '#FDFAF6', borderTop: '1px solid #EAE4DB', borderBottom: '1px solid #EAE4DB', padding: '72px 0' }}>
           <div className="max-w-[900px] mx-auto px-6 lg:px-8">
             <div className="mb-10">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
@@ -368,9 +330,9 @@ export default function ServicesPage() {
               Need help deciding which service fits?
             </h2>
             <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.65)', marginBottom: '32px' }}>
-              Book a discovery call and we&apos;ll tell you whether you need a
-              foundation build, HubSpot cleanup, activation support, or some
-              combination of the three.
+              Book a discovery call and we&apos;ll tell you whether you need a GTM
+              audit, a foundation build, a HubSpot rebuild, or outbound
+              infrastructure next.
             </p>
             <BookDiscoveryButton
               utmContent="services_cta"
@@ -381,9 +343,9 @@ export default function ServicesPage() {
                 fontSize: '1.0625rem',
                 fontWeight: 600,
                 borderRadius: '8px',
-                boxShadow: '0 2px 12px rgba(241,90,36,0.35)',
+                boxShadow: '0 6px 28px rgba(241,90,36,0.5)',
               }}
-              hoverStyle={{ background: '#D44E1E', boxShadow: '0 4px 20px rgba(241,90,36,0.45)' }}
+              hoverStyle={{ background: '#D44E1E', boxShadow: '0 8px 36px rgba(241,90,36,0.65)' }}
             >
               Book a Discovery Call
             </BookDiscoveryButton>
@@ -393,9 +355,7 @@ export default function ServicesPage() {
       <Footer />
       <style>{`
         @media (max-width: 640px) {
-          .services-offer-card,
-          .services-problem-card,
-          .services-buy-card {
+          .services-offer-card {
             border-radius: 14px !important;
           }
         }

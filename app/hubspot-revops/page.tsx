@@ -1,22 +1,21 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import BookDiscoveryButton from '@/components/BookDiscoveryButton';
 import { absoluteUrl, jsonLd, siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'HubSpot & RevOps | GrowthStack',
+  title: 'HubSpot Setup & RevOps for Early-Stage B2B SaaS | GrowthStack',
   description:
-    'HubSpot setup, cleanup, pipeline design, workflow automation, and RevOps support for early-stage B2B startups.',
+    'GrowthStack sets up and rebuilds HubSpot for early-stage B2B teams — lifecycle stages, pipeline, workflows, reporting, and CRM cleanup. Fixed scope, 10-day delivery.',
   alternates: {
     canonical: absoluteUrl('/hubspot-revops'),
   },
   openGraph: {
-    title: 'HubSpot & RevOps | GrowthStack',
+    title: 'HubSpot Setup & RevOps for Early-Stage B2B SaaS | GrowthStack',
     description:
-      'HubSpot setup, cleanup, pipeline design, workflow automation, and RevOps support for early-stage B2B startups.',
+      'GrowthStack sets up and rebuilds HubSpot for early-stage B2B teams — lifecycle stages, pipeline, workflows, reporting, and CRM cleanup. Fixed scope, 10-day delivery.',
     url: absoluteUrl('/hubspot-revops'),
     images: [
       {
@@ -28,37 +27,27 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: 'HubSpot & RevOps | GrowthStack',
+    title: 'HubSpot Setup & RevOps for Early-Stage B2B SaaS | GrowthStack',
     description:
-      'HubSpot setup, cleanup, pipeline design, workflow automation, and RevOps support for early-stage B2B startups.',
+      'GrowthStack sets up and rebuilds HubSpot for early-stage B2B teams — lifecycle stages, pipeline, workflows, reporting, and CRM cleanup. Fixed scope, 10-day delivery.',
     images: [absoluteUrl('/hubspot-revops/twitter-image')],
   },
 };
 
-export default function HubspotRevopsPage() {
-  const faqItems = [
-    {
-      question: 'Can you work in an existing HubSpot portal?',
-      answer:
-        'Yes. GrowthStack can audit, clean up, and restructure an existing HubSpot setup so your pipeline, reporting, and workflows reflect how the team actually sells.',
-    },
-    {
-      question: 'Do you only help with HubSpot, or do you handle the surrounding system too?',
-      answer:
-        'We work on the broader GTM system as well: lifecycle stages, pipeline design, workflow automation, reporting, routing, and activation support where it fits.',
-    },
-    {
-      question: 'Is this only for larger teams?',
-      answer:
-        'No. This is designed for early-stage B2B teams that need a cleaner commercial system before adding more complexity, headcount, or volume.',
-    },
-    {
-      question: 'Do you manage outbound too?',
-      answer:
-        'Yes. Outbound can be activated once the CRM and workflow foundation are in place, so campaigns run inside a usable system instead of alongside one.',
-    },
-  ];
+const faqItems = [
+  {
+    question: 'Can you work in an existing HubSpot portal?',
+    answer:
+      'Yes. Most of the work starts in an existing portal. We audit what is there, decide what to keep, and rebuild the structural layer properly.',
+  },
+  {
+    question: 'Do you handle the CRM only or the wider GTM system too?',
+    answer:
+      'Both. This page is HubSpot-specific, but the work usually overlaps with lifecycle design, outbound connection, routing, and reporting across the full stack.',
+  },
+];
 
+export default function HubspotRevopsPage() {
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -79,7 +68,7 @@ export default function HubspotRevopsPage() {
       'RevOps support',
     ],
     description:
-      'HubSpot setup, cleanup, pipeline design, workflow automation, and RevOps support for early-stage B2B startups.',
+      'GrowthStack sets up and rebuilds HubSpot for early-stage B2B teams — lifecycle stages, pipeline, workflows, reporting, and CRM cleanup. Fixed scope, 10-day delivery.',
   };
 
   const faqJsonLd = {
@@ -135,7 +124,7 @@ export default function HubspotRevopsPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '24px' }}>
               <div
                 className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full"
-                style={{ fontSize: '0.72rem', color: '#F15A24', background: 'rgba(241,90,36,0.12)', padding: '6px 14px', border: '1px solid rgba(241,90,36,0.25)' }}
+                style={{ fontSize: '0.72rem', color: '#F15A24', background: 'rgba(241,90,36,0.08)', padding: '5px 12px', border: '1px solid rgba(241,90,36,0.25)', letterSpacing: '0.08em' }}
               >
                 HubSpot and RevOps
               </div>
@@ -159,162 +148,80 @@ export default function HubspotRevopsPage() {
                 />
               </div>
             </div>
-            <h1 className="font-bold text-white leading-tight mb-5" style={{ fontSize: 'clamp(2rem,4vw,3rem)', maxWidth: '820px' }}>
-              HubSpot setup and RevOps support for startups that need a cleaner
-              commercial system.
+            <h1 className="font-bold text-white mb-5" style={{ fontSize: 'clamp(2rem,4vw,3rem)', maxWidth: '820px', lineHeight: 1.1 }}>
+              HubSpot set up properly — not just switched on.
             </h1>
             <p style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.65)', maxWidth: '700px', lineHeight: 1.7 }}>
-              GrowthStack helps early-stage B2B teams clean up HubSpot, structure
-              pipeline, automate workflows, improve reporting, and create a system
-              that can actually support growth.
+              Most early-stage B2B teams have HubSpot. Very few have it set up in a
+              way that reflects how their revenue actually moves. We fix that — in
+              10 days, with full documentation, and without an ongoing retainer to
+              keep it working.
             </p>
           </div>
         </section>
 
         <section style={{ background: '#fff', padding: '72px 0' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-start">
-              <div>
-                <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
-                  What We Do
-                </div>
-                <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.2, marginBottom: '14px' }}>
-                  We turn HubSpot from a partial setup into a usable operating layer.
-                </h2>
-              <p style={{ fontSize: '1rem', color: '#555', lineHeight: 1.8 }}>
-                Most early-stage teams have some combination of the right tools and
-                the wrong structure. Contact data is inconsistent, stages do not
-                reflect reality, workflows are patchy, and founders still do too
-                much manually. We fix that.
-              </p>
-              <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.75, marginTop: '14px' }}>
-                If your main problem is a messy live portal rather than a broader
-                systems build, start with <a href="/hubspot-cleanup" style={{ color: '#F15A24', textDecoration: 'none' }}>HubSpot Cleanup</a>.
-              </p>
-            </div>
-              <div
-                className="hubspot-outcomes-card"
-                style={{
-                  background: '#F7F8F7',
-                  border: '1px solid #E2E5E2',
-                  borderRadius: '18px',
-                  padding: '24px',
-                }}
-              >
-                <div style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '14px' }}>
-                  Typical outcomes
-                </div>
-                <div style={{ display: 'grid', gap: '12px' }}>
-                  {[
-                    'A cleaner HubSpot structure with usable properties and views',
-                    'Lifecycle stages and deal pipelines the team can actually follow',
-                    'Workflow automation that reduces manual updates and missed handoffs',
-                    'Reporting founders can use to see what is really happening',
-                    'A system ready for outbound or other activation layers',
-                  ].map((item) => (
-                    <div key={item} style={{ display: 'flex', gap: '10px', fontSize: '0.9375rem', color: '#333', lineHeight: 1.7 }}>
-                      <span style={{ color: '#F15A24', fontWeight: 700 }}>+</span>
-                      {item}
-                    </div>
-                  ))}
-                </div>
+            <div className="text-center mb-12">
+              <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
+                Problem
               </div>
+              <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A' }}>
+                What a broken HubSpot setup actually costs you.
+              </h2>
             </div>
-
-            <div
-              style={{
-                marginTop: '24px',
-                background: '#FCFAF7',
-                border: '1px solid #ECE6DE',
-                borderRadius: '18px',
-                padding: '22px',
-              }}
-            >
-              <div className="grid md:grid-cols-2 gap-5">
-                <div
-                  style={{
-                    background: '#FFFFFF',
-                    border: '1px solid #ECE6DE',
-                    borderRadius: '16px',
-                    padding: '20px',
-                  }}
-                >
-                  <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '10px' }}>
-                    Need the broader system
-                  </div>
-                  <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
-                    HubSpot and RevOps support
-                  </h3>
-                  <p style={{ fontSize: '0.92rem', color: '#555', lineHeight: 1.7 }}>
-                    Best when the team needs structure, workflow logic, reporting,
-                    and the wider operating model improved together.
-                  </p>
+            <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
+              {[
+                {
+                  title: 'Invisible pipeline',
+                  body: "When lifecycle stages don't match the real funnel, you can't see conversion rates by stage. You can't tell where deals stall. You can't answer investor questions without manually pulling numbers from three places.",
+                },
+                {
+                  title: 'Broken team trust',
+                  body: "When reps don't trust the CRM, they stop using it. Deals get tracked in personal spreadsheets. Follow-up depends on memory. Ownership disputes slow everything down.",
+                },
+                {
+                  title: 'Outbound disconnected from the system',
+                  body: "When outbound lives outside HubSpot — replies in inboxes, statuses in spreadsheets, next steps in Slack — pipeline generated from outbound is invisible. You can't attribute it, report on it, or improve it.",
+                },
+              ].map((item) => (
+                <div key={item.title} style={{ background: '#F7F8F7', border: '1px solid #E2E5E2', borderRadius: '18px', padding: '24px' }}>
+                  <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>{item.title}</h3>
+                  <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.75 }}>{item.body}</p>
                 </div>
-
-                <Link href="/hubspot-cleanup" style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <article
-                    style={{
-                      background: '#FFFFFF',
-                      border: '1px solid rgba(241,90,36,0.24)',
-                      borderRadius: '16px',
-                      padding: '20px',
-                      height: '100%',
-                    }}
-                  >
-                    <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '10px' }}>
-                      Need cleanup first
-                    </div>
-                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
-                      Start with HubSpot cleanup
-                    </h3>
-                    <p style={{ fontSize: '0.92rem', color: '#555', lineHeight: 1.7, marginBottom: '12px' }}>
-                      Best when HubSpot is already live but the fields, stages,
-                      workflows, and reporting are no longer usable.
-                    </p>
-                    <div style={{ fontSize: '0.9rem', color: '#F15A24', fontWeight: 600 }}>
-                      See HubSpot cleanup →
-                    </div>
-                  </article>
-                </Link>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         <section style={{ background: '#F7F8F7', borderTop: '1px solid #E2E5E2', borderBottom: '1px solid #E2E5E2', padding: '72px 0' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="mb-10">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
-                Services
+                What We Fix
               </div>
               <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A' }}>
-                Where we usually help
+                What a properly built HubSpot looks like.
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-              {[
-                {
-                  title: 'HubSpot setup or cleanup',
-                  body: 'Portal structure, properties, views, permissions, and basic hygiene fixed so the CRM becomes usable.',
-                },
-                {
-                  title: 'Pipeline and lifecycle design',
-                  body: 'Deal stages, lifecycle stages, and ownership logic built around how the team actually sells.',
-                },
-                {
-                  title: 'Automation and routing',
-                  body: 'Lead assignment, follow-up triggers, and workflow automation to reduce manual admin and dropped handoffs.',
-                },
-                {
-                  title: 'Reporting and activation support',
-                  body: 'Dashboards, visibility, and the operational layer needed before outbound or other pipeline motions scale.',
-                },
-              ].map((item) => (
-                <div key={item.title} className="hubspot-service-card" style={{ background: '#fff', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '22px' }}>
-                  <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>{item.title}</h3>
-                  <p style={{ fontSize: '0.92rem', color: '#555', lineHeight: 1.7 }}>{item.body}</p>
-                </div>
-              ))}
+            <div style={{ overflowX: 'auto', background: '#fff', border: '1px solid #E2E5E2', borderRadius: '16px' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '760px' }}>
+                <tbody>
+                  {[
+                    ['Lifecycle stages no one uses consistently', 'Stages that match how revenue actually moves, with clear entry and exit criteria'],
+                    ["Pipeline that doesn't reflect real deal flow", "Deal stages and properties the team actually updates — because they're useful"],
+                    ['Duplicate and confusing properties', 'Clean property architecture supporting reporting and workflow logic'],
+                    ['Workflows that surprise the team or do nothing', 'Automation that handles routing, handoffs, and tasks — transparently'],
+                    ['Dashboards nobody trusts', 'Reporting that answers the questions leadership actually asks'],
+                    ['Outbound disconnected from CRM', 'Outbound replies, statuses, and next steps flowing back into HubSpot automatically'],
+                  ].map(([broken, fixed]) => (
+                    <tr key={broken}>
+                      <td style={{ width: '40%', padding: '18px 20px', borderBottom: '1px solid #E2E5E2', color: '#8A4A3B', fontWeight: 600 }}>{broken}</td>
+                      <td style={{ padding: '18px 20px', borderBottom: '1px solid #E2E5E2', color: '#1A1A1A', lineHeight: 1.65 }}>{fixed}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
@@ -323,118 +230,33 @@ export default function HubspotRevopsPage() {
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div className="mb-10">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
-                Best Fit
+                Proof
               </div>
-              <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A', marginBottom: '12px' }}>
-                This is usually a fit if...
+              <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A' }}>
+                Results from real builds.
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
-              <div className="hubspot-fit-card" style={{ background: '#F7F8F7', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '24px' }}>
-                <div style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '14px' }}>
-                  Good fit
-                </div>
-                {[
-                  'Your HubSpot exists but no one fully trusts it',
-                  'Founder-led follow-up still drives too much of the motion',
-                  'Reporting is weak or inconsistent',
-                  'You need cleaner structure before adding more execution',
-                ].map((item) => (
-                  <div key={item} style={{ display: 'flex', gap: '10px', padding: '10px 0', borderBottom: '1px solid #E2E5E2', fontSize: '0.9375rem', color: '#333' }}>
-                    <span style={{ color: '#F15A24', fontWeight: 700 }}>+</span>
-                    {item}
-                  </div>
-                ))}
-              </div>
-              <div className="hubspot-fit-card" style={{ background: '#F7F8F7', border: '1px solid #E2E5E2', borderRadius: '16px', padding: '24px' }}>
-                <div style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#888', marginBottom: '14px' }}>
-                  Not a fit
-                </div>
-                {[
-                  'You already have a mature RevOps team in place',
-                  'You only want a lead-gen vendor with no systems ownership',
-                  'You are still pre-product and not ready for system design',
-                  'You want strategy slides without implementation',
-                ].map((item) => (
-                  <div key={item} style={{ display: 'flex', gap: '10px', padding: '10px 0', borderBottom: '1px solid #E2E5E2', fontSize: '0.9375rem', color: '#555' }}>
-                    <span style={{ color: '#888', fontWeight: 700 }}>-</span>
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section style={{ background: '#FCFAF7', borderTop: '1px solid #ECE6DE', borderBottom: '1px solid #ECE6DE', padding: '72px 0' }}>
-          <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-            <div className="mb-10">
-              <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
-                Related Reading
-              </div>
-              <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A', marginBottom: '12px' }}>
-                Practical guides on HubSpot and RevOps
-              </h2>
-              <p style={{ fontSize: '1rem', color: '#555', lineHeight: 1.7, maxWidth: '700px' }}>
-                If you are evaluating whether your current setup needs cleanup or a
-                broader rebuild, start with these guides.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid md:grid-cols-2 gap-5 sm:gap-6">
               {[
                 {
-                  href: '/blog/hubspot-setup-checklist-startups',
-                  category: 'HubSpot',
-                  title: 'HubSpot Setup Checklist for Early-Stage B2B Startups',
-                  body: 'A practical checklist covering lifecycle stages, pipelines, properties, workflows, and reporting.',
+                  stat: '90% reduction in sales response time',
+                  body: 'Rebuilt lead routing and ownership assignment inside HubSpot for a B2B SaaS team. Speed-to-lead dropped from 6 hours to 22 minutes. The fix was structural — ownership rules, routing workflows, and notification logic that had never been set up properly.',
                 },
                 {
-                  href: '/blog/hubspot-lifecycle-stages-b2b-startups',
-                  category: 'RevOps',
-                  title: 'How to Define HubSpot Lifecycle Stages for B2B Startups',
-                  body: 'A clear guide to structuring lifecycle stages so routing, ownership, and reporting all make sense.',
-                },
-                {
-                  href: '/blog/revenue-infrastructure',
-                  category: 'Infrastructure',
-                  title: 'Why Revenue Infrastructure Matters Before You Scale',
-                  body: 'A broader piece on why systems, not disconnected tactics, are what make pipeline repeatable.',
+                  stat: '12% → 23% lead-to-opportunity conversion in 60 days',
+                  body: 'Rebuilt the full GTM motion — ICP definition, CRM stage structure, outbound tooling, and CRM handoffs. Conversion improved because the system finally tracked and managed leads the way the funnel actually works.',
                 },
               ].map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  style={{ textDecoration: 'none', color: 'inherit' }}
-                >
-                  <article
-                    style={{
-                      background: '#FFFFFF',
-                      border: '1px solid #ECE6DE',
-                      borderRadius: '16px',
-                      padding: '22px',
-                      height: '100%',
-                      transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                    }}
-                    className="hubspot-reading-card"
-                  >
-                    <div style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '14px' }}>
-                      {item.category}
-                    </div>
-                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.45, marginBottom: '12px' }}>
-                      {item.title}
-                    </h3>
-                    <p style={{ fontSize: '0.92rem', color: '#555', lineHeight: 1.7 }}>
-                      {item.body}
-                    </p>
-                  </article>
-                </Link>
+                <div key={item.stat} style={{ background: '#FDFAF6', border: '1px solid #ECE6DE', borderRadius: '18px', padding: '24px' }}>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F15A24', lineHeight: 1.15, marginBottom: '12px' }}>{item.stat}</div>
+                  <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.75 }}>{item.body}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section style={{ background: '#fff', padding: '72px 0' }}>
+        <section style={{ background: '#FDFAF6', borderTop: '1px solid #EAE4DB', borderBottom: '1px solid #EAE4DB', padding: '72px 0' }}>
           <div className="max-w-[900px] mx-auto px-6 lg:px-8">
             <div className="mb-10">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>
@@ -450,8 +272,8 @@ export default function HubspotRevopsPage() {
                 <div
                   key={item.question}
                   style={{
-                    background: '#F7F8F7',
-                    border: '1px solid #E2E5E2',
+                    background: '#FFFFFF',
+                    border: '1px solid #ECE6DE',
                     borderRadius: '16px',
                     padding: '22px',
                   }}
@@ -471,45 +293,51 @@ export default function HubspotRevopsPage() {
         <section style={{ background: '#0F1B2D', padding: '72px 0', textAlign: 'center' }}>
           <div className="max-w-[640px] mx-auto px-6 lg:px-8">
             <h2 style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)', fontWeight: 700, color: '#fff', marginBottom: '16px' }}>
-              Need help cleaning up HubSpot or fixing your GTM system?
+              See what's actually broken in your HubSpot.
             </h2>
             <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.65)', marginBottom: '32px' }}>
-              Book a discovery call and we&apos;ll look at your current setup, where
-              the biggest operational gaps are, and what should be fixed first.
+              The audit starts with a structured review of your current portal —
+              lifecycle stages, pipeline, properties, workflows, ownership, and
+              reporting. You get a specific findings document and a prioritised fix
+              list.
             </p>
-            <BookDiscoveryButton
-              utmContent="hubspot_revops_cta"
-              className="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-lg cursor-pointer"
-              style={{
-                background: '#F15A24',
-                padding: '14px 36px',
-                fontSize: '1.0625rem',
-                fontWeight: 600,
-                borderRadius: '8px',
-                boxShadow: '0 2px 12px rgba(241,90,36,0.35)',
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <BookDiscoveryButton
+                utmContent="hubspot_revops_cta"
+                className="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-lg cursor-pointer"
+                style={{
+                  background: '#F15A24',
+                  padding: '14px 36px',
+                  fontSize: '1.0625rem',
+                  fontWeight: 600,
+                  borderRadius: '8px',
+                boxShadow: '0 6px 28px rgba(241,90,36,0.5)',
               }}
-              hoverStyle={{ background: '#D44E1E', boxShadow: '0 4px 20px rgba(241,90,36,0.45)' }}
-            >
-              Book a Discovery Call →
-            </BookDiscoveryButton>
+              hoverStyle={{ background: '#D44E1E', boxShadow: '0 8px 36px rgba(241,90,36,0.65)' }}
+              >
+                Book a GTM Audit — $1,200
+              </BookDiscoveryButton>
+              <BookDiscoveryButton
+                utmContent="hubspot_revops_discovery"
+                className="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-lg cursor-pointer"
+                style={{
+                  background: 'transparent',
+                  padding: '14px 36px',
+                  fontSize: '1.0625rem',
+                  fontWeight: 600,
+                  borderRadius: '8px',
+                  border: '2px solid rgba(255,255,255,0.24)',
+                  color: '#fff',
+                }}
+                hoverStyle={{ background: 'rgba(255,255,255,0.05)' }}
+              >
+                Book a free discovery call first
+              </BookDiscoveryButton>
+            </div>
           </div>
         </section>
       </main>
       <Footer />
-      <style>{`
-        .hubspot-reading-card:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 16px 34px rgba(23, 32, 51, 0.08);
-        }
-        @media (max-width: 640px) {
-          .hubspot-outcomes-card,
-          .hubspot-service-card,
-          .hubspot-fit-card,
-          .hubspot-reading-card {
-            border-radius: 14px !important;
-          }
-        }
-      `}</style>
     </>
   );
 }

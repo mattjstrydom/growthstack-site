@@ -2,30 +2,15 @@
 
 import { Eyebrow } from './MarketingPrimitives';
 
-const greatFit = [
-  'Founder-led sales is still carrying too much of the pipeline',
-  'HubSpot is underused, messy, or not set up properly',
-  'The team needs better reporting and clearer pipeline visibility',
-  'Outbound needs to exist inside a real system, not as a side project',
-  'You are preparing for scale, handoff, or a more structured GTM motion',
-];
-
-const notAFit = [
-  'You already have a mature RevOps function in-house',
-  'You only want a pure lead-gen vendor with no systems work',
-  'You are pre-product and still finding basic market demand',
-  'You want strategy slides, not implementation',
-];
-
 export default function WhoItIsFor() {
   return (
     <>
       <section
         id="about"
         style={{
-          background: '#FBF6EF',
-          borderTop: '1px solid #ECE2D4',
-          borderBottom: '1px solid #ECE2D4',
+          background: '#FDFAF6',
+          borderTop: '1px solid #EAE4DB',
+          borderBottom: '1px solid #EAE4DB',
           padding: '72px 0',
         }}
       >
@@ -42,8 +27,7 @@ export default function WhoItIsFor() {
                 lineHeight: 1.2,
               }}
             >
-              GrowthStack is for early-stage B2B teams with traction, pressure to
-              grow, and a commercial system that still needs to be built properly.
+              This works for a specific kind of team.
             </h2>
           </div>
 
@@ -67,35 +51,15 @@ export default function WhoItIsFor() {
               >
                 Good fit
               </h4>
-              <ul>
-                {greatFit.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3"
-                    style={{
-                      padding: '12px 0',
-                      borderBottom: '1px solid #ECE2D4',
-                      fontSize: '0.9375rem',
-                      color: '#1A1A1A',
-                    }}
-                  >
-                    <span
-                      className="shrink-0 rounded-full flex items-center justify-center mt-0.5"
-                      style={{
-                        width: '20px',
-                        height: '20px',
-                        background: 'rgba(241,90,36,0.1)',
-                        color: '#F15A24',
-                        fontSize: '0.7rem',
-                        fontWeight: 700,
-                      }}
-                    >
-                      +
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p style={{ fontSize: '0.9375rem', color: '#1A1A1A', lineHeight: 1.75, margin: 0 }}>
+                You&apos;re post-seed or at Series A. You have product-market signal
+                and some customers, but the commercial system is still informal.
+                Founder-led sales is carrying too much. You know outbound needs to
+                happen properly but haven&apos;t had the bandwidth to build it.
+                HubSpot is either not set up right or set up by someone who&apos;s no
+                longer there. You want to own the system — not pay a retainer for
+                someone to run it for you indefinitely.
+              </p>
             </div>
 
             <div
@@ -117,41 +81,19 @@ export default function WhoItIsFor() {
               >
                 Not a fit
               </h4>
-              <ul>
-                {notAFit.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3"
-                    style={{
-                      padding: '12px 0',
-                      borderBottom: '1px solid #ECE2D4',
-                      fontSize: '0.9375rem',
-                      color: '#4A4A4A',
-                    }}
-                  >
-                    <span
-                      className="shrink-0 rounded-full flex items-center justify-center mt-0.5"
-                      style={{
-                        width: '20px',
-                        height: '20px',
-                        background: '#F7F2EA',
-                        border: '1px solid #ECE2D4',
-                        color: '#888',
-                        fontSize: '0.7rem',
-                      }}
-                    >
-                      -
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p style={{ fontSize: '0.9375rem', color: '#4A4A4A', lineHeight: 1.75, margin: 0 }}>
+                You&apos;re still finding your first customers. You have a mature
+                RevOps function in-house. You want strategy slides and
+                recommendations, not implementation. You&apos;re looking for a pure
+                lead-gen vendor who runs outbound campaigns for you with no systems
+                work involved.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <div style={{ background: '#FBF6EF', padding: '0 0 48px' }}>
+      <div style={{ background: '#FDFAF6', padding: '0 0 48px' }}>
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
           <div
             style={{
@@ -167,8 +109,8 @@ export default function WhoItIsFor() {
               className="mx-auto max-w-2xl italic leading-[1.75] mb-3"
               style={{ fontSize: 'clamp(1rem,2vw,1.25rem)', color: '#3E464F' }}
             >
-              &ldquo;The goal is not just more activity. It is a GTM system your
-              team can trust, run, and grow on top of.&rdquo;
+              &ldquo;The goal isn&apos;t more activity. It&apos;s a GTM system your team can
+              trust, measure, and actually run.&rdquo;
             </blockquote>
             <cite
               className="not-italic font-semibold"

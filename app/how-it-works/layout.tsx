@@ -2,22 +2,22 @@ import type { Metadata } from 'next';
 import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'How It Works | GrowthStack',
+  title: 'How GrowthStack Works: GTM System Build in 10 Days | GrowthStack',
   description:
-    'See how GrowthStack builds GTM systems for early-stage B2B teams: HubSpot setup, pipeline structure, workflow automation, reporting, and pipeline activation.',
+    'GrowthStack builds GTM infrastructure for early-stage B2B teams in 10 days. Fixed scope, fixed price, full handover. See the full process, timeline, and pricing.',
   alternates: {
     canonical: absoluteUrl('/how-it-works'),
   },
   openGraph: {
-    title: 'How It Works | GrowthStack',
+    title: 'How GrowthStack Works: GTM System Build in 10 Days | GrowthStack',
     description:
-      'See how GrowthStack builds GTM systems for early-stage B2B teams: HubSpot setup, pipeline structure, workflow automation, reporting, and pipeline activation.',
+      'GrowthStack builds GTM infrastructure for early-stage B2B teams in 10 days. Fixed scope, fixed price, full handover. See the full process, timeline, and pricing.',
     url: absoluteUrl('/how-it-works'),
   },
   twitter: {
-    title: 'How It Works | GrowthStack',
+    title: 'How GrowthStack Works: GTM System Build in 10 Days | GrowthStack',
     description:
-      'See how GrowthStack builds GTM systems for early-stage B2B teams: HubSpot setup, pipeline structure, workflow automation, reporting, and pipeline activation.',
+      'GrowthStack builds GTM infrastructure for early-stage B2B teams in 10 days. Fixed scope, fixed price, full handover. See the full process, timeline, and pricing.',
   },
 };
 

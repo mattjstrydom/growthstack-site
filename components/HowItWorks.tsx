@@ -50,12 +50,10 @@ export default function HowItWorks() {
               className="font-bold text-[#1A1A1A]"
               style={{ fontSize: 'clamp(1.875rem, 3.5vw, 3rem)', fontWeight: 700, lineHeight: 1.2 }}
             >
-              We fix the system first.
-              <br className="hidden sm:block" /> Then we help it support pipeline.
+              From broken to working in 10 days.
             </h2>
             <p className="mt-4 max-w-[700px]" style={{ color: '#4A4A4A', lineHeight: 1.75 }}>
-              The homepage only shows the high-level path. The dedicated page covers
-              the full process, timeline, and pricing in detail.
+              Full timeline, scope, and pricing on the dedicated page.
             </p>
           </div>
 
@@ -66,9 +64,11 @@ export default function HowItWorks() {
                 style={{
                   fontSize: '0.72rem',
                   color: '#F15A24',
-                  border: '1px solid rgba(241,90,36,0.3)',
-                  background: 'rgba(241,90,36,0.1)',
-                  padding: '4px 12px',
+                  border: '1px solid rgba(241,90,36,0.25)',
+                  background: 'rgba(241,90,36,0.08)',
+                  padding: '5px 12px',
+                  borderRadius: '9999px',
+                  letterSpacing: '0.08em',
                 }}
               >
                 Step 1
@@ -77,20 +77,21 @@ export default function HowItWorks() {
                 className="font-semibold text-white mb-1"
                 style={{ fontSize: 'clamp(1.1rem,2vw,1.375rem)', fontWeight: 600 }}
               >
-                Audit the motion
+                Audit the motion (Days 1–2)
               </h3>
               <p
                 className="mb-5"
                 style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}
               >
-                Find what is actually broken
               </p>
               <p
                 className="leading-[1.75]"
                 style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9375rem' }}
               >
-                We review the CRM, funnel stages, ownership, workflow gaps, and
-                reporting issues before changing structure.
+                Before we touch anything, we map what actually exists: CRM
+                structure, funnel stages, workflow logic, ownership gaps, and
+                reporting blind spots. Most teams are surprised by what they find.
+                We&apos;re not.
               </p>
             </CardShell>
 
@@ -100,9 +101,11 @@ export default function HowItWorks() {
                 style={{
                   fontSize: '0.72rem',
                   color: '#F15A24',
-                  border: '1px solid rgba(241,90,36,0.3)',
-                  background: 'rgba(241,90,36,0.1)',
-                  padding: '4px 12px',
+                  border: '1px solid rgba(241,90,36,0.25)',
+                  background: 'rgba(241,90,36,0.08)',
+                  padding: '5px 12px',
+                  borderRadius: '9999px',
+                  letterSpacing: '0.08em',
                 }}
               >
                 Step 2
@@ -111,20 +114,20 @@ export default function HowItWorks() {
                 className="font-semibold text-white mb-1"
                 style={{ fontSize: 'clamp(1.1rem,2vw,1.375rem)', fontWeight: 600 }}
               >
-                Build the system
+                Build the system (Days 3–8)
               </h3>
               <p
                 className="mb-5"
                 style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}
               >
-                HubSpot, pipelines, and workflows
               </p>
               <p
                 className="leading-[1.75]"
                 style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9375rem' }}
               >
-                We clean up or build the operating layer so the CRM, handoffs,
-                lifecycle logic, and reporting all work together.
+                We rebuild the operating layer — HubSpot structure, lifecycle
+                logic, workflow automation, and CRM-connected outbound — so
+                everything works together instead of around each other.
               </p>
             </CardShell>
 
@@ -134,9 +137,11 @@ export default function HowItWorks() {
                 style={{
                   fontSize: '0.72rem',
                   color: '#F15A24',
-                  border: '1px solid rgba(241,90,36,0.22)',
+                  border: '1px solid rgba(241,90,36,0.25)',
                   background: 'rgba(241,90,36,0.08)',
-                  padding: '4px 12px',
+                  padding: '5px 12px',
+                  borderRadius: '9999px',
+                  letterSpacing: '0.08em',
                 }}
               >
                 Step 3
@@ -145,20 +150,20 @@ export default function HowItWorks() {
                 className="font-semibold text-[#1A1A1A] mb-1"
                 style={{ fontSize: 'clamp(1.1rem,2vw,1.375rem)', fontWeight: 600 }}
               >
-                Activate and improve
+                Handover and activate (Days 9–10)
               </h3>
               <p
                 className="mb-5"
                 style={{ fontSize: '0.85rem', color: 'rgba(26,26,26,0.45)' }}
               >
-                Add execution on top of a usable base
               </p>
               <p
                 className="leading-[1.75]"
                 style={{ color: '#555', fontSize: '0.9375rem' }}
               >
-                Once the system is live, we help it support outbound, enrichment,
-                workflow refinement, and ongoing optimisation where it fits.
+                You get a fully documented system with clear ownership rules, a
+                working reporting setup, and a team that knows how to use it. No
+                dependency on us to keep it running.
               </p>
             </CardShell>
           </div>
@@ -203,7 +208,7 @@ export default function HowItWorks() {
                   whiteSpace: 'nowrap',
                 }}
               >
-                View Full Process
+                View Full Process →
               </Link>
             </div>
           </div>

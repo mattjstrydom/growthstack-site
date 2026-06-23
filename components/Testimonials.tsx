@@ -1,8 +1,31 @@
-import Image from 'next/image';
-import { testimonials, type Testimonial } from '@/lib/testimonials';
 import { Eyebrow } from './MarketingPrimitives';
 
-function TestimonialCard({ t }: { t: Testimonial }) {
+const proofTiles = [
+  {
+    stat: '12% → 23%',
+    label: 'Lead-to-opportunity conversion',
+    body:
+      'Rebuilt the full outbound motion for a B2B SaaS conference platform — ICP definition, Clay enrichment, multi-channel sequences, and CRM handoffs. Conversion improved in 60 days. Pipeline became measurable for the first time.',
+  },
+  {
+    stat: '90%',
+    label: 'Reduction in sales response time',
+    body:
+      'Automated lead routing and ownership assignment inside HubSpot. Reps stopped arguing over who owned what. Speed-to-lead dropped from 6 hours to 22 minutes.',
+  },
+  {
+    stat: '40%+',
+    label: 'Open rates at 20,000+ monthly touchpoints',
+    body:
+      'Signal-based outbound infrastructure with AI personalisation at scale. Not a one-week spike — sustained over multiple months across a high-volume outbound program.',
+  },
+] as const;
+
+function ProofCard({
+  stat,
+  label,
+  body,
+}: (typeof proofTiles)[number]) {
   return (
     <article
       className="testimonial-card"
@@ -18,117 +41,51 @@ function TestimonialCard({ t }: { t: Testimonial }) {
         boxShadow: '0 12px 32px rgba(23, 32, 51, 0.04)',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-        <div
-          style={{
-            width: '56px',
-            height: '56px',
-            borderRadius: '50%',
-            overflow: 'hidden',
-            flexShrink: 0,
-            border: '2px solid #F15A24',
-          }}
-        >
-          <Image
-            src={t.image}
-            alt={`${t.name}, ${t.role} at ${t.company}`}
-            width={56}
-            height={56}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        </div>
-        <div>
-          <div style={{ fontWeight: 700, fontSize: '0.9375rem', color: '#1A1A1A', lineHeight: 1.2 }}>
-            {t.name}
-          </div>
-          <div style={{ fontSize: '0.8rem', color: '#F15A24', fontWeight: 600, marginTop: '2px' }}>
-            {t.company}
-          </div>
-          <div style={{ fontSize: '0.75rem', color: '#888', marginTop: '1px' }}>
-            {t.role}
-          </div>
-        </div>
+      <div
+        style={{
+          fontSize: 'clamp(2rem, 4vw, 3rem)',
+          fontWeight: 700,
+          color: '#F15A24',
+          lineHeight: 1,
+          letterSpacing: '-0.02em',
+        }}
+      >
+        {stat}
       </div>
-
-      <div style={{ display: 'flex', gap: '3px' }} aria-label={`${t.stars} out of 5 stars`}>
-        {Array.from({ length: t.stars }).map((_, i) => (
-          <svg key={i} viewBox="0 0 16 16" width="16" height="16" fill="#F15A24">
-            <path d="M8 1l1.854 3.754L14 5.528l-3 2.926.708 4.128L8 10.354l-3.708 2.228L5 8.454 2 5.528l4.146-.774z" />
-          </svg>
-        ))}
+      <div
+        style={{
+          fontSize: 'clamp(0.78rem, 1.3vw, 0.875rem)',
+          fontWeight: 500,
+          color: '#6B6B6B',
+          letterSpacing: '0.04em',
+          textTransform: 'uppercase',
+          marginTop: '6px',
+          lineHeight: 1.35,
+        }}
+      >
+        {label}
       </div>
-
-      <blockquote
+      <p
         style={{
           fontSize: '0.9375rem',
           color: '#4A4A4A',
           lineHeight: 1.7,
-          fontStyle: 'italic',
           margin: 0,
           flex: 1,
         }}
       >
-        &ldquo;{t.quote}&rdquo;
-      </blockquote>
-
-      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-        {t.metrics.map((m, i) => (
-          <span
-            key={`${t.id}-${m.label}`}
-            style={{
-              display: 'inline-flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              background: i === 0 ? 'rgba(241,90,36,0.07)' : '#F9F5EF',
-              border: `1px solid ${i === 0 ? 'rgba(241,90,36,0.2)' : '#ECE6DE'}`,
-              borderRadius: '8px',
-              padding: '6px 10px',
-              minWidth: '60px',
-            }}
-          >
-            <span
-              style={{
-                fontSize: '0.875rem',
-                fontWeight: 800,
-                color: i === 0 ? '#F15A24' : '#1A1A1A',
-                lineHeight: 1,
-                fontVariantNumeric: 'tabular-nums',
-              }}
-            >
-              {m.value}
-            </span>
-            <span
-              style={{
-                fontSize: '0.6rem',
-                color: '#888',
-                marginTop: '3px',
-                fontWeight: 500,
-                textAlign: 'center',
-                lineHeight: 1.2,
-              }}
-            >
-              {m.label}
-            </span>
-          </span>
-        ))}
-      </div>
-
+        {body}
+      </p>
       <div
         style={{
-          fontSize: '0.72rem',
-          color: '#B0B8C0',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '4px',
+          fontSize: '0.75rem',
+          color: '#7D776F',
           paddingTop: '4px',
           borderTop: '1px solid #F1ECE5',
+          fontWeight: 600,
         }}
       >
-        <svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="#C8D0D8" strokeWidth="1.5">
-          <path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.75 4.5 8.5 4.5 8.5s4.5-4.75 4.5-8.5c0-2.485-2.015-4.5-4.5-4.5z" />
-          <circle cx="8" cy="6" r="1.5" />
-        </svg>
-        {t.location}
+        Methodology-backed build result
       </div>
     </article>
   );
@@ -138,9 +95,9 @@ export default function Testimonials() {
   return (
     <section
       style={{
-        background: '#FFFFFF',
-        borderTop: '1px solid #ECE6DE',
-        borderBottom: '1px solid #ECE6DE',
+        background: '#FDFAF6',
+        borderTop: '1px solid #EAE4DB',
+        borderBottom: '1px solid #EAE4DB',
         padding: '72px 0 80px',
       }}
     >
@@ -158,66 +115,22 @@ export default function Testimonials() {
               lineHeight: 1.2,
             }}
           >
-            Built for teams creating their first repeatable revenue system
+            Built from 30+ outbound and RevOps systems across B2B SaaS.
           </h2>
           <p
             style={{
               fontSize: '1.0625rem',
               color: '#666',
               marginTop: '12px',
-              maxWidth: '640px',
+              maxWidth: '700px',
               margin: '12px auto 0',
               lineHeight: 1.65,
             }}
           >
-            From CRM structure and reporting to pipeline activation, GrowthStack
-            helps early-stage teams turn scattered selling into measurable
-            pipeline.
+            GrowthStack doesn&apos;t have a long client list yet — that&apos;s honest.
+            What it has is a track record of building these systems inside real
+            companies, with real results that are specific enough to verify.
           </p>
-        </div>
-
-        <div
-          className="testimonial-stats"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '16px',
-            marginBottom: '40px',
-          }}
-        >
-          {[
-            { value: '10 days', label: 'To a working commercial foundation' },
-            { value: '1 system', label: 'For CRM, workflow, and pipeline visibility' },
-            { value: '3-4x lower', label: 'Cost than building the full function in-house' },
-          ].map(({ value, label }) => (
-            <div
-              key={label}
-              style={{
-                background: '#FFFCF8',
-                padding: '22px 20px',
-                textAlign: 'center',
-                borderRadius: '16px',
-                border: '1px solid #ECE6DE',
-                boxShadow: '0 10px 28px rgba(23, 32, 51, 0.04)',
-              }}
-            >
-              <div
-                style={{
-                  fontSize: 'clamp(1.5rem,3vw,2.25rem)',
-                  fontWeight: 800,
-                  color: '#F15A24',
-                  fontVariantNumeric: 'tabular-nums',
-                  lineHeight: 1,
-                  marginBottom: '6px',
-                }}
-              >
-                {value}
-              </div>
-              <div style={{ fontSize: '0.8rem', color: '#888', fontWeight: 500 }}>
-                {label}
-              </div>
-            </div>
-          ))}
         </div>
 
         <div
@@ -228,10 +141,25 @@ export default function Testimonials() {
             gap: '20px',
           }}
         >
-          {testimonials.map((t) => (
-            <TestimonialCard key={t.id} t={t} />
+          {proofTiles.map((tile) => (
+            <ProofCard key={tile.label} {...tile} />
           ))}
         </div>
+
+        <p
+          style={{
+            fontSize: '0.95rem',
+            color: '#666',
+            lineHeight: 1.7,
+            maxWidth: '860px',
+            margin: '28px auto 0',
+            textAlign: 'center',
+          }}
+        >
+          These numbers are real and methodology-based. If you want to understand
+          how any of them were achieved, ask in the discovery call — the answer is
+          in the system design, not the luck.
+        </p>
       </div>
 
       <style>{`
@@ -240,14 +168,12 @@ export default function Testimonials() {
           box-shadow: 0 18px 40px rgba(23, 32, 51, 0.1);
         }
         @media (max-width: 900px) {
-          .testimonial-grid,
-          .testimonial-stats {
+          .testimonial-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
         }
         @media (max-width: 560px) {
-          .testimonial-grid,
-          .testimonial-stats {
+          .testimonial-grid {
             grid-template-columns: 1fr !important;
           }
           .testimonial-card {

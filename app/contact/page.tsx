@@ -84,7 +84,7 @@ export default function ContactPage() {
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div
               className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full mb-6"
-              style={{ fontSize: '0.72rem', color: '#F15A24', background: 'rgba(241,90,36,0.12)', padding: '6px 14px', border: '1px solid rgba(241,90,36,0.25)' }}
+              style={{ fontSize: '0.72rem', color: '#F15A24', background: 'rgba(241,90,36,0.08)', padding: '5px 12px', border: '1px solid rgba(241,90,36,0.25)', letterSpacing: '0.08em' }}
             >
               Get In Touch
             </div>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                       borderRadius: '8px',
                       background: '#F15A24',
                       color: '#fff',
-                      boxShadow: '0 2px 12px rgba(241,90,36,0.35)',
+                      boxShadow: '0 4px 20px rgba(241,90,36,0.45)',
                     }}
                     hoverStyle={{ background: '#D44E1E' }}
                   >
@@ -230,7 +230,7 @@ export default function ContactPage() {
                           border: 'none',
                           borderRadius: '8px',
                           cursor: submitting ? 'not-allowed' : 'pointer',
-                          boxShadow: '0 2px 12px rgba(241,90,36,0.3)',
+                          boxShadow: '0 6px 28px rgba(241,90,36,0.5)',
                           transition: 'background 0.2s',
                         }}
                       >

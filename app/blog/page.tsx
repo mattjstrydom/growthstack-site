@@ -61,9 +61,10 @@ export default function BlogPage() {
               style={{
                 fontSize: '0.72rem',
                 color: '#F15A24',
-                background: 'rgba(241,90,36,0.12)',
-                padding: '6px 14px',
+                background: 'rgba(241,90,36,0.08)',
+                padding: '5px 12px',
                 border: '1px solid rgba(241,90,36,0.25)',
+                letterSpacing: '0.08em',
               }}
             >
               Resources
@@ -82,7 +83,7 @@ export default function BlogPage() {
           </div>
         </section>
 
-        <section style={{ background: '#F7F8F7', padding: '64px 0 96px' }}>
+        <section style={{ background: '#FDFAF6', padding: '64px 0 96px' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div
               className="grid gap-6"
@@ -98,9 +99,9 @@ export default function BlogPage() {
                   <article
                     className="blog-card-inner h-full flex flex-col rounded-xl overflow-hidden"
                     style={{
-                      background: '#fff',
-                      border: '1px solid rgba(0,0,0,0.07)',
-                      boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
+                      background: '#FFFFFF',
+                      border: '1px solid #E2E5E2',
+                      boxShadow: '0 10px 24px rgba(23, 32, 51, 0.04)',
                       transition: 'box-shadow 0.2s ease, transform 0.2s ease',
                     }}
                   >
@@ -151,7 +152,7 @@ export default function BlogPage() {
         </section>
       </main>
       <Footer />
-      <style>{`.blog-card-inner:hover{box-shadow:0 8px 32px rgba(0,0,0,0.12)!important;transform:translateY(-2px)}`}</style>
+      <style>{`.blog-card-inner:hover{box-shadow:0 16px 34px rgba(23,32,51,0.08)!important;transform:translateY(-2px)}`}</style>
     </>
   );
 }

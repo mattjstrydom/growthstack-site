@@ -16,7 +16,7 @@ export default function TermsPage() {
   return (
     <>
       <Navigation />
-      <main style={{ paddingTop: "68px", background: "#fff" }}>
+      <main style={{ paddingTop: "68px", background: "#FDFAF6" }}>
         <section style={{ background: "#0F1B2D", padding: "80px 0 72px" }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div
@@ -24,9 +24,10 @@ export default function TermsPage() {
               style={{
                 fontSize: "0.72rem",
                 color: "#F15A24",
-                background: "rgba(241,90,36,0.12)",
-                padding: "6px 14px",
+                background: "rgba(241,90,36,0.08)",
+                padding: "5px 12px",
                 border: "1px solid rgba(241,90,36,0.25)",
+                letterSpacing: "0.08em",
               }}
             >
               Legal

@@ -10,34 +10,34 @@ import {
 
 const faqs = [
   {
-    question: 'What does GrowthStack do?',
+    question: 'What does GrowthStack actually do?',
     answer:
-      'GrowthStack helps early-stage B2B startups build the GTM and RevOps foundation behind repeatable pipeline. That includes HubSpot setup, pipeline design, lifecycle stages, workflow automation, reporting, and outbound activation.',
+      'We build and rebuild the GTM operating layer for early-stage B2B teams — HubSpot setup, workflow automation, lead routing, outbound infrastructure, and reporting. The output is a documented system your team owns and can run without us.',
   },
   {
-    question: 'Is GrowthStack an outbound agency or a RevOps partner?',
+    question: 'Is this an outbound agency or a RevOps partner?',
     answer:
-      'We are closer to a GTM systems and RevOps partner. Outbound is one of the ways we help generate pipeline, but it sits inside a broader commercial system.',
+      "Neither, exactly. We don't run outbound campaigns for you on an ongoing basis, and we're not a traditional RevOps consultant who gives you recommendations and leaves. We build and implement the system — then hand it over. Think infrastructure contractor, not agency retainer.",
+  },
+  {
+    question: 'How long does an engagement take?',
+    answer:
+      'Most GTM foundation builds are 10 days from kickoff to handover. HubSpot cleanups range from 5 to 15 days depending on the state of the portal. We scope everything before we start so there are no surprises.',
   },
   {
     question: 'Do you only work in HubSpot?',
     answer:
-      'HubSpot is our preferred CRM environment for early-stage teams because it gives founders a strong operational core. We also work with the surrounding tool stack that feeds and supports it.',
+      "HubSpot is the primary CRM we build on. The surrounding stack — Clay, Apollo, Instantly, n8n — is flexible and chosen based on what fits the team's motion and budget.",
   },
   {
-    question: 'Can you help if our HubSpot is already live but messy?',
+    question: 'What if our HubSpot is already live but a mess?',
     answer:
-      'Yes. We can audit, clean up, and restructure an existing HubSpot setup so your pipeline, reporting, and automations reflect how the business actually sells.',
+      "That's one of the most common starting points. We audit what exists, identify what's worth keeping, and rebuild the structural layer properly rather than adding more on top of something broken.",
   },
   {
-    question: 'Do you manage outbound too?',
+    question: 'How is pricing structured?',
     answer:
-      'Yes. We can activate outbound once the right GTM and RevOps foundation is in place, so campaigns run inside a usable system instead of alongside one.',
-  },
-  {
-    question: 'Who is GrowthStack best for?',
-    answer:
-      'Early-stage B2B startups that need clearer pipeline, cleaner systems, and a more repeatable go-to-market motion.',
+      'Fixed scope, fixed price. No retainers unless you want ongoing support after the build. Pricing is detailed on the How It Works page.',
   },
 ];
 
@@ -121,12 +121,13 @@ export default function FAQ() {
             <Eyebrow subtle>Ready to start?</Eyebrow>
           </div>
           <h2 className="font-bold text-white mb-4" style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700 }}>
-            Turn sales chaos into a working GTM engine.
+            Ready to sort it properly?
           </h2>
           <p className="mb-8 max-w-lg mx-auto leading-[1.75]" style={{ color: 'rgba(255,255,255,0.58)' }}>
-            Book a discovery call and we&apos;ll look at your current GTM setup,
-            HubSpot structure, pipeline flow, and where the biggest gaps are.
-            You&apos;ll leave with a clearer view of what needs fixing first.
+            Book a discovery call. We&apos;ll look at your current CRM setup,
+            pipeline flow, outbound motion, and reporting. You&apos;ll leave the call
+            with a clear view of what needs fixing first — whether you work with
+            GrowthStack or not.
           </p>
           <BookDiscoveryButton
             utmContent="homepage_cta"
@@ -140,7 +141,7 @@ export default function FAQ() {
             </svg>
           </BookDiscoveryButton>
           <p className="mt-4" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.28)' }}>
-            No pitch deck. No generic audit. Just a useful working session.
+            No pitch deck. No generic audit report. Just a useful 45-minute working session.
           </p>
         </div>
       </section>

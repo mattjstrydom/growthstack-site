@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import Hero from '@/components/Hero';
@@ -7,7 +8,27 @@ import Testimonials from '@/components/Testimonials';
 import WhoItIsFor from '@/components/WhoItIsFor';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
-import { jsonLd, siteConfig } from '@/lib/site';
+import { absoluteUrl, jsonLd, siteConfig } from '@/lib/site';
+
+export const metadata: Metadata = {
+  title: 'GTM Systems & HubSpot RevOps for B2B SaaS Startups | GrowthStack',
+  description:
+    "GrowthStack builds the GTM infrastructure early-stage B2B teams keep meaning to sort — HubSpot setup, pipeline architecture, Clay enrichment, and outbound systems. Fixed scope. You own everything.",
+  alternates: {
+    canonical: absoluteUrl('/'),
+  },
+  openGraph: {
+    title: 'GTM Systems & HubSpot RevOps for B2B SaaS Startups | GrowthStack',
+    description:
+      "GrowthStack builds the GTM infrastructure early-stage B2B teams keep meaning to sort — HubSpot setup, pipeline architecture, Clay enrichment, and outbound systems. Fixed scope. You own everything.",
+    url: absoluteUrl('/'),
+  },
+  twitter: {
+    title: 'GTM Systems & HubSpot RevOps for B2B SaaS Startups | GrowthStack',
+    description:
+      "GrowthStack builds the GTM infrastructure early-stage B2B teams keep meaning to sort — HubSpot setup, pipeline architecture, Clay enrichment, and outbound systems. Fixed scope. You own everything.",
+  },
+};
 
 export default function Home() {
   const websiteJsonLd = {
@@ -20,7 +41,7 @@ export default function Home() {
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'GTM Systems and RevOps for Early-Stage B2B Startups',
+    name: 'GTM Systems & HubSpot RevOps for B2B SaaS Startups',
     provider: {
       '@type': 'Organization',
       name: siteConfig.name,
@@ -29,13 +50,13 @@ export default function Home() {
     areaServed: 'Global',
     serviceType: [
       'HubSpot setup',
-      'RevOps support',
-      'Pipeline design',
+      'HubSpot RevOps',
+      'Pipeline architecture',
       'Workflow automation',
-      'Outbound activation',
+      'Outbound systems',
     ],
     description:
-      'GrowthStack helps early-stage B2B startups build the systems behind repeatable pipeline: HubSpot setup, CRM design, reporting, automation, and outbound activation.',
+      "GrowthStack builds the GTM infrastructure early-stage B2B teams keep meaning to sort — HubSpot setup, pipeline architecture, Clay enrichment, and outbound systems. Fixed scope. You own everything.",
   };
 
   const faqJsonLd = {
@@ -44,42 +65,50 @@ export default function Home() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'What does GrowthStack do?',
+        name: 'What does GrowthStack actually do?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'GrowthStack helps early-stage B2B startups build the GTM and RevOps foundation behind repeatable pipeline. That includes HubSpot setup, pipeline design, lifecycle stages, workflow automation, reporting, and outbound activation.',
+          text: 'We build and rebuild the GTM operating layer for early-stage B2B teams — HubSpot setup, workflow automation, lead routing, outbound infrastructure, and reporting. The output is a documented system your team owns and can run without us.',
         },
       },
       {
         '@type': 'Question',
-        name: 'How much does GrowthStack cost?',
+        name: 'Is this an outbound agency or a RevOps partner?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The Foundation Build starts at $2,500 as a one-time setup. Pipeline Activation support starts at $1,500 per month.',
+          text: "Neither, exactly. We don't run outbound campaigns for you on an ongoing basis, and we're not a traditional RevOps consultant who gives you recommendations and leaves. We build and implement the system — then hand it over.",
         },
       },
       {
         '@type': 'Question',
-        name: 'How quickly can you build the foundation?',
+        name: 'How long does an engagement take?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The Foundation Build is completed in 10 to 15 business days. That includes HubSpot setup or cleanup, pipeline structure, key workflows, reporting, and the commercial system needed before activation.',
+          text: 'Most GTM foundation builds are 10 days from kickoff to handover. HubSpot cleanups range from 5 to 15 days depending on the state of the portal. We scope everything before we start so there are no surprises.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Who is GrowthStack for?',
+        name: 'Do you only work in HubSpot?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'GrowthStack is built for early-stage B2B startups that need clearer pipeline, cleaner systems, and a more repeatable go-to-market motion.',
+          text: "HubSpot is the primary CRM we build on. The surrounding stack — Clay, Apollo, Instantly, n8n — is flexible and chosen based on what fits the team's motion and budget.",
         },
       },
       {
         '@type': 'Question',
-        name: 'Do you manage outbound too?',
+        name: 'What if our HubSpot is already live but a mess?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. GrowthStack can activate outbound once the right GTM and RevOps foundation is in place, so campaigns run inside a usable system instead of alongside one.',
+          text: "That's one of the most common starting points. We audit what exists, identify what's worth keeping, and rebuild the structural layer properly rather than adding more on top of something broken.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How is pricing structured?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Fixed scope, fixed price. No retainers unless you want ongoing support after the build. Pricing is detailed on the How It Works page.',
         },
       },
     ],
@@ -105,9 +134,9 @@ export default function Home() {
         <HowItWorks />
         <section
           style={{
-            background: '#FCFAF7',
-            borderTop: '1px solid #ECE6DE',
-            borderBottom: '1px solid #ECE6DE',
+            background: '#FDFAF6',
+            borderTop: '1px solid #EAE4DB',
+            borderBottom: '1px solid #EAE4DB',
             padding: '72px 0',
           }}
         >
@@ -119,8 +148,9 @@ export default function Home() {
                   fontSize: '0.72rem',
                   color: '#F15A24',
                   background: 'rgba(241,90,36,0.08)',
-                  padding: '6px 14px',
-                  border: '1px solid rgba(241,90,36,0.18)',
+                  padding: '5px 12px',
+                  border: '1px solid rgba(241,90,36,0.25)',
+                  letterSpacing: '0.08em',
                 }}
               >
                 Common Starting Points

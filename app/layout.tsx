@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "GrowthStack GTM systems and RevOps preview image",
+        alt: "GrowthStack GTM infrastructure preview image",
       },
     ],
   },

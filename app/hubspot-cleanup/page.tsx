@@ -120,8 +120,8 @@ export default function HubspotCleanupPage() {
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '24px' }}>
               <div
-                className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full"
-                style={{ fontSize: '0.72rem', color: '#F15A24', background: 'rgba(241,90,36,0.12)', padding: '6px 14px', border: '1px solid rgba(241,90,36,0.25)' }}
+              className="inline-flex items-center font-bold uppercase tracking-[0.1em] rounded-full"
+              style={{ fontSize: '0.72rem', color: '#F15A24', background: 'rgba(241,90,36,0.08)', padding: '5px 12px', border: '1px solid rgba(241,90,36,0.25)', letterSpacing: '0.08em' }}
               >
                 HubSpot Cleanup
               </div>
@@ -313,9 +313,9 @@ export default function HubspotCleanupPage() {
                 fontSize: '1.0625rem',
                 fontWeight: 600,
                 borderRadius: '8px',
-                boxShadow: '0 2px 12px rgba(241,90,36,0.35)',
+              boxShadow: '0 6px 28px rgba(241,90,36,0.5)',
               }}
-              hoverStyle={{ background: '#D44E1E', boxShadow: '0 4px 20px rgba(241,90,36,0.45)' }}
+              hoverStyle={{ background: '#D44E1E', boxShadow: '0 8px 36px rgba(241,90,36,0.65)' }}
             >
               Book a Discovery Call
             </BookDiscoveryButton>
