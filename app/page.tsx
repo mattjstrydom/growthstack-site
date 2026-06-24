@@ -11,20 +11,20 @@ import Footer from '@/components/Footer';
 import { absoluteUrl, jsonLd, siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'GTM Systems & HubSpot RevOps for B2B SaaS Startups | GrowthStack',
+  title: 'GTM Infrastructure for Early-Stage B2B | GrowthStack',
   description:
     "GrowthStack builds the GTM infrastructure early-stage B2B teams keep meaning to sort — HubSpot setup, pipeline architecture, Clay enrichment, and outbound systems. Fixed scope. You own everything.",
   alternates: {
     canonical: absoluteUrl('/'),
   },
   openGraph: {
-    title: 'GTM Systems & HubSpot RevOps for B2B SaaS Startups | GrowthStack',
+    title: 'GTM Infrastructure for Early-Stage B2B | GrowthStack',
     description:
       "GrowthStack builds the GTM infrastructure early-stage B2B teams keep meaning to sort — HubSpot setup, pipeline architecture, Clay enrichment, and outbound systems. Fixed scope. You own everything.",
     url: absoluteUrl('/'),
   },
   twitter: {
-    title: 'GTM Systems & HubSpot RevOps for B2B SaaS Startups | GrowthStack',
+    title: 'GTM Infrastructure for Early-Stage B2B | GrowthStack',
     description:
       "GrowthStack builds the GTM infrastructure early-stage B2B teams keep meaning to sort — HubSpot setup, pipeline architecture, Clay enrichment, and outbound systems. Fixed scope. You own everything.",
   },
@@ -41,7 +41,7 @@ export default function Home() {
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'GTM Systems & HubSpot RevOps for B2B SaaS Startups',
+    name: 'GTM Infrastructure for Early-Stage B2B',
     provider: {
       '@type': 'Organization',
       name: siteConfig.name,
