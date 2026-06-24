@@ -60,11 +60,27 @@ export default function RootLayout({
     url: siteConfig.url,
     email: siteConfig.email,
     logo: `${siteConfig.url}/icon.png`,
+    description:
+      "GrowthStack builds GTM operating infrastructure for early-stage B2B teams â€” HubSpot setup, outbound systems, workflow automation, and CRM architecture. Fixed scope. 10-day delivery. You own everything.",
+    foundingDate: "2020",
+    sameAs: ["https://www.linkedin.com/company/growthstack"],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: siteConfig.email,
+    },
   };
 
   return (
     <html lang="en" className={`${geist.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-[#1A1A1A]">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#F15A24] focus:text-white focus:rounded focus:font-medium"
+        >
+          Skip to main content
+        </a>
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLd(organizationJsonLd) }}
@@ -79,11 +95,13 @@ export default function RootLayout({
           />
         </noscript>
 
-        {children}
+        <div id="main-content" className="contents">
+          {children}
+        </div>
 
         <Script
           id="cal-embed"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.com/embed/embed.js","init");
 Cal("init","discovery",{origin:"https://app.cal.com"});

@@ -57,6 +57,13 @@ export default function Home() {
     ],
     description:
       "GrowthStack builds the GTM infrastructure early-stage B2B teams keep meaning to sort — HubSpot setup, pipeline architecture, Clay enrichment, and outbound systems. Fixed scope. You own everything.",
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      lowPrice: '1200',
+      highPrice: '10000',
+      offerCount: '4',
+    },
   };
 
   const faqJsonLd = {
@@ -239,3 +246,4 @@ export default function Home() {
     </>
   );
 }
+

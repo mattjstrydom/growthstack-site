@@ -173,7 +173,7 @@ export default function BeforeAfterSlider() {
               >
                 The result
               </div>
-              <h3
+              <h2
                 style={{
                   fontSize: 'clamp(1.35rem,2.6vw,1.9rem)',
                   fontWeight: 700,
@@ -183,7 +183,7 @@ export default function BeforeAfterSlider() {
                 }}
               >
                 A GTM system founders can actually run, trust, and scale.
-              </h3>
+              </h2>
               <p
                 style={{
                   margin: 0,

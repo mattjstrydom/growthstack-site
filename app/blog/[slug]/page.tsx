@@ -64,8 +64,10 @@ export default async function BlogPostPage({ params }: Props) {
     dateModified: post.date,
     mainEntityOfPage: absoluteUrl(`/blog/${slug}`),
     author: {
-      '@type': 'Organization',
-      name: siteConfig.name,
+      '@type': 'Person',
+      name: 'Matt Strydom',
+      url: absoluteUrl('/about'),
+      sameAs: ['https://www.linkedin.com/company/growthstack'],
     },
     publisher: {
       '@type': 'Organization',

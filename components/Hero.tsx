@@ -32,6 +32,7 @@ export default function Hero() {
           >
             Your pipeline is still
             <br />
+            {' '}
             <em className="not-italic" style={{ color: '#F15A24' }}>
               living in the founder&apos;s head.
             </em>

@@ -3,30 +3,23 @@ import { getAllSlugs } from "@/lib/posts";
 import { absoluteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-  const staticRoutes = [
-    "/",
-    "/about",
-    "/blog",
-    "/contact",
-    "/services",
-    "/hubspot-cleanup",
-    "/hubspot-revops",
-    "/how-it-works",
-    "/privacy-policy",
-    "/terms-and-conditions",
-  ];
+  const now = new Date().toISOString();
+  const serviceLastModified = new Date("2026-06-24").toISOString();
 
   return [
-    ...staticRoutes.map((route) => ({
-      url: absoluteUrl(route),
-      lastModified,
-      changeFrequency: route === "/blog" ? ("weekly" as const) : ("monthly" as const),
-      priority: route === "/" ? 1 : 0.7,
-    })),
+    { url: absoluteUrl("/"), lastModified: now, changeFrequency: "monthly" as const, priority: 1 },
+    { url: absoluteUrl("/services"), lastModified: serviceLastModified, changeFrequency: "monthly" as const, priority: 0.9 },
+    { url: absoluteUrl("/hubspot-revops"), lastModified: serviceLastModified, changeFrequency: "monthly" as const, priority: 0.9 },
+    { url: absoluteUrl("/how-it-works"), lastModified: serviceLastModified, changeFrequency: "monthly" as const, priority: 0.85 },
+    { url: absoluteUrl("/about"), lastModified: serviceLastModified, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: absoluteUrl("/contact"), lastModified: serviceLastModified, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: absoluteUrl("/blog"), lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 },
+    { url: absoluteUrl("/hubspot-cleanup"), lastModified: serviceLastModified, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: absoluteUrl("/privacy-policy"), lastModified: serviceLastModified, changeFrequency: "monthly" as const, priority: 0.3 },
+    { url: absoluteUrl("/terms-and-conditions"), lastModified: serviceLastModified, changeFrequency: "monthly" as const, priority: 0.3 },
     ...getAllSlugs().map((slug) => ({
       url: absoluteUrl(`/blog/${slug}`),
-      lastModified,
+      lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
