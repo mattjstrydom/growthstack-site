@@ -42,3 +42,5 @@ next-env.d.ts
 
 .claude/
 .vercel
+.env.local
+_to_delete/
