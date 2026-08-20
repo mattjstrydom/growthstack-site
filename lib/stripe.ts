@@ -26,6 +26,62 @@ export function getStripe(): Stripe {
   return client;
 }
 
+/**
+ * Validates a statement descriptor suffix against Stripe's rules before we send it.
+ *
+ * Stripe rejects the whole Checkout Session if the suffix is invalid, which would
+ * take checkout down rather than degrade it. So this returns `undefined` and warns
+ * on anything questionable: a missing suffix costs us a nicer card statement, a
+ * rejected session costs us the sale.
+ *
+ * Stripe's rules for the complete descriptor (prefix + "* " + suffix):
+ *   - 5 to 22 characters total
+ *   - Latin characters only
+ *   - at least one letter in each of prefix and suffix
+ *   - none of  <  >  \  '  "  *
+ *
+ * The prefix lives in the Stripe dashboard, not here, so we cannot measure the
+ * concatenated length at runtime. Capping the suffix at 10 makes that unnecessary:
+ * the prefix maxes out at 10 and the separator is 2, so 10 + 2 + 10 hits the 22
+ * limit exactly. Any suffix within 10 is safe against every legal prefix.
+ */
+export const DESCRIPTOR_SUFFIX_MAX = 10;
+
+export function sanitizeStatementDescriptorSuffix(
+  suffix: string | undefined
+): string | undefined {
+  if (!suffix) return undefined;
+
+  const trimmed = suffix.trim();
+
+  if (trimmed.length === 0) return undefined;
+
+  if (trimmed.length > DESCRIPTOR_SUFFIX_MAX) {
+    console.warn(
+      `[stripe] statement descriptor suffix "${trimmed}" is ${trimmed.length} chars; ` +
+        `max ${DESCRIPTOR_SUFFIX_MAX} to stay inside Stripe's 22-char total with any prefix. Omitting it.`
+    );
+    return undefined;
+  }
+
+  // Latin letters, digits, space, and the punctuation Stripe tolerates.
+  if (!/^[A-Za-z0-9 .,\-_&+/()#:;]+$/.test(trimmed)) {
+    console.warn(
+      `[stripe] statement descriptor suffix "${trimmed}" contains characters Stripe may reject. Omitting it.`
+    );
+    return undefined;
+  }
+
+  if (!/[A-Za-z]/.test(trimmed)) {
+    console.warn(
+      `[stripe] statement descriptor suffix "${trimmed}" has no letter, which Stripe requires. Omitting it.`
+    );
+    return undefined;
+  }
+
+  return trimmed;
+}
+
 /** Reads an env var that must be present, with an error that says what to do. */
 export function requireEnv(name: string): string {
   const value = process.env[name];

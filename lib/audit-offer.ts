@@ -27,6 +27,18 @@ export const auditOffer = {
   ],
   creditTerms:
     'The audit fee applies as a credit toward any build engagement booked within 30 days.',
+  /**
+   * Appended to the account's statement descriptor prefix so a card statement reads
+   * e.g. "GROWTHSTK* GTM AUDIT" rather than just the company name. Worth the effort:
+   * an unrecognised statement line is the most common cause of a chargeback, and it
+   * gets worse the more products you sell under one descriptor.
+   *
+   * Keep this at 10 characters or fewer. Stripe caps the whole concatenated
+   * descriptor at 22, the prefix can be up to 10, and the separator "* " costs 2.
+   * 10 + 2 + 10 = 22, so a suffix within 10 can never be truncated no matter what
+   * prefix is configured in the dashboard. See assertValidDescriptorSuffix.
+   */
+  statementDescriptorSuffix: 'GTM AUDIT',
 } as const;
 
 /** Where the buyer books the working session, after paying. */

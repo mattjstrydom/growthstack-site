@@ -1,6 +1,11 @@
 import { NextResponse } from 'next/server';
 import { auditOffer } from '@/lib/audit-offer';
-import { getStripe, requireEnv, siteOrigin } from '@/lib/stripe';
+import {
+  getStripe,
+  requireEnv,
+  sanitizeStatementDescriptorSuffix,
+  siteOrigin,
+} from '@/lib/stripe';
 
 export const runtime = 'nodejs';
 // Never cached: every call must mint a fresh Checkout Session.
@@ -112,6 +117,17 @@ export async function POST(request: Request) {
       // state nexus rules and is not a decision that belongs in code. Read
       // docs/STRIPE-CHECKOUT.md before flipping it.
       automatic_tax: { enabled: process.env.STRIPE_AUTOMATIC_TAX === 'true' },
+
+      // Card statements show "<PREFIX>* GTM AUDIT" instead of just the company
+      // name, which matters now that more than one product bills under the same
+      // descriptor prefix. Set the prefix once in the Stripe dashboard under
+      // Settings -> Business details. Sanitised first: an invalid suffix would make
+      // Stripe reject the whole session, so we would rather ship without it.
+      payment_intent_data: {
+        statement_descriptor_suffix: sanitizeStatementDescriptorSuffix(
+          auditOffer.statementDescriptorSuffix
+        ),
+      },
 
       submit_type: 'pay',
       custom_text: {

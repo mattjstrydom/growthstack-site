@@ -25,6 +25,7 @@ else.
 | `components/AuditCtaLink.tsx` | The only approved way to link to the paid audit. |
 | `components/CalInlineEmbed.tsx` | Inline cal.com scheduler with its own namespace. |
 | `scripts/test-webhook.mjs` | 20 assertions over the webhook. Run it after any change. |
+| `scripts/test-descriptor.mjs` | 20 assertions over the statement descriptor validator. No credentials needed. |
 
 The flow: `/audit` → Stripe hosted checkout → `/audit/confirmed` → books the
 session. Stripe fires the webhook in parallel, which writes to Sequenzy.
@@ -77,7 +78,37 @@ In cal.com create an event type for the 60-minute audit working session, then se
 `NEXT_PUBLIC_CAL_AUDIT_EVENT` to its slug path, e.g. `growthstackhq/gtm-audit`.
 Consider marking it "private" so it is only reachable from the confirmation page.
 
-## Step 6 — Sequenzy
+## Step 6 — Statement descriptor prefix
+
+Because you sell more than one product, the card statement should say which one was
+bought. Stripe builds the full descriptor as `PREFIX* SUFFIX`. We set the suffix in
+code; you set the prefix once in the dashboard.
+
+Stripe dashboard → **Settings → Business details** → **Shortened descriptor**:
+
+```
+GROWTHSTK
+```
+
+Nine characters. Use your real DBA name if the trading entity is not GrowthStack —
+matching the legal name matters more than matching the brand, because the whole
+point is that the buyer recognises the line on their statement.
+
+The audit then shows as `GROWTHSTK* GTM AUDIT` (20 characters).
+
+The rules, so future products fit: the complete descriptor must be 5 to 22
+characters, Latin only, with at least one letter in each of the prefix and suffix,
+and none of `< > \ ' " *`. The prefix can be 2 to 10 characters and the separator
+`* ` costs 2, which is why `statementDescriptorSuffix` in `lib/audit-offer.ts` is
+capped at 10 — a suffix within 10 fits any legal prefix without truncation.
+
+When you add the builds, give each its own suffix (`GTM BUILD`, `HS CLEANUP`) in
+the same pattern. `sanitizeStatementDescriptorSuffix` in `lib/stripe.ts` validates
+whatever you set and drops an invalid value with a warning rather than letting
+Stripe reject the whole session, so a typo degrades the statement instead of
+breaking checkout. `node scripts/test-descriptor.mjs` covers the rules.
+
+## Step 7 — Sequenzy
 
 Sequenzy dashboard → **Settings → API Keys**. Put the key in `SEQUENZY_API_KEY`.
 
@@ -95,7 +126,7 @@ Writes use `duplicateStrategy: merge`, so a duplicate webhook delivery or a late
 form fill can never overwrite existing data. If `SEQUENZY_API_KEY` is unset the
 site still takes payments and just logs a warning.
 
-## Step 7 — Test the whole path
+## Step 8 — Test the whole path
 
 ```bash
 npm run dev
@@ -125,7 +156,7 @@ Also run the offline regression suite, which needs no credentials:
 node scripts/test-webhook.mjs   # requires the app running on the port in the file
 ```
 
-## Step 8 — Production
+## Step 9 — Production
 
 1. In Vercel, add every variable from `.env.example` to **Production** (and
    **Preview**, using test keys, if you want previews to work).
