@@ -60,6 +60,7 @@ const faqItems = [
 const serviceCards = [
   {
     title: 'GTM Foundation Build',
+    price: '$4,500',
     who: "Teams that are past founder-led selling but haven't formalised the system yet. The CRM exists but doesn't reflect how revenue moves. Follow-up is inconsistent. No one can tell you conversion rates by stage without pulling numbers manually.",
     items: [
       'HubSpot contact, company, and deal property architecture',
@@ -76,6 +77,7 @@ const serviceCards = [
   },
   {
     title: 'HubSpot Cleanup & RevOps Rebuild',
+    price: 'Scoped from the audit',
     who: "Teams that already have HubSpot live but it's no longer working. Duplicate properties. Broken workflows. Lifecycle stages that haven't been touched since the original setup. Dashboards nobody looks at because nobody trusts them.",
     items: [
       'Full audit of current portal structure before any changes',
@@ -91,6 +93,7 @@ const serviceCards = [
   },
   {
     title: 'Outbound Infrastructure Build',
+    price: '$7,500 with the Foundation Build',
     who: "Teams that know outbound needs to happen properly but haven't been able to build it. You've tried some version of cold email. Results were underwhelming. You're not sure if the problem was the list, the copy, the tooling, or all three.",
     items: [
       'ICP definition and segmentation framework',
@@ -263,6 +266,14 @@ export default function ServicesPage() {
               ))}
             </div>
 
+            <p style={{ marginTop: '20px', fontSize: '0.95rem', color: '#555', lineHeight: 1.7 }}>
+              Every engagement is fixed scope and fixed price, agreed in writing before
+              anything is built.{' '}
+              <Link href="/how-it-works#pricing" style={{ color: '#F15A24', textDecoration: 'none', fontWeight: 600 }}>
+                See the full pricing table →
+              </Link>
+            </p>
+
             <div
               style={{
                 marginTop: '22px',
@@ -327,12 +338,13 @@ export default function ServicesPage() {
         <section style={{ background: '#0F1B2D', padding: '72px 0', textAlign: 'center' }}>
           <div className="max-w-[640px] mx-auto px-6 lg:px-8">
             <h2 style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)', fontWeight: 700, color: '#fff', marginBottom: '16px' }}>
-              Need help deciding which service fits?
+              Not sure which one you need?
             </h2>
             <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.65)', marginBottom: '32px' }}>
-              Book a discovery call and we&apos;ll tell you whether you need a GTM
-              audit, a foundation build, a HubSpot rebuild, or outbound
-              infrastructure next.
+              That is what the audit is for. $1,200 for a structured review of your
+              CRM, outbound motion and reporting, with a prioritised fix list and a
+              specific scope for whatever build makes sense next. The fee credits
+              toward any build booked within 30 days.
             </p>
             <BookDiscoveryButton
               utmContent="services_cta"
@@ -347,8 +359,12 @@ export default function ServicesPage() {
               }}
               hoverStyle={{ background: '#D44E1E', boxShadow: '0 10px 28px rgba(15,27,45,0.2)' }}
             >
-              Book a Discovery Call
+              Book a GTM Audit — $1,200
             </BookDiscoveryButton>
+            <p style={{ marginTop: '18px', fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>
+              One build at a time, so the 10-day scope holds. Currently taking
+              bookings for the next available slot.
+            </p>
           </div>
         </section>
       </main>

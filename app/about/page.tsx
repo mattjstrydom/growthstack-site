@@ -85,10 +85,17 @@ export default function AboutPage() {
                   Founder
                 </div>
                 <h2 style={{ fontSize: 'clamp(1.625rem,3vw,2.5rem)', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.2 }}>
+                  {/* TODO(matt): replace with your actual name. "Someone" is the single
+                      most expensive word on this website. A named operator with a visible
+                      history outsells a faceless brand every time, because the buyer is
+                      not choosing a company, they are choosing who will be in their portal. */}
                   Built by someone who's been inside these systems.
                 </h2>
               </div>
               <div style={{ paddingTop: '4px' }}>
+                {/* TODO(matt): add a real photograph here (public/headshots/), your full
+                    name, and a link to your LinkedIn profile. Nothing else on this page
+                    works until a prospect can see who they would be hiring. */}
                 <p style={{ fontSize: '1.05rem', color: '#555', lineHeight: 1.8, marginBottom: '20px' }}>
                   GrowthStack was founded by a marketing operations and revenue
                   infrastructure specialist who has spent years building the exact
@@ -96,12 +103,19 @@ export default function AboutPage() {
                   architecture, outbound infrastructure, Clay enrichment pipelines,
                   CRM automation, and reporting that actually works.
                 </p>
+                {/* TODO(matt): "30+" is a countable claim. Confirm the real number and use
+                    it, or drop the figure. Same for the three metrics below: each needs the
+                    company context added (size, stage, category, HubSpot tier) or it should
+                    be removed. "Verifiable" is a word you should only use if a prospect can
+                    actually verify it, which today they cannot. */}
                 <p style={{ fontSize: '1.05rem', color: '#555', lineHeight: 1.8, marginBottom: '20px' }}>
                   The practice is built on 30+ complete outbound and RevOps system
-                  builds across B2B SaaS companies, with results that are specific
-                  and verifiable: 12% to 23% lead-to-opportunity conversion in 60
-                  days. 90% reduction in sales response time. 40%+ open rates
-                  sustained at 20,000+ monthly outbound touchpoints.
+                  builds across B2B SaaS companies. Three of those results: lead-to-
+                  opportunity conversion from 12% to 23% over 60 days, speed-to-lead
+                  from 6 hours to 22 minutes, and 40%+ open rates sustained at
+                  20,000+ monthly outbound touchpoints. Clients are not named
+                  publicly, and we will walk you through exactly how each one was
+                  built.
                 </p>
                 <p style={{ fontSize: '1.05rem', color: '#555', lineHeight: 1.8 }}>
                   The positioning is simple: most early-stage B2B teams have tools.

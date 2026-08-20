@@ -125,7 +125,7 @@ export default function HowItWorksPage() {
           </div>
         </section>
 
-        <section style={{ background: '#FDFAF6', borderTop: '1px solid #E2E5E2', borderBottom: '1px solid #E2E5E2', padding: '80px 0' }}>
+        <section id="pricing" style={{ background: '#FDFAF6', borderTop: '1px solid #E2E5E2', borderBottom: '1px solid #E2E5E2', padding: '80px 0', scrollMarginTop: '80px' }}>
           <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className="font-bold uppercase tracking-[0.1em] mb-3" style={{ fontSize: '0.72rem', color: '#F15A24' }}>Pricing</div>
@@ -167,6 +167,13 @@ export default function HowItWorksPage() {
 
             <p style={{ marginTop: '18px', fontSize: '0.92rem', color: '#555' }}>
               The $1,200 audit fee credits toward any build engagement booked within 30 days.
+              For comparison, HubSpot&apos;s own Professional onboarding is $3,000 to
+              $6,000 and covers onboarding rather than architecture.
+            </p>
+            <p style={{ marginTop: '10px', fontSize: '0.92rem', color: '#555' }}>
+              We run one build at a time so the 10-day scope holds. If the slot is
+              taken when you book, we will tell you the next date before you pay
+              anything.
             </p>
           </div>
         </section>
@@ -196,7 +203,7 @@ export default function HowItWorksPage() {
               map of what's broken and what to fix first — whether you continue
               with GrowthStack or handle it internally.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex justify-center">
               <BookDiscoveryButton
                 utmContent="hiw_bottom_cta"
                 className="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-lg cursor-pointer"
@@ -206,27 +213,11 @@ export default function HowItWorksPage() {
                   fontSize: '1.0625rem',
                   fontWeight: 600,
                   borderRadius: '8px',
-                boxShadow: '0 8px 24px rgba(15,27,45,0.16)',
-              }}
-              hoverStyle={{ background: '#D44E1E', boxShadow: '0 10px 28px rgba(15,27,45,0.2)' }}
-              >
-                Book a GTM Audit
-              </BookDiscoveryButton>
-              <BookDiscoveryButton
-                utmContent="hiw_bottom_discovery"
-                className="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-lg cursor-pointer"
-                style={{
-                  background: 'transparent',
-                  padding: '14px 36px',
-                  fontSize: '1.0625rem',
-                  fontWeight: 600,
-                  borderRadius: '8px',
-                  border: '2px solid rgba(255,255,255,0.24)',
-                  color: '#fff',
+                  boxShadow: '0 8px 24px rgba(15,27,45,0.16)',
                 }}
-                hoverStyle={{ background: 'rgba(255,255,255,0.05)' }}
+                hoverStyle={{ background: '#D44E1E', boxShadow: '0 10px 28px rgba(15,27,45,0.2)' }}
               >
-                Book a Discovery Call (no obligation)
+                Book a GTM Audit — $1,200
               </BookDiscoveryButton>
             </div>
           </div>

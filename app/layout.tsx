@@ -1,12 +1,29 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import { jsonLd, siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const geist = Geist({
+/* Fonts are self-hosted rather than pulled from next/font/google. Two reasons:
+   the build no longer needs network access to fonts.googleapis.com (Google Fonts
+   outages and locked-down CI can no longer break a deploy), and the files are
+   served from our own origin, so there is no third-party connection on first
+   paint. Both are variable fonts, so one file covers the whole weight range.
+   Source: @fontsource-variable, latin subset. */
+
+const geist = localFont({
+  src: "./fonts/Geist-Variable.woff2",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "100 900",
+  display: "swap",
+});
+
+// Display face. Carries all headlines; body copy stays on Geist.
+const bricolage = localFont({
+  src: "./fonts/BricolageGrotesque-Variable.woff2",
+  variable: "--font-display",
+  weight: "200 800",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -72,7 +89,10 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${geist.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${geist.variable} ${bricolage.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col bg-white text-[#1A1A1A]">
         <a
           href="#main-content"

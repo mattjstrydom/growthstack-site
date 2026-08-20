@@ -1,25 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── GrowthStack design tokens (extracted from growthstackhq.com) ── */
+  /* ── GrowthStack design tokens ──────────────────────────────────────────
+     Structure, type scale and surface treatment take after handoff.ai.
+     The palette stays GrowthStack: orange on navy, not green.
+     ---------------------------------------------------------------------- */
 
   /* Brand */
   --color-primary:       #F15A24;
   --color-primary-hover: #D44E1E;
+  /* Lighter orange for accents on dark surfaces. #F15A24 on navy is too low
+     contrast for text; this tint clears AA at body sizes. */
+  --color-primary-soft:  #FF9264;
 
-  /* Dark surfaces (nav, hero, offer cards, CTA, footer) */
-  --color-dark-bg:      #0F1B2D;
-  --color-dark-surface: #162333;
+  /* Navy scale. --color-ink is the deepest surface, --color-ink-raised sits
+     one step up for cards on top of it. */
+  --color-ink:          #0B1524;
+  --color-ink-raised:   #122034;
+  --color-ink-hairline: rgba(255, 255, 255, 0.08);
+
+  /* Legacy aliases, kept so existing pages keep compiling */
+  --color-dark-bg:      #0B1524;
+  --color-dark-surface: #122034;
 
   /* Light surfaces */
   --color-panel:  #ffffff;
   --color-bg:     #ffffff;
-  --color-border: #E2E5E2;
+  --color-sand:   #FDFAF6;
+  --color-border: #E7E2DA;
 
-  /* Light text */
-  --color-text:           #1A1A1A;
+  /* Text */
+  --color-text:           #16181D;
   --color-text-secondary: #4A4A4A;
-  --color-text-muted:     #888888;
+  --color-text-muted:     #8A8A8A;
 
   /* Tailwind orange override → brand primary */
   --color-orange-400: #f47340;
@@ -27,7 +40,13 @@
   --color-orange-600: #D44E1E;
 
   --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-display);
   --font-mono: var(--font-geist-mono);
+
+  /* Radii. 12px on interactive elements, 18px on cards, 28px on big panels. */
+  --radius-control: 12px;
+  --radius-card: 18px;
+  --radius-panel: 28px;
 }
 
 html {
@@ -36,25 +55,178 @@ html {
 
 body {
   background-color: #ffffff;
-  color: #1A1A1A;
+  color: #16181D;
   font-size: 1rem;
   line-height: 1.75;
 }
 
-h1, h2 {
-  letter-spacing: -0.02em;
+/* ── Typography ────────────────────────────────────────────────────────────
+   Display face on headlines only. Tight tracking at large sizes, loosening as
+   the size drops, so headings stay optically even across the scale.
+   ------------------------------------------------------------------------- */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+}
+
+h1 {
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+}
+
+h2 {
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+h3, h4 {
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+/* Display scale. Used in place of ad-hoc clamp() calls so every page shares
+   the same rhythm. */
+.gs-display-xl { font-size: clamp(2.75rem, 6vw, 4.5rem); }
+.gs-display-lg { font-size: clamp(2rem, 4.2vw, 3.25rem); }
+.gs-display-md { font-size: clamp(1.5rem, 2.6vw, 2rem); }
+
+/* Lede paragraph under a headline. */
+.gs-lede {
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  line-height: 1.65;
+  color: #4A4A4A;
 }
 
 nav {
-  transition: background 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease, backdrop-filter 0.2s ease;
+}
+
+/* ── Surfaces ──────────────────────────────────────────────────────────────
+   The dark sections carry a soft off-centre glow rather than sitting as flat
+   blocks of navy. Cheap in bytes, and it is most of what reads as "premium".
+   ------------------------------------------------------------------------- */
+.gs-dark {
+  background-color: #0B1524;
+  background-image:
+    radial-gradient(
+      60% 55% at 50% 0%,
+      rgba(241, 90, 36, 0.16) 0%,
+      rgba(241, 90, 36, 0) 70%
+    );
+  color: #ffffff;
+}
+
+.gs-dark-flat {
+  background-color: #0B1524;
+  color: #ffffff;
+}
+
+/* Faint blueprint grid. Sits behind light hero sections. */
+.gs-grid-bg {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(to right, rgba(22, 24, 29, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 24, 29, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Fades the grid out toward the bottom so it never fights the content. */
+.gs-grid-fade {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+}
+
+/* ── Components ───────────────────────────────────────────────────────────── */
+
+/* Hairline-ruled list item. Lifted from handoff.ai's feature list: a 2px rule
+   on the left instead of a bullet. Reads as editorial rather than listicle. */
+.gs-rule-item {
+  border-left: 2px solid rgba(241, 90, 36, 0.28);
+  padding-left: 18px;
+  transition: border-color 0.2s ease;
+}
+.gs-rule-item:hover {
+  border-left-color: #F15A24;
+}
+.gs-dark .gs-rule-item,
+.gs-dark-flat .gs-rule-item {
+  border-left-color: rgba(255, 255, 255, 0.14);
+}
+.gs-dark .gs-rule-item:hover,
+.gs-dark-flat .gs-rule-item:hover {
+  border-left-color: #FF9264;
+}
+
+/* Metric band. Hairline-divided row of numbers on a dark panel. */
+.gs-stat-band {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+}
+.gs-stat-band > * {
+  padding: 34px 28px;
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+/* Trailing borders are cleaned up by the outer overflow:hidden plus this
+   negative-margin trick, which keeps the grid tidy at every breakpoint. */
+.gs-stat-band {
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+
+.gs-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.gs-card:hover {
+  border-color: rgba(241, 90, 36, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(11, 21, 36, 0.07);
+}
+
+.gs-card-dark {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-card);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.gs-card-dark:hover {
+  border-color: rgba(255, 146, 100, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ── Motion ────────────────────────────────────────────────────────────────
+   One orchestrated entrance on load, staggered by --gs-delay. Nothing else
+   moves on its own; the rest is hover state only.
+   ------------------------------------------------------------------------- */
+@keyframes gs-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.gs-rise {
+  animation: gs-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--gs-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gs-rise { animation: none; }
+  html { scroll-behavior: auto; }
+  .gs-card:hover, .gs-card-dark:hover { transform: none; }
 }
 
 :root {
   --section-bg-primary: #ffffff;
-  --section-bg-secondary: #f8fafc;
-  --section-border: #e5e7eb;
-  --text-primary: #1a1a1a;
-  --text-muted: #555555;
+  --section-bg-secondary: #FDFAF6;
+  --section-border: #E7E2DA;
+  --text-primary: #16181D;
+  --text-muted: #4A4A4A;
   --accent: #F15A24;
-  --dark: #0F1B2D;
+  --dark: #0B1524;
 }

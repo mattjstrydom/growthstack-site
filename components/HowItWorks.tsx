@@ -2,7 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { CardShell, Eyebrow } from './MarketingPrimitives';
+import {
+  Eyebrow,
+  Section,
+  SectionHeading,
+  primaryButtonStyle,
+} from './MarketingPrimitives';
 
 const tools = [
   {
@@ -37,269 +42,185 @@ const tools = [
   },
 ] as const;
 
+const steps = [
+  {
+    label: 'Step 1',
+    title: 'Audit the motion (Days 1–2)',
+    body: (
+      <>
+        Before we touch anything, we map what actually exists: CRM structure,
+        funnel stages, workflow logic, ownership gaps, and reporting blind
+        spots. Most teams are surprised by what they find. We&apos;re not.
+      </>
+    ),
+  },
+  {
+    label: 'Step 2',
+    title: 'Build the system (Days 3–8)',
+    body: (
+      <>
+        We rebuild the operating layer — HubSpot structure, lifecycle logic,
+        workflow automation, and CRM-connected outbound — so everything works
+        together instead of around each other.
+      </>
+    ),
+  },
+  {
+    label: 'Step 3',
+    title: 'Handover and activate (Days 9–10)',
+    body: (
+      <>
+        You get a fully documented system with clear ownership rules, a working
+        reporting setup, and a team that knows how to use it. No dependency on
+        us to keep it running.
+      </>
+    ),
+  },
+] as const;
+
 export default function HowItWorks() {
   return (
     <>
-      <section id="how-it-works" className="bg-white" style={{ padding: '72px 0' }}>
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-          <div className="mb-12">
-            <div className="mb-3">
-              <Eyebrow subtle>How It Works</Eyebrow>
-            </div>
-            <h2
-              className="font-bold text-[#1A1A1A]"
-              style={{ fontSize: 'clamp(1.875rem, 3.5vw, 3rem)', fontWeight: 700, lineHeight: 1.2 }}
+      <Section id="how-it-works" tone="dark">
+        <SectionHeading
+          tone="dark"
+          eyebrow="How It Works"
+          title="From broken to working in 10 days."
+          lede="Full timeline, scope, and pricing on the dedicated page."
+        />
+
+        <div
+          className="gs-rise"
+          style={{
+            ['--gs-delay' as string]: '80ms',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '20px',
+          }}
+        >
+          {steps.map((step) => (
+            <article
+              key={step.label}
+              className="gs-card-dark"
+              style={{
+                padding: '30px 28px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '14px',
+              }}
             >
-              From broken to working in 10 days.
-            </h2>
-            <p className="mt-4 max-w-[700px]" style={{ color: '#4A4A4A', lineHeight: 1.75 }}>
-              Full timeline, scope, and pricing on the dedicated page.
+              <Eyebrow subtle>{step.label}</Eyebrow>
+              <h3
+                className="gs-display-md"
+                style={{ color: '#ffffff', margin: 0 }}
+              >
+                {step.title}
+              </h3>
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: '0.9375rem',
+                  lineHeight: 1.7,
+                  color: 'rgba(255,255,255,0.66)',
+                }}
+              >
+                {step.body}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <div
+          className="gs-card-dark"
+          style={{
+            marginTop: '24px',
+            padding: '28px 30px',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '20px',
+          }}
+        >
+          <div style={{ maxWidth: '640px' }}>
+            <Eyebrow subtle>Full timeline and pricing</Eyebrow>
+            <p
+              style={{
+                margin: '12px 0 0',
+                fontSize: '0.95rem',
+                lineHeight: 1.7,
+                color: 'rgba(255,255,255,0.66)',
+              }}
+            >
+              If you want the detailed breakdown of phases, pricing, and what
+              happens after kickoff, go to the dedicated page.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-5 sm:gap-6 mb-8">
-            <CardShell dark>
-              <div
-              className="inline-block font-bold uppercase tracking-[0.1em] rounded-full mb-5"
-                style={{
-                  fontSize: '0.72rem',
-                  color: '#F15A24',
-                  border: '1px solid rgba(241,90,36,0.25)',
-                  background: 'rgba(241,90,36,0.08)',
-                  padding: '5px 12px',
-                  borderRadius: '9999px',
-                  letterSpacing: '0.08em',
-                }}
-              >
-                Step 1
-              </div>
-              <h3
-                className="font-semibold text-white mb-1"
-                style={{ fontSize: 'clamp(1.1rem,2vw,1.375rem)', fontWeight: 600 }}
-              >
-                Audit the motion (Days 1–2)
-              </h3>
-              <p
-                className="mb-5"
-                style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}
-              >
-              </p>
-              <p
-                className="leading-[1.75]"
-                style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9375rem' }}
-              >
-                Before we touch anything, we map what actually exists: CRM
-                structure, funnel stages, workflow logic, ownership gaps, and
-                reporting blind spots. Most teams are surprised by what they find.
-                We&apos;re not.
-              </p>
-            </CardShell>
-
-            <CardShell highlighted>
-              <div
-                className="inline-block font-bold uppercase tracking-[0.1em] rounded-full mb-5"
-                style={{
-                  fontSize: '0.72rem',
-                  color: '#F15A24',
-                  border: '1px solid rgba(241,90,36,0.25)',
-                  background: 'rgba(241,90,36,0.08)',
-                  padding: '5px 12px',
-                  borderRadius: '9999px',
-                  letterSpacing: '0.08em',
-                }}
-              >
-                Step 2
-              </div>
-              <h3
-                className="font-semibold text-white mb-1"
-                style={{ fontSize: 'clamp(1.1rem,2vw,1.375rem)', fontWeight: 600 }}
-              >
-                Build the system (Days 3–8)
-              </h3>
-              <p
-                className="mb-5"
-                style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}
-              >
-              </p>
-              <p
-                className="leading-[1.75]"
-                style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9375rem' }}
-              >
-                We rebuild the operating layer — HubSpot structure, lifecycle
-                logic, workflow automation, and CRM-connected outbound — so
-                everything works together instead of around each other.
-              </p>
-            </CardShell>
-
-            <CardShell dark>
-              <div
-                className="inline-block font-bold uppercase tracking-[0.1em] rounded-full mb-5"
-                style={{
-                  fontSize: '0.72rem',
-                  color: '#F15A24',
-                  border: '1px solid rgba(241,90,36,0.25)',
-                  background: 'rgba(241,90,36,0.08)',
-                  padding: '5px 12px',
-                  borderRadius: '9999px',
-                  letterSpacing: '0.08em',
-                }}
-              >
-                Step 3
-              </div>
-              <h3
-                className="font-semibold text-white mb-1"
-                style={{ fontSize: 'clamp(1.1rem,2vw,1.375rem)', fontWeight: 600 }}
-              >
-                Handover and activate (Days 9–10)
-              </h3>
-              <p
-                className="mb-5"
-                style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)' }}
-              >
-              </p>
-              <p
-                className="leading-[1.75]"
-                style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9375rem' }}
-              >
-                You get a fully documented system with clear ownership rules, a
-                working reporting setup, and a team that knows how to use it. No
-                dependency on us to keep it running.
-              </p>
-            </CardShell>
-          </div>
-
-          <div
-            className="rounded-2xl"
+          <Link
+            href="/how-it-works"
+            className="inline-flex items-center justify-center"
             style={{
-              background: '#ffffff',
-              border: '1px solid #e5e7eb',
-              padding: '24px',
+              ...primaryButtonStyle,
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#D44E1E';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#F15A24';
+              e.currentTarget.style.transform = 'none';
             }}
           >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div style={{ maxWidth: '700px' }}>
-                <div
-                  style={{
-                    fontSize: '0.78rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                    color: '#F15A24',
-                    marginBottom: '8px',
-                  }}
-                >
-                  Full timeline and pricing
-                </div>
-                <p style={{ margin: 0, fontSize: '0.95rem', color: '#555', lineHeight: 1.7 }}>
-                  If you want the detailed breakdown of phases, pricing, and what
-                  happens after kickoff, go to the dedicated page.
-                </p>
-              </div>
-              <Link
-                href="/how-it-works"
-                className="inline-flex items-center justify-center font-semibold rounded-lg"
-                style={{
-                  padding: '12px 22px',
-                  fontSize: '0.95rem',
-                  borderRadius: '10px',
-                  background: '#0F1B2D',
-                  color: '#FFFFFF',
-                  textDecoration: 'none',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                View Full Process →
-              </Link>
-            </div>
-          </div>
+            View Full Process →
+          </Link>
         </div>
-      </section>
+      </Section>
 
-      <section className="bg-white text-center" style={{ padding: '72px 0' }}>
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-          <div className="mb-3">
-            <Eyebrow subtle>Tool Stack</Eyebrow>
-          </div>
-          <h2
-            className="font-bold text-[#1A1A1A] mb-2"
-            style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700 }}
-          >
-            Built on tools that work together
-          </h2>
-          <p className="mb-8 max-w-xl mx-auto" style={{ color: '#4A4A4A' }}>
-            HubSpot is the operational core, supported by the modern GTM stack around
-            it. Nothing is built to lock you into us.
-          </p>
-          <div className="tool-logo-grid">
-            {tools.map((tool) => (
-              <div
-                key={tool.name}
-                className="tool-logo-card"
+      <Section tone="light">
+        <SectionHeading
+          align="center"
+          eyebrow="Tool Stack"
+          title="Built on tools that work together"
+          lede="HubSpot is the operational core, supported by the modern GTM stack around it. Nothing is built to lock you into us."
+        />
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
+            gap: '20px',
+          }}
+        >
+          {tools.map((tool) => (
+            <div
+              key={tool.name}
+              className="gs-card"
+              style={{
+                padding: '22px 20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minHeight: '76px',
+              }}
+            >
+              <Image
+                src={tool.src}
+                alt={tool.name}
+                width={tool.width}
+                height={tool.height}
                 style={{
-                  background: '#FFFFFF',
-                  border: '1px solid #E2E5E2',
-                  borderRadius: '18px',
-                  padding: '18px 20px',
+                  width: 'auto',
+                  height: '28px',
+                  maxWidth: '100%',
+                  objectFit: 'contain',
                 }}
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    minHeight: '36px',
-                  }}
-                >
-                  <Image
-                    src={tool.src}
-                    alt={tool.name}
-                    width={tool.width}
-                    height={tool.height}
-                    className="tool-logo-image"
-                    style={{
-                      width: 'auto',
-                      height: '28px',
-                      maxWidth: '100%',
-                      objectFit: 'contain',
-                    }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+              />
+            </div>
+          ))}
         </div>
-      </section>
-      <style>{`
-        .tool-logo-grid {
-          display: grid;
-          grid-template-columns: repeat(5, minmax(0, 1fr));
-          gap: 14px;
-        }
-        .tool-logo-card {
-          box-shadow: 0 10px 24px rgba(23, 32, 51, 0.04);
-          transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-        }
-        .tool-logo-card:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 16px 34px rgba(23, 32, 51, 0.08);
-          border-color: #D8DEDA !important;
-        }
-        @media (max-width: 960px) {
-          .tool-logo-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-          }
-        }
-        @media (max-width: 640px) {
-          .tool-logo-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
-          }
-          .tool-logo-card {
-            border-radius: 14px !important;
-            padding: 16px 14px !important;
-          }
-        }
-      `}</style>
+      </Section>
     </>
   );
 }
