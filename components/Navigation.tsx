@@ -3,12 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import BookDiscoveryButton from './BookDiscoveryButton';
-import {
-  mobileButtonStyle,
-  navButtonHoverStyle,
-  navButtonStyle,
-} from './MarketingPrimitives';
+import AuditCtaLink from './AuditCtaLink';
+import { mobileButtonStyle, navButtonStyle } from './MarketingPrimitives';
 
 /* Header follows handoff.ai's technique: a fixed bar with a real backdrop-filter,
    so page content shows through faintly behind it. Handoff can run that bar dark
@@ -124,14 +120,12 @@ export default function Navigation() {
               {quietLink.label}
             </Link>
 
-            <BookDiscoveryButton
+            <AuditCtaLink
               utmContent="nav_desktop"
-              className="inline-flex items-center gap-2 cursor-pointer whitespace-nowrap"
+              label="Book a GTM Audit"
+              className="whitespace-nowrap"
               style={navButtonStyle}
-              hoverStyle={navButtonHoverStyle}
-            >
-              Book a GTM Audit
-            </BookDiscoveryButton>
+            />
           </div>
 
           <button
@@ -183,14 +177,12 @@ export default function Navigation() {
               ))}
             </div>
             <div className="mt-3 px-1 pb-1">
-              <BookDiscoveryButton
+              <AuditCtaLink
                 utmContent="nav_mobile"
-                className="inline-flex justify-center items-center w-full cursor-pointer"
+                label="Book a GTM Audit"
+                className="w-full"
                 style={mobileButtonStyle}
-                hoverStyle={navButtonHoverStyle}
-              >
-                Book a GTM Audit
-              </BookDiscoveryButton>
+              />
             </div>
           </div>
         </div>

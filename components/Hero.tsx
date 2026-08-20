@@ -1,6 +1,7 @@
 'use client';
 
-import BookDiscoveryButton from './BookDiscoveryButton';
+import AuditCtaLink from './AuditCtaLink';
+import { auditOffer } from '@/lib/audit-offer';
 import BeforeAfterSlider from './BeforeAfterSlider';
 import Link from 'next/link';
 import {
@@ -147,23 +148,11 @@ export default function Hero() {
           className="gs-rise"
           style={{ ['--gs-delay' as string]: '320ms', fontSize: '0.9375rem', marginBottom: '56px' }}
         >
-          <BookDiscoveryButton
+          <AuditCtaLink
+            variant="quiet"
             utmContent="homepage_hero_audit"
-            className="cursor-pointer"
-            style={{
-              background: 'none',
-              border: 'none',
-              padding: 0,
-              font: 'inherit',
-              color: '#F15A24',
-              fontWeight: 500,
-              textDecoration: 'underline',
-              textUnderlineOffset: '3px',
-            }}
-            hoverStyle={{ color: '#D44E1E' }}
-          >
-            Ready to move? Book the GTM Audit, $1,200, credited to your build.
-          </BookDiscoveryButton>
+            label={`Ready to move? Book the GTM Audit, ${'$'}{auditOffer.priceDisplay}, credited to your build.`}
+          />
         </p>
 
         <div className="gs-rise" style={{ ['--gs-delay' as string]: '380ms' }}>

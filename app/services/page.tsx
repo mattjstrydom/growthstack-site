@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import BookDiscoveryButton from '@/components/BookDiscoveryButton';
+import AuditCtaLink from '@/components/AuditCtaLink';
 import { absoluteUrl, jsonLd, siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -346,21 +346,11 @@ export default function ServicesPage() {
               specific scope for whatever build makes sense next. The fee credits
               toward any build booked within 30 days.
             </p>
-            <BookDiscoveryButton
+            <AuditCtaLink
+              variant="on-dark"
               utmContent="services_cta"
-              className="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-lg cursor-pointer"
-              style={{
-                background: '#F15A24',
-                padding: '14px 36px',
-                fontSize: '1.0625rem',
-                fontWeight: 600,
-                borderRadius: '8px',
-                boxShadow: '0 8px 24px rgba(15,27,45,0.16)',
-              }}
-              hoverStyle={{ background: '#D44E1E', boxShadow: '0 10px 28px rgba(15,27,45,0.2)' }}
-            >
-              Book a GTM Audit — $1,200
-            </BookDiscoveryButton>
+              label="Book a GTM Audit — $1,200"
+            />
             <p style={{ marginTop: '18px', fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>
               One build at a time, so the 10-day scope holds. Currently taking
               bookings for the next available slot.
