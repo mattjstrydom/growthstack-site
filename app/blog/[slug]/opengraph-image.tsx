@@ -1,5 +1,11 @@
 import { ImageResponse } from 'next/og';
-import { getPost } from '@/lib/posts';
+import { getPost, getAllSlugs } from '@/lib/posts';
+
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return getAllSlugs().map(slug => ({ slug }));
+}
 
 export const size = {
   width: 1200,
