@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import BookDiscoveryButton from '@/components/BookDiscoveryButton';
+import AuditCtaLink from '@/components/AuditCtaLink';
 import { absoluteUrl, jsonLd, siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -301,38 +301,12 @@ export default function HubspotRevopsPage() {
               reporting. You get a specific findings document and a prioritised fix
               list.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <BookDiscoveryButton
+            <div className="flex justify-center">
+              <AuditCtaLink
+                variant="on-dark"
                 utmContent="hubspot_revops_cta"
-                className="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-lg cursor-pointer"
-                style={{
-                  background: '#F15A24',
-                  padding: '14px 36px',
-                  fontSize: '1.0625rem',
-                  fontWeight: 600,
-                  borderRadius: '8px',
-                boxShadow: '0 8px 24px rgba(15,27,45,0.16)',
-              }}
-              hoverStyle={{ background: '#D44E1E', boxShadow: '0 10px 28px rgba(15,27,45,0.2)' }}
-              >
-                Book a GTM Audit — $1,200
-              </BookDiscoveryButton>
-              <BookDiscoveryButton
-                utmContent="hubspot_revops_discovery"
-                className="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-lg cursor-pointer"
-                style={{
-                  background: 'transparent',
-                  padding: '14px 36px',
-                  fontSize: '1.0625rem',
-                  fontWeight: 600,
-                  borderRadius: '8px',
-                  border: '2px solid rgba(255,255,255,0.24)',
-                  color: '#fff',
-                }}
-                hoverStyle={{ background: 'rgba(255,255,255,0.05)' }}
-              >
-                Book a free discovery call first
-              </BookDiscoveryButton>
+                label="Book a GTM Audit — $1,200"
+              />
             </div>
           </div>
         </section>

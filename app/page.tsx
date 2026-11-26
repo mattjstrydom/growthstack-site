@@ -8,6 +8,7 @@ import Testimonials from '@/components/Testimonials';
 import WhoItIsFor from '@/components/WhoItIsFor';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
+import { Eyebrow, Section, SectionHeading } from '@/components/MarketingPrimitives';
 import { absoluteUrl, jsonLd, siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -139,104 +140,51 @@ export default function Home() {
         />
         <Hero />
         <HowItWorks />
-        <section
-          style={{
-            background: '#FDFAF6',
-            borderTop: '1px solid #EAE4DB',
-            borderBottom: '1px solid #EAE4DB',
-            padding: '72px 0',
-          }}
-        >
-          <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-            <div className="mb-10">
-              <div
-                className="inline-flex items-center font-bold uppercase tracking-[0.1em] mb-3"
-                style={{
-                  fontSize: '0.72rem',
-                  color: '#F15A24',
-                  background: 'transparent',
-                  padding: '5px 13px',
-                  border: '1px dashed rgba(241,90,36,0.6)',
-                  borderRadius: '4px',
-                  letterSpacing: '0.1em',
-                  fontWeight: 600,
-                }}
-              >
-                Common Starting Points
-              </div>
-              <h2
-                style={{
-                  fontSize: 'clamp(1.625rem,3vw,2.5rem)',
-                  fontWeight: 700,
-                  color: '#1A1A1A',
-                  marginBottom: '12px',
-                }}
-              >
-                Where most teams actually begin
-              </h2>
-              <p style={{ fontSize: '1rem', color: '#555', lineHeight: 1.75, maxWidth: '760px' }}>
-                Some teams need the full GTM foundation. Others already have HubSpot
-                live and just need the messy parts cleaned up before they can scale
-                motion on top of it.
-              </p>
-            </div>
+        <Section tone="light">
+          <SectionHeading
+            eyebrow="Common Starting Points"
+            title="Where most teams actually begin"
+            lede="Some teams need the full GTM foundation. Others already have HubSpot live and just need the messy parts cleaned up before they can scale motion on top of it."
+          />
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <Link href="/services" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <article
-                  style={{
-                    background: '#fff',
-                    border: '1px solid #ECE6DE',
-                    borderRadius: '18px',
-                    padding: '24px',
-                    height: '100%',
-                  }}
-                >
-                  <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '12px' }}>
-                    Build the system
-                  </div>
-                  <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
-                    GTM foundation and RevOps setup
-                  </h3>
-                  <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.75, marginBottom: '16px' }}>
-                    Best for teams moving from founder-led selling into a clearer CRM,
-                    pipeline, workflow, and reporting setup.
-                  </p>
-                  <div style={{ fontSize: '0.92rem', color: '#1A1A1A', fontWeight: 600 }}>
-                    Explore services →
-                  </div>
-                </article>
-              </Link>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link href="/services" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <article className="gs-card" style={{ padding: '30px 28px', height: '100%' }}>
+                <Eyebrow>Build the system</Eyebrow>
+                <h3 className="gs-display-md" style={{ color: '#16181D', margin: '16px 0 12px' }}>
+                  GTM foundation and RevOps setup
+                </h3>
+                <p style={{ fontSize: '0.95rem', color: '#4A4A4A', lineHeight: 1.7, marginBottom: '18px' }}>
+                  Best for teams moving from founder-led selling into a clearer CRM,
+                  pipeline, workflow, and reporting setup.
+                </p>
+                <div style={{ fontSize: '0.92rem', color: '#F15A24', fontWeight: 500 }}>
+                  Explore services &rarr;
+                </div>
+              </article>
+            </Link>
 
-              <Link href="/hubspot-cleanup" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <article
-                  style={{
-                    background: '#fff',
-                    border: '1px solid rgba(241,90,36,0.24)',
-                    borderRadius: '18px',
-                    padding: '24px',
-                    height: '100%',
-                    boxShadow: '0 12px 30px rgba(23, 32, 51, 0.05)',
-                  }}
-                >
-                  <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#F15A24', marginBottom: '12px' }}>
-                    Clean up what exists
-                  </div>
-                  <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
-                    HubSpot cleanup for messy live portals
-                  </h3>
-                  <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.75, marginBottom: '16px' }}>
-                    Best for teams that already have HubSpot, but the stages, data,
-                    workflows, and reporting no longer reflect reality.
-                  </p>
-                  <div style={{ fontSize: '0.92rem', color: '#1A1A1A', fontWeight: 600 }}>
-                    See HubSpot cleanup →
-                  </div>
-                </article>
-              </Link>
-            </div>
+            <Link href="/hubspot-cleanup" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <article
+                className="gs-card"
+                style={{ padding: '30px 28px', height: '100%', borderColor: 'rgba(241,90,36,0.3)' }}
+              >
+                <Eyebrow>Clean up what exists</Eyebrow>
+                <h3 className="gs-display-md" style={{ color: '#16181D', margin: '16px 0 12px' }}>
+                  HubSpot cleanup for messy live portals
+                </h3>
+                <p style={{ fontSize: '0.95rem', color: '#4A4A4A', lineHeight: 1.7, marginBottom: '18px' }}>
+                  Best for teams that already have HubSpot, but the stages, data,
+                  workflows, and reporting no longer reflect reality.
+                </p>
+                <div style={{ fontSize: '0.92rem', color: '#F15A24', fontWeight: 500 }}>
+                  See HubSpot cleanup &rarr;
+                </div>
+              </article>
+            </Link>
           </div>
-        </section>
+        </Section>
+
         <TriggerCards />
         <Testimonials />
         <WhoItIsFor />

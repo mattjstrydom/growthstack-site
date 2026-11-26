@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import BookDiscoveryButton from './BookDiscoveryButton';
 import {
-  Eyebrow,
+  Section,
+  SectionHeading,
   primaryButtonHoverStyle,
   primaryButtonStyle,
 } from './MarketingPrimitives';
@@ -41,97 +41,137 @@ const faqs = [
   },
 ];
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div style={{ borderBottom: '1px solid #E2E5E2', padding: '22px 0' }}>
-      <button
-        className="w-full flex items-center justify-between text-left gap-4 group"
-        onClick={() => setOpen(!open)}
-        aria-expanded={open}
-      >
-        <span
-          className="font-semibold transition-colors"
-          style={{ fontSize: '1.0625rem', fontWeight: 600, color: open ? '#F15A24' : '#1A1A1A' }}
-        >
-          {question}
-        </span>
-        <span
-          className="shrink-0 rounded-full flex items-center justify-center transition-transform"
-          style={{
-            width: '28px',
-            height: '28px',
-            border: `1.5px solid ${open ? '#F15A24' : '#E2E5E2'}`,
-            transform: open ? 'rotate(45deg)' : 'none',
-            flexShrink: 0,
-          }}
-        >
-          <svg className="w-3 h-3" style={{ color: open ? '#F15A24' : '#888' }} viewBox="0 0 12 12" fill="none">
-            <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
-        </span>
-      </button>
-      {open && (
-        <p className="mt-3 leading-[1.75]" style={{ fontSize: '0.9875rem', color: '#4A4A4A' }}>
-          {answer}
-        </p>
-      )}
-    </div>
-  );
+/* Native <details> accordion: no state, no JS, keyboard accessible for free.
+   The default marker is removed and replaced with a cross that rotates to an
+   "x" when the row is open. */
+const accordionCss = `
+.gs-faq-item > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
 }
+.gs-faq-item > summary::-webkit-details-marker { display: none; }
+.gs-faq-item > summary::marker { content: ''; }
+.gs-faq-item > summary:focus-visible {
+  outline: 2px solid #F15A24;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+.gs-faq-q {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #16181D;
+  line-height: 1.45;
+  transition: color 0.2s ease;
+}
+.gs-faq-item > summary:hover .gs-faq-q { color: #F15A24; }
+.gs-faq-item[open] > summary .gs-faq-q { color: #F15A24; }
+.gs-faq-sign {
+  position: relative;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #E7E2DA;
+  color: #8A8A8A;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.gs-faq-sign::before,
+.gs-faq-sign::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  border-radius: 1px;
+}
+.gs-faq-sign::before {
+  width: 11px;
+  height: 1.5px;
+  transform: translate(-50%, -50%);
+}
+.gs-faq-sign::after {
+  width: 1.5px;
+  height: 11px;
+  transform: translate(-50%, -50%);
+}
+.gs-faq-item[open] .gs-faq-sign {
+  transform: rotate(45deg);
+  border-color: #F15A24;
+  color: #F15A24;
+}
+.gs-faq-answer {
+  font-size: 0.95rem;
+  color: #4A4A4A;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0 0 22px;
+  max-width: 62ch;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gs-faq-sign { transition: none; }
+}
+`;
 
 export default function FAQ() {
   return (
     <>
-      <section
-        id="faq"
-        style={{
-          background: '#FDFAF6',
-          borderTop: '1px solid #E2E5E2',
-          borderBottom: '1px solid #E2E5E2',
-          padding: '72px 0',
-        }}
-      >
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-8">
-          <div className="mb-10">
-            <div className="mb-3">
-              <Eyebrow subtle>FAQ</Eyebrow>
-            </div>
-            <h2 className="font-bold text-[#1A1A1A]" style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700 }}>
-              Common questions
-            </h2>
-          </div>
+      <Section id="faq" tone="sand">
+        <SectionHeading eyebrow="FAQ" title="Common questions" />
 
-          <div className="max-w-3xl">
-            {faqs.map((faq) => (
-              <FAQItem key={faq.question} {...faq} />
-            ))}
-          </div>
+        <style dangerouslySetInnerHTML={{ __html: accordionCss }} />
+
+        <div
+          className="gs-card gs-rise"
+          style={{
+            maxWidth: '760px',
+            padding: '6px 28px',
+            ['--gs-delay' as string]: '80ms',
+          }}
+        >
+          {faqs.map((faq, index) => (
+            <details
+              key={faq.question}
+              className="gs-faq-item"
+              style={{
+                borderBottom:
+                  index === faqs.length - 1 ? 'none' : '1px solid #E7E2DA',
+              }}
+            >
+              <summary>
+                <span className="gs-faq-q">{faq.question}</span>
+                <span className="gs-faq-sign" aria-hidden />
+              </summary>
+              <p className="gs-faq-answer">{faq.answer}</p>
+            </details>
+          ))}
         </div>
-      </section>
+      </Section>
 
-      <section
-        className="relative overflow-hidden text-center"
-        style={{ background: '#0F1B2D', padding: '80px 0' }}
-      >
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(241,90,36,0.07) 0%, transparent 65%)' }} />
-        <div className="relative max-w-[1100px] mx-auto px-6 lg:px-8">
-          <div className="mb-4">
-            <Eyebrow subtle>Ready to start?</Eyebrow>
-          </div>
-          <h2 className="font-bold text-white mb-4" style={{ fontSize: 'clamp(1.875rem,3.5vw,3rem)', fontWeight: 700 }}>
-            Ready to sort it properly?
-          </h2>
-          <p className="mb-8 max-w-lg mx-auto leading-[1.75]" style={{ color: 'rgba(255,255,255,0.58)' }}>
-            Book a discovery call. We&apos;ll look at your current CRM setup,
-            pipeline flow, outbound motion, and reporting. You&apos;ll leave the call
-            with a clear view of what needs fixing first — whether you work with
-            GrowthStack or not.
-          </p>
+      <Section tone="dark">
+        <div style={{ textAlign: 'center' }}>
+          <SectionHeading
+            tone="dark"
+            align="center"
+            eyebrow="Ready to start?"
+            title="Ready to sort it properly?"
+            lede={
+              <>
+                Book a discovery call. We&apos;ll look at your current CRM setup,
+                pipeline flow, outbound motion, and reporting. You&apos;ll leave the call
+                with a clear view of what needs fixing first — whether you work with
+                GrowthStack or not.
+              </>
+            }
+          />
+
           <BookDiscoveryButton
             utmContent="homepage_cta"
-            className="inline-flex items-center gap-2 text-white font-semibold rounded-lg cursor-pointer transition-all"
+            className="inline-flex items-center gap-2 cursor-pointer"
             style={primaryButtonStyle}
             hoverStyle={primaryButtonHoverStyle}
           >
@@ -140,11 +180,19 @@ export default function FAQ() {
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </BookDiscoveryButton>
-          <p className="mt-4" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.28)' }}>
+
+          <p
+            style={{
+              marginTop: '18px',
+              fontSize: '0.8rem',
+              color: 'rgba(255,255,255,0.38)',
+              lineHeight: 1.7,
+            }}
+          >
             No pitch deck. No generic audit report. Just a useful 45-minute working session.
           </p>
         </div>
-      </section>
+      </Section>
     </>
   );
 }
